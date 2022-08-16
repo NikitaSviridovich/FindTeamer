@@ -10,6 +10,7 @@
 		69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69327C2228AB7E8C004F7C99 /* LoginView.swift */; };
 		69327C2528AB8B2E004F7C99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */; };
 		69327C2828AB8BE1004F7C99 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 69327C2728AB8BE1004F7C99 /* FirebaseAuth */; };
+		69327C2A28AB9E57004F7C99 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69327C2928AB9E57004F7C99 /* SignUpView.swift */; };
 		69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */; };
 		69C92F5828A3D86D00F2E878 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F5728A3D86D00F2E878 /* ContentView.swift */; };
 		69C92F5A28A3D86F00F2E878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C92F5928A3D86F00F2E878 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		69327C2228AB7E8C004F7C99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		69327C2928AB9E57004F7C99 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		69C92F5228A3D86D00F2E878 /* FindTeamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTeamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamerApp.swift; sourceTree = "<group>"; };
 		69C92F5728A3D86D00F2E878 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				69327C2228AB7E8C004F7C99 /* LoginView.swift */,
+				69327C2928AB9E57004F7C99 /* SignUpView.swift */,
 			);
 			path = ViewsContent;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				69C92F5828A3D86D00F2E878 /* ContentView.swift in Sources */,
 				69C92F6228A3D86F00F2E878 /* FindTeamer.xcdatamodeld in Sources */,
 				69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */,
+				69327C2A28AB9E57004F7C99 /* SignUpView.swift in Sources */,
 				69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
