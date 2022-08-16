@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69327C2228AB7E8C004F7C99 /* LoginView.swift */; };
+		69327C2528AB8B2E004F7C99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */; };
+		69327C2828AB8BE1004F7C99 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 69327C2728AB8BE1004F7C99 /* FirebaseAuth */; };
 		69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */; };
 		69C92F5828A3D86D00F2E878 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F5728A3D86D00F2E878 /* ContentView.swift */; };
 		69C92F5A28A3D86F00F2E878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C92F5928A3D86F00F2E878 /* Assets.xcassets */; };
@@ -36,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69327C2228AB7E8C004F7C99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		69C92F5228A3D86D00F2E878 /* FindTeamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTeamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamerApp.swift; sourceTree = "<group>"; };
 		69C92F5728A3D86D00F2E878 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69327C2828AB8BE1004F7C99 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69327C2128AB7E5E004F7C99 /* ViewsContent */ = {
+			isa = PBXGroup;
+			children = (
+				69327C2228AB7E8C004F7C99 /* LoginView.swift */,
+			);
+			path = ViewsContent;
+			sourceTree = "<group>";
+		};
 		69C92F4928A3D86D00F2E878 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +112,8 @@
 		69C92F5428A3D86D00F2E878 /* FindTeamer */ = {
 			isa = PBXGroup;
 			children = (
+				69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */,
+				69327C2128AB7E5E004F7C99 /* ViewsContent */,
 				69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */,
 				69C92F5728A3D86D00F2E878 /* ContentView.swift */,
 				69C92F5928A3D86F00F2E878 /* Assets.xcassets */,
@@ -149,6 +165,9 @@
 			dependencies = (
 			);
 			name = FindTeamer;
+			packageProductDependencies = (
+				69327C2728AB8BE1004F7C99 /* FirebaseAuth */,
+			);
 			productName = FindTeamer;
 			productReference = 69C92F5228A3D86D00F2E878 /* FindTeamer.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +240,9 @@
 				Base,
 			);
 			mainGroup = 69C92F4928A3D86D00F2E878;
+			packageReferences = (
+				69327C2628AB8BE1004F7C99 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 69C92F5328A3D86D00F2E878 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -239,6 +261,7 @@
 			files = (
 				69C92F5D28A3D86F00F2E878 /* Preview Assets.xcassets in Resources */,
 				69C92F5A28A3D86F00F2E878 /* Assets.xcassets in Resources */,
+				69327C2528AB8B2E004F7C99 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +289,7 @@
 				69C92F5F28A3D86F00F2E878 /* Persistence.swift in Sources */,
 				69C92F5828A3D86D00F2E878 /* ContentView.swift in Sources */,
 				69C92F6228A3D86F00F2E878 /* FindTeamer.xcdatamodeld in Sources */,
+				69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */,
 				69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,6 +609,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		69327C2628AB8BE1004F7C99 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		69327C2728AB8BE1004F7C99 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69327C2628AB8BE1004F7C99 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		69C92F6028A3D86F00F2E878 /* FindTeamer.xcdatamodeld */ = {
