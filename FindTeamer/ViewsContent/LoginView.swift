@@ -15,7 +15,7 @@ struct LoginView: View {
     
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             VStack {
                 WelcomeText()
                 WelcomeIcon()
@@ -24,7 +24,7 @@ struct LoginView: View {
                             .background(lightGreyColor)
                             .cornerRadius(5.0)
                             .padding(.horizontal, 20)
-                        SecureField("Password", text: $password)
+                SecureField("Password", text: $password)
                             .padding()
                             .background(lightGreyColor)
                             .cornerRadius(5.0)
@@ -73,7 +73,7 @@ struct WelcomeIcon : View {
             .frame(width: 150, height: 150)
             .clipped()
             .cornerRadius(10)
-            .padding(.bottom, 75)
+            .padding(.bottom, 35)
     }
 }
 
