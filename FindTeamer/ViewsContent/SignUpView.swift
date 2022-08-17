@@ -7,27 +7,32 @@
 
 import SwiftUI
 import Firebase
+import Combine
 
 
 struct SignUpView: View {
-    @State var email: String = ""
     @State var password: String = ""
     @State var repeatedPassword: String = ""
     
+    @ObservedObject var formModel: SignUpModel
+    
+    init(formModel: SignUpModel = SignUpModel()) {
+          self.formModel = formModel
+    }
+    
     var body: some View {
         WelcomeIcon()
-        RegText()
-        TextField("Email", text: $email)
+        TextField("Email", text: $formModel.userEmail)
                     .padding()
                     .background(lightGreyColor)
                     .cornerRadius(5.0)
                     .padding(.horizontal, 20)
-        SecureField("Password", text: $password)
+        SecureField("Password", text: $formModel.userPassword)
                     .padding()
                     .background(lightGreyColor)
                     .cornerRadius(5.0)
                     .padding(.horizontal, 20)
-        SecureField("Repeat Password", text: $password)
+        SecureField("Repeat Password", text: $formModel.userRepeatPassword)
                     .padding()
                     .background(lightGreyColor)
                     .cornerRadius(5.0)
@@ -40,7 +45,10 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        Group {
+            SignUpView()
+            SignUpView()
+        }
     }
 }
 
