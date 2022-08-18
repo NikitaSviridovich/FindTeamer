@@ -21,6 +21,7 @@
 		69C92F6C28A3D86F00F2E878 /* FindTeamerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F6B28A3D86F00F2E878 /* FindTeamerTests.swift */; };
 		69C92F7628A3D86F00F2E878 /* FindTeamerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F7528A3D86F00F2E878 /* FindTeamerUITests.swift */; };
 		69C92F7828A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F7728A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift */; };
+		D072E0BB28AE53D000FE0D41 /* ErrorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072E0BA28AE53D000FE0D41 /* ErrorConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		69C92F7128A3D86F00F2E878 /* FindTeamerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindTeamerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C92F7528A3D86F00F2E878 /* FindTeamerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamerUITests.swift; sourceTree = "<group>"; };
 		69C92F7728A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D072E0BA28AE53D000FE0D41 /* ErrorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		69C92F5428A3D86D00F2E878 /* FindTeamer */ = {
 			isa = PBXGroup;
 			children = (
+				D072E0B928AE53B100FE0D41 /* Errors */,
 				6914668028ABCC4D003C2222 /* Models */,
 				69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */,
 				69327C2128AB7E5E004F7C99 /* ViewsContent */,
@@ -161,6 +164,14 @@
 				69C92F7728A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift */,
 			);
 			path = FindTeamerUITests;
+			sourceTree = "<group>";
+		};
+		D072E0B928AE53B100FE0D41 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				D072E0BA28AE53D000FE0D41 /* ErrorConfigurator.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 				69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */,
 				69327C2A28AB9E57004F7C99 /* SignUpView.swift in Sources */,
 				69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */,
+				D072E0BB28AE53D000FE0D41 /* ErrorConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,8 +11,7 @@ import Combine
 
 
 struct SignUpView: View {
-    @State var password: String = ""
-    @State var repeatedPassword: String = ""
+    @State var errorArray: String = ""
     
     @ObservedObject var formModel: SignUpModel
     
@@ -37,8 +36,29 @@ struct SignUpView: View {
                     .background(lightGreyColor)
                     .cornerRadius(5.0)
                     .padding(.horizontal, 20)
-        Button(action: {print("Button tapped")}) {
+        Text(errorArray)
+            .opacity(0.5)
+            .foregroundColor(.red)
+            .padding()
+        Button(action: registerClicked) {
                    FinishButtonContent()
+        }.opacity(buttonOpacity)
+    }
+    
+    var buttonOpacity: Double {
+        return formModel.isFormValid &&
+                formModel.errorMessages.count == 0 ? 1 : 0.5
+    }
+    
+    func registerClicked() {
+        self.errorArray = ""
+        if self.formModel.isFormValid && self.formModel.errorMessages.count == 0 {
+            
+        } else {
+            for i in self.formModel.errorMessages {
+                self.errorArray += " " + i.value
+            }
+
         }
     }
 }
