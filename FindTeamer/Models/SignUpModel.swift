@@ -12,7 +12,6 @@ class SignUpModel : ObservableObject {
     @Published var userEmail = ""
     @Published var userPassword = ""
     @Published var userRepeatPassword = ""
-    
     @Published var isFormValid = false
     
     var errorMessages: Dictionary<String, String> = [:]
