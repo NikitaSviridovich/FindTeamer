@@ -12,7 +12,6 @@ import Combine
 
 struct SignUpView: View {
     @State var errorArray: String = ""
-    
     @ObservedObject var formModel: SignUpModel
     
     init(formModel: SignUpModel = SignUpModel()) {
