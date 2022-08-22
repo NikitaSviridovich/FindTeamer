@@ -31,6 +31,7 @@ private extension SignUpModel {
     var isNameValidPublisher: AnyPublisher<Bool, Never> {
         $userName
             .map { name in
+                self.errorMessages.removeValue(forKey: ErrorNaming.nameError.rawValue)
                 if name.count < 2 {
                     self.errorMessages[ErrorNaming.nameError.rawValue] = ErrorConfigurator.nameError.localizedDescription
                 }

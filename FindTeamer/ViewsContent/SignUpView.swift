@@ -12,7 +12,13 @@ import Combine
 
 struct SignUpView: View {
     @State var errorArray: String = ""
+    @State private var presentAlert = false
+    @State private var activeAlert: ActiveAlert = .first
     @ObservedObject var formModel: SignUpModel
+    @Environment(\.presentationMode) var presentationMode
+    
+    let signUpManager: FirebaseManager = FirebaseManager()
+    let alertModel: AlertModel = AlertModel()
     
     init(formModel: SignUpModel = SignUpModel()) {
           self.formModel = formModel
@@ -45,8 +51,24 @@ struct SignUpView: View {
             .foregroundColor(.red)
             .padding()
         Button(action: registerClicked) {
-                   FinishButtonContent()
+            FinishButtonContent()
         }.opacity(buttonOpacity)
+        .alert(isPresented: $presentAlert) {
+            switch activeAlert {
+            case .first:
+                return Alert (
+                    title: Text(alertModel.title),
+                    message: Text(alertModel.message),
+                    dismissButton: .default(Text(alertModel.buttonNaming)) {
+                        presentationMode.wrappedValue.dismiss()
+                    })
+            case .second:
+                return Alert (
+                    title: Text(alertModel.title),
+                    message: Text(alertModel.message),
+                    dismissButton: .default(Text(alertModel.buttonNaming)))
+            }
+        }
     }
     
     var buttonOpacity: Double {
@@ -57,7 +79,19 @@ struct SignUpView: View {
     func registerClicked() {
         self.errorArray = ""
         if self.formModel.isFormValid && self.formModel.errorMessages.count == 0 {
-            
+            signUpManager.createUser(email: self.formModel.userEmail, password: self.formModel.userPassword, completionBlock: { (success) in
+                    presentAlert = true
+                    if (success) {
+                        activeAlert = .first
+                        alertModel.title = "Success"
+                        alertModel.message = "Registration complete!"
+                    } else {
+                        activeAlert = .second
+                        alertModel.title = "Error"
+                        alertModel.message = "Registration failed. Please try again!"
+                        alertModel.buttonNaming = "OK"
+                }
+            })
         } else {
             for i in self.formModel.errorMessages {
                 self.errorArray += " " + i.value
@@ -85,14 +119,5 @@ struct FinishButtonContent : View {
                         .frame(width: 330, height: 40)
                         .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
                         .cornerRadius(45.0)
-    }
-}
-
-struct RegText : View {
-    var body: some View {
-        return Text("Fill The Form")
-            .font(.largeTitle)
-            .fontWeight(.semibold)
-            .padding(.bottom, 20)
     }
 }
