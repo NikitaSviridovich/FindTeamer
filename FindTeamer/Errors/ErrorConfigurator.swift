@@ -8,6 +8,7 @@
 import Foundation
 
 public enum ErrorNaming: String {
+    case nameError = "nameError"
     case emailError = "emailError"
     case shortPassword = "shortPassword"
     case longPassword = "longPassword"
@@ -15,6 +16,7 @@ public enum ErrorNaming: String {
 }
 
 public enum ErrorConfigurator: Error {
+    case nameError
     case emailError
     case shortPassword
     case longPassword
@@ -23,12 +25,14 @@ public enum ErrorConfigurator: Error {
 extension ErrorConfigurator: LocalizedError {
     public var errorDescription: String? {
         switch self {
+        case .nameError:
+            return NSLocalizedString("Name is too short!", comment: "")
         case .emailError:
             return NSLocalizedString("Incorrect email!", comment: "")
         case .shortPassword:
             return NSLocalizedString("Password too short!", comment: "")
         case .longPassword:
-            return NSLocalizedString("Password too long!", comment: "")
+            return NSLocalizedString("Password is too long!", comment: "")
         case .repeatedPassword:
             return NSLocalizedString("Passwords not matches", comment: "")
         }

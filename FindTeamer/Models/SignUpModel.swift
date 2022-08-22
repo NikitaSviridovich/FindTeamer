@@ -9,9 +9,11 @@ import Foundation
 import Combine
 
 class SignUpModel : ObservableObject {
+    @Published var userName = ""
     @Published var userEmail = ""
     @Published var userPassword = ""
     @Published var userRepeatPassword = ""
+    
     @Published var isFormValid = false
     
     var errorMessages: Dictionary<String, String> = [:]
@@ -26,6 +28,17 @@ class SignUpModel : ObservableObject {
       }
 }
 private extension SignUpModel {
+    var isNameValidPublisher: AnyPublisher<Bool, Never> {
+        $userName
+            .map { name in
+                if name.count < 2 {
+                    self.errorMessages[ErrorNaming.nameError.rawValue] = ErrorConfigurator.nameError.localizedDescription
+                }
+                return name.count > 2
+            }
+            .eraseToAnyPublisher()
+    }
+    
     var isEmailValidPublisher: AnyPublisher<Bool, Never> {
         $userEmail
             .map { email in
@@ -67,12 +80,13 @@ private extension SignUpModel {
     }
     
     var isSignUpFormValidPublisher: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest3(
+        Publishers.CombineLatest4(
+            isNameValidPublisher,
             isEmailValidPublisher,
             isPasswordValidPublisher,
             isPasswordMatchesValidPublisher)
-          .map {isEmailValid, isPasswordValid, passwordMatches in
-              return isEmailValid && isPasswordValid && passwordMatches
+          .map { isNameValid, isEmailValid, isPasswordValid, passwordMatches in
+              return isNameValid && isEmailValid && isPasswordValid && passwordMatches
           }
           .eraseToAnyPublisher()
       }

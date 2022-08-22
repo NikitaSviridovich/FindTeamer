@@ -21,6 +21,11 @@ struct SignUpView: View {
     
     var body: some View {
         WelcomeIcon()
+        TextField("Name", text: $formModel.userName)
+                    .padding()
+                    .background(lightGreyColor)
+                    .cornerRadius(5.0)
+                    .padding(.horizontal, 20)
         TextField("Email", text: $formModel.userEmail)
                     .padding()
                     .background(lightGreyColor)
