@@ -9,28 +9,39 @@ import SwiftUI
 import Firebase
 
 let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
+
 struct LoginView: View {
     @State var email: String = ""
     @State var password: String = ""
+    @State private var presentAlert = false
     
+    let signInManager: FirebaseManager = FirebaseManager()
+    let alertModel: AlertModel = AlertModel()
     
     var body: some View {
         NavigationView {
             VStack {
                 WelcomeText()
                 WelcomeIcon()
-                TextField("Username", text: $email)
+                TextField("Email", text: $email)
                             .padding()
                             .background(lightGreyColor)
-                            .cornerRadius(5.0)
+                            .cornerRadius(10.0)
                             .padding(.horizontal, 20)
                 SecureField("Password", text: $password)
                             .padding()
                             .background(lightGreyColor)
-                            .cornerRadius(5.0)
+                            .cornerRadius(10.0)
                             .padding(.horizontal, 20)
-                Button(action: {print("Button tapped")}) {
+                Button(action: logInClicked) {
                            LoginButtonContent()
+                }
+                .alert(isPresented: $presentAlert) {
+                        return Alert (
+                            title: Text(alertModel.title),
+                            message: Text(alertModel.message),
+                            dismissButton: .destructive(Text(alertModel.buttonNaming))
+                        )
                 }
                 Text("OR")
                             .font(.footnote)
@@ -47,6 +58,19 @@ struct LoginView: View {
                 }
             }
         }
+    }
+    
+    func logInClicked() {
+        signInManager.signIn(email: email, password: password, completionBlock: { (authResult, error) in
+            if let error = error, authResult == nil {
+                presentAlert = true
+                alertModel.title = "Sign In Failed"
+                alertModel.message = error.localizedDescription
+                alertModel.buttonNaming = "OK :("
+            } else {
+                
+            }
+        })
     }
 }
 
@@ -80,11 +104,11 @@ struct WelcomeIcon : View {
 struct LoginButtonContent : View {
     var body: some View {
         Text("LOG IN")
-                        .font(.callout)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 330, height: 40)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(45.0)
+            .font(.callout)
+            .foregroundColor(.white)
+            .padding()
+            .frame(width: 330, height: 40)
+            .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(45.0)
     }
 }

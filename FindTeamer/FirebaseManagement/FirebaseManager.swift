@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import UIKit
 
 class FirebaseManager {
     func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
@@ -16,6 +17,12 @@ class FirebaseManager {
             } else {
                 completionBlock(false)
             }
+        }
+    }
+    
+    func signIn(email: String, password: String, completionBlock : @escaping (_ authResult: AuthDataResult?, _ error: Error?) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            completionBlock(authResult, error)
         }
     }
 }
