@@ -1,0 +1,6 @@
+framework module Pods_FindTeamer_FindTeamerUITests {
+  umbrella header "Pods-FindTeamer-FindTeamerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
