@@ -96,7 +96,6 @@ struct SignUpView: View {
             for i in self.formModel.errorMessages {
                 self.errorArray += " " + i.value
             }
-
         }
     }
 }
@@ -110,14 +109,4 @@ struct SignUpView_Previews: PreviewProvider {
     }
 }
 
-struct FinishButtonContent : View {
-    var body: some View {
-        Text("Let's Go!")
-                        .font(.callout)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 330, height: 40)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(45.0)
-    }
-}
+
