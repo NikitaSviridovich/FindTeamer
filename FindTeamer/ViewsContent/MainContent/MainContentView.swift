@@ -11,14 +11,14 @@ struct MainContentView: View {
     @State var presentAddEventSheet = false
     @State var viewModel = EventsViewModel()
     
-    init() { }
+    init() {
+        viewModel.initialLoadData()
+    }
 
     var body: some View {
         ZStack {
             List(viewModel.events) { event in
                 eventCellGenerator(event: event)
-            }.onAppear() {
-                viewModel.initialLoadData()
             }
             .navigationBarBackButtonHidden(true)
             .sheet(isPresented: self.$presentAddEventSheet) {
@@ -26,9 +26,24 @@ struct MainContentView: View {
             }
             VStack { Spacer()
                 HStack { Spacer()
-                    plusButton(action: self.presentAddEventSheet)
+                    Button(action: {
+                        self.presentAddEventSheet.toggle()
+                    }, label: {
+                    Text("+")
+                        .font(.system(.largeTitle))
+                        .frame(width: 77, height: 70)
+                        .foregroundColor(Color.white)
+                        .padding(.bottom, 7)
+                    })
+                    .background(Color.green)
+                    .cornerRadius(38.5)
+                    .padding()
+                    .shadow(color: Color.black.opacity(0.3),
+                                        radius: 3,
+                                        x: 3,
+                                        y: 3)
                 }
-            }
+            }.navigationBarTitleDisplayMode(.inline)
         }
     }
 }

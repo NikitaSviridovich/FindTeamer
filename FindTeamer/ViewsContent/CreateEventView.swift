@@ -40,8 +40,8 @@ struct CreateEventView: View {
                       TextField("Address", text: $viewModel.event.eventAddress)
                   }
                   
-                  Section(header: Text("Number of players")) {
-                      Text(viewModel.event.eventUserCounter)
+                  Section(header: Text("Email Contact")) {
+                      TextField("Email", text: $viewModel.event.eventUserCounter)
                   }
                   
                   Section(header: Text("Date and Time")) {
@@ -50,7 +50,7 @@ struct CreateEventView: View {
                             .frame(maxHeight: 400)
                   }
                   Section(header: Text("Description")) {
-                      TextField("", text: $viewModel.event.eventDescription)
+                      TextField("Please add your additional contacts", text: $viewModel.event.eventDescription)
                           .frame(height: 150, alignment: .topLeading)
                   }
               }
