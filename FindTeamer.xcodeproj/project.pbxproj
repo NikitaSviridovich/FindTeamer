@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03856E9BEDD70AB672B5BD76 /* Pods_FindTeamerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB181EC2E3C89C7B5D9132C /* Pods_FindTeamerTests.framework */; };
+		44177A9645EB65DAE6B503E5 /* Pods_FindTeamer_FindTeamerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5645F92DE7D85FC5457E538C /* Pods_FindTeamer_FindTeamerUITests.framework */; };
 		690C16DB28B3B5C4003B9CCE /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C16DA28B3B5C4003B9CCE /* AlertModel.swift */; };
 		6914668228ABCCA5003C2222 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914668128ABCCA5003C2222 /* SignUpModel.swift */; };
+		691A010F28BE17F700E09018 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 691A010E28BE17F700E09018 /* FirebaseFirestoreSwift */; };
+		691A011128C0B12A00E09018 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011028C0B12A00E09018 /* EventsViewModel.swift */; };
+		691A011428C2248F00E09018 /* MainComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011328C2248F00E09018 /* MainComponents.swift */; };
+		691A011828C2323900E09018 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011728C2323900E09018 /* EventDetailsView.swift */; };
 		69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69327C2228AB7E8C004F7C99 /* LoginView.swift */; };
 		69327C2528AB8B2E004F7C99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */; };
 		69327C2828AB8BE1004F7C99 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 69327C2728AB8BE1004F7C99 /* FirebaseAuth */; };
 		69327C2A28AB9E57004F7C99 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69327C2928AB9E57004F7C99 /* SignUpView.swift */; };
 		693D8D6128B3A454005FE83C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D8D6028B3A454005FE83C /* FirebaseManager.swift */; };
+		693FF4A028BB756500CDBBFE /* CreateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF49F28BB756500CDBBFE /* CreateEventView.swift */; };
+		693FF4A328BB780C00CDBBFE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 693FF4A228BB780C00CDBBFE /* FirebaseAuth */; };
+		693FF4A528BB780C00CDBBFE /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 693FF4A428BB780C00CDBBFE /* FirebaseDatabase */; };
+		693FF4A728BB780C00CDBBFE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 693FF4A628BB780C00CDBBFE /* FirebaseFirestore */; };
+		693FF4A928BB780C00CDBBFE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 693FF4A828BB780C00CDBBFE /* FirebaseStorage */; };
+		693FF4AB28BB800C00CDBBFE /* CommonComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF4AA28BB800C00CDBBFE /* CommonComponents.swift */; };
+		693FF4AD28BB8AE400CDBBFE /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF4AC28BB8AE400CDBBFE /* EventViewModel.swift */; };
+		693FF4B028BB8B1B00CDBBFE /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF4AF28BB8B1B00CDBBFE /* EventModel.swift */; };
+		693FF4E628BCDA2F00CDBBFE /* Pods-FindTeamer in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FF4E128BCDA2700CDBBFE /* Pods-FindTeamer */; };
 		69716CAC28B5143700520ECF /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69716CAB28B5143700520ECF /* MainContentView.swift */; };
 		69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */; };
 		69C92F5828A3D86D00F2E878 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F5728A3D86D00F2E878 /* ContentView.swift */; };
@@ -28,6 +43,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		693FF4E028BCDA2700CDBBFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 693FF4B428BCDA2600CDBBFE /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AD31CD4939B1C844F0F6545E9BE40522;
+			remoteInfo = "Pods-FindTeamer";
+		};
+		693FF4E228BCDA2700CDBBFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 693FF4B428BCDA2600CDBBFE /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FF649514BE22CBE82EC77F683BA7EABB;
+			remoteInfo = "Pods-FindTeamer-FindTeamerUITests";
+		};
+		693FF4E428BCDA2700CDBBFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 693FF4B428BCDA2600CDBBFE /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D50DAA5A9D4ABBAF95A60E6D734F4D77;
+			remoteInfo = "Pods-FindTeamerTests";
+		};
 		69C92F6828A3D86F00F2E878 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69C92F4A28A3D86D00F2E878 /* Project object */;
@@ -45,12 +81,53 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26389BC0B14AEDC5784EB648 /* Pods-FindTeamer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamer.release.xcconfig"; path = "Target Support Files/Pods-FindTeamer/Pods-FindTeamer.release.xcconfig"; sourceTree = "<group>"; };
+		4DD438B02DADA8200452B4F8 /* Pods-FindTeamerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamerTests.debug.xcconfig"; path = "Target Support Files/Pods-FindTeamerTests/Pods-FindTeamerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5645F92DE7D85FC5457E538C /* Pods_FindTeamer_FindTeamerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamer_FindTeamerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65936D161F62317BFBB284E6 /* Pods-FindTeamer-FindTeamerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamer-FindTeamerUITests.debug.xcconfig"; path = "Target Support Files/Pods-FindTeamer-FindTeamerUITests/Pods-FindTeamer-FindTeamerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		690C16DA28B3B5C4003B9CCE /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		6914668128ABCCA5003C2222 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		691A011028C0B12A00E09018 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
+		691A011328C2248F00E09018 /* MainComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComponents.swift; sourceTree = "<group>"; };
+		691A011728C2323900E09018 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		69327C2228AB7E8C004F7C99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		69327C2928AB9E57004F7C99 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		693D8D6028B3A454005FE83C /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		693FF49F28BB756500CDBBFE /* CreateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventView.swift; sourceTree = "<group>"; };
+		693FF4AA28BB800C00CDBBFE /* CommonComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonComponents.swift; sourceTree = "<group>"; };
+		693FF4AC28BB8AE400CDBBFE /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		693FF4AF28BB8B1B00CDBBFE /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		693FF4B428BCDA2600CDBBFE /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
+		693FF4B928BCDA2700CDBBFE /* Pods-FindTeamer-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pods-FindTeamer-umbrella.h"; sourceTree = "<group>"; };
+		693FF4BA28BCDA2700CDBBFE /* Pods-FindTeamer.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Pods-FindTeamer.debug.xcconfig"; sourceTree = "<group>"; };
+		693FF4BB28BCDA2700CDBBFE /* Pods-FindTeamer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pods-FindTeamer-Info.plist"; sourceTree = "<group>"; };
+		693FF4BC28BCDA2700CDBBFE /* Pods-FindTeamer.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FindTeamer.modulemap"; sourceTree = "<group>"; };
+		693FF4BD28BCDA2700CDBBFE /* Pods-FindTeamer-acknowledgements.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Pods-FindTeamer-acknowledgements.markdown"; sourceTree = "<group>"; };
+		693FF4BE28BCDA2700CDBBFE /* Pods-FindTeamer-dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Pods-FindTeamer-dummy.m"; sourceTree = "<group>"; };
+		693FF4BF28BCDA2700CDBBFE /* Pods-FindTeamer.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Pods-FindTeamer.release.xcconfig"; sourceTree = "<group>"; };
+		693FF4C028BCDA2700CDBBFE /* Pods-FindTeamer-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pods-FindTeamer-acknowledgements.plist"; sourceTree = "<group>"; };
+		693FF4C228BCDA2700CDBBFE /* Pods-FindTeamerTests.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Pods-FindTeamerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		693FF4C328BCDA2700CDBBFE /* Pods-FindTeamerTests.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FindTeamerTests.modulemap"; sourceTree = "<group>"; };
+		693FF4C428BCDA2700CDBBFE /* Pods-FindTeamerTests-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pods-FindTeamerTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		693FF4C528BCDA2700CDBBFE /* Pods-FindTeamerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pods-FindTeamerTests-Info.plist"; sourceTree = "<group>"; };
+		693FF4C628BCDA2700CDBBFE /* Pods-FindTeamerTests.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Pods-FindTeamerTests.release.xcconfig"; sourceTree = "<group>"; };
+		693FF4C728BCDA2700CDBBFE /* Pods-FindTeamerTests-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pods-FindTeamerTests-umbrella.h"; sourceTree = "<group>"; };
+		693FF4C828BCDA2700CDBBFE /* Pods-FindTeamerTests-acknowledgements.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Pods-FindTeamerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		693FF4C928BCDA2700CDBBFE /* Pods-FindTeamerTests-dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Pods-FindTeamerTests-dummy.m"; sourceTree = "<group>"; };
+		693FF4CB28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FindTeamer-FindTeamerUITests.modulemap"; sourceTree = "<group>"; };
+		693FF4CC28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pods-FindTeamer-FindTeamerUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		693FF4CD28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Pods-FindTeamer-FindTeamerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		693FF4CE28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pods-FindTeamer-FindTeamerUITests-Info.plist"; sourceTree = "<group>"; };
+		693FF4CF28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pods-FindTeamer-FindTeamerUITests-umbrella.h"; sourceTree = "<group>"; };
+		693FF4D028BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests-dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Pods-FindTeamer-FindTeamerUITests-dummy.m"; sourceTree = "<group>"; };
+		693FF4D128BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Pods-FindTeamer-FindTeamerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		693FF4D228BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests-acknowledgements.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Pods-FindTeamer-FindTeamerUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		693FF4D428BCDA2700CDBBFE /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		693FF4D528BCDA2700CDBBFE /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		693FF4D628BCDA2700CDBBFE /* Manifest.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Manifest.lock; sourceTree = "<group>"; };
+		693FF4DA28BCDA2700CDBBFE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		693FF4DB28BCDA2700CDBBFE /* swiftlint */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = swiftlint; sourceTree = "<group>"; };
 		69716CAB28B5143700520ECF /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		69C92F5228A3D86D00F2E878 /* FindTeamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTeamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamerApp.swift; sourceTree = "<group>"; };
@@ -64,7 +141,12 @@
 		69C92F7128A3D86F00F2E878 /* FindTeamerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindTeamerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C92F7528A3D86F00F2E878 /* FindTeamerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamerUITests.swift; sourceTree = "<group>"; };
 		69C92F7728A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7D7CA5C17C0D7DC039B8338E /* Pods_FindTeamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8013907F3E525CC2180781A8 /* Pods-FindTeamer-FindTeamerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamer-FindTeamerUITests.release.xcconfig"; path = "Target Support Files/Pods-FindTeamer-FindTeamerUITests/Pods-FindTeamer-FindTeamerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CBB181EC2E3C89C7B5D9132C /* Pods_FindTeamerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D072E0BA28AE53D000FE0D41 /* ErrorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorConfigurator.swift; sourceTree = "<group>"; };
+		F69636143EDAC2022C2707DA /* Pods-FindTeamer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamer.debug.xcconfig"; path = "Target Support Files/Pods-FindTeamer/Pods-FindTeamer.debug.xcconfig"; sourceTree = "<group>"; };
+		FC0B5DDE579EBED5DCE3DF87 /* Pods-FindTeamerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamerTests.release.xcconfig"; path = "Target Support Files/Pods-FindTeamerTests/Pods-FindTeamerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +154,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FF4E628BCDA2F00CDBBFE /* Pods-FindTeamer in Frameworks */,
+				693FF4A528BB780C00CDBBFE /* FirebaseDatabase in Frameworks */,
+				693FF4A728BB780C00CDBBFE /* FirebaseFirestore in Frameworks */,
+				691A010F28BE17F700E09018 /* FirebaseFirestoreSwift in Frameworks */,
 				69327C2828AB8BE1004F7C99 /* FirebaseAuth in Frameworks */,
+				693FF4A928BB780C00CDBBFE /* FirebaseStorage in Frameworks */,
+				693FF4A328BB780C00CDBBFE /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03856E9BEDD70AB672B5BD76 /* Pods_FindTeamerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,27 +176,68 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44177A9645EB65DAE6B503E5 /* Pods_FindTeamer_FindTeamerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67CC2E9688A9A5BC64791EAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				693FF4B328BCDA2600CDBBFE /* Pods */,
+				7D7CA5C17C0D7DC039B8338E /* Pods_FindTeamer.framework */,
+				5645F92DE7D85FC5457E538C /* Pods_FindTeamer_FindTeamerUITests.framework */,
+				CBB181EC2E3C89C7B5D9132C /* Pods_FindTeamerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6914668028ABCC4D003C2222 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				6914668128ABCCA5003C2222 /* SignUpModel.swift */,
 				690C16DA28B3B5C4003B9CCE /* AlertModel.swift */,
+				693FF4AF28BB8B1B00CDBBFE /* EventModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		691A011228C2245E00E09018 /* MainContent */ = {
+			isa = PBXGroup;
+			children = (
+				69716CAB28B5143700520ECF /* MainContentView.swift */,
+				691A011328C2248F00E09018 /* MainComponents.swift */,
+			);
+			path = MainContent;
+			sourceTree = "<group>";
+		};
+		691A011528C231FE00E09018 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				69327C2228AB7E8C004F7C99 /* LoginView.swift */,
+				69327C2928AB9E57004F7C99 /* SignUpView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		691A011628C2322100E09018 /* EventDetails */ = {
+			isa = PBXGroup;
+			children = (
+				691A011728C2323900E09018 /* EventDetailsView.swift */,
+			);
+			path = EventDetails;
 			sourceTree = "<group>";
 		};
 		69327C2128AB7E5E004F7C99 /* ViewsContent */ = {
 			isa = PBXGroup;
 			children = (
-				69327C2228AB7E8C004F7C99 /* LoginView.swift */,
-				69327C2928AB9E57004F7C99 /* SignUpView.swift */,
-				69716CAB28B5143700520ECF /* MainContentView.swift */,
+				691A011628C2322100E09018 /* EventDetails */,
+				691A011528C231FE00E09018 /* Authentication */,
+				691A011228C2245E00E09018 /* MainContent */,
+				693FF49F28BB756500CDBBFE /* CreateEventView.swift */,
+				693FF4AA28BB800C00CDBBFE /* CommonComponents.swift */,
 			);
 			path = ViewsContent;
 			sourceTree = "<group>";
@@ -120,13 +250,135 @@
 			path = FirebaseManagement;
 			sourceTree = "<group>";
 		};
+		693FF4AE28BB8B0800CDBBFE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				693FF4AC28BB8AE400CDBBFE /* EventViewModel.swift */,
+				691A011028C0B12A00E09018 /* EventsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		693FF4B328BCDA2600CDBBFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				693FF4B428BCDA2600CDBBFE /* Pods.xcodeproj */,
+				693FF4B728BCDA2700CDBBFE /* Target Support Files */,
+				693FF4D628BCDA2700CDBBFE /* Manifest.lock */,
+				693FF4D728BCDA2700CDBBFE /* Local Podspecs */,
+				693FF4D828BCDA2700CDBBFE /* Headers */,
+				693FF4D928BCDA2700CDBBFE /* SwiftLint */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		693FF4B528BCDA2600CDBBFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				693FF4E128BCDA2700CDBBFE /* Pods-FindTeamer */,
+				693FF4E328BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests */,
+				693FF4E528BCDA2700CDBBFE /* Pods-FindTeamerTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		693FF4B728BCDA2700CDBBFE /* Target Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				693FF4B828BCDA2700CDBBFE /* Pods-FindTeamer */,
+				693FF4C128BCDA2700CDBBFE /* Pods-FindTeamerTests */,
+				693FF4CA28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests */,
+				693FF4D328BCDA2700CDBBFE /* SwiftLint */,
+			);
+			path = "Target Support Files";
+			sourceTree = "<group>";
+		};
+		693FF4B828BCDA2700CDBBFE /* Pods-FindTeamer */ = {
+			isa = PBXGroup;
+			children = (
+				693FF4B928BCDA2700CDBBFE /* Pods-FindTeamer-umbrella.h */,
+				693FF4BA28BCDA2700CDBBFE /* Pods-FindTeamer.debug.xcconfig */,
+				693FF4BB28BCDA2700CDBBFE /* Pods-FindTeamer-Info.plist */,
+				693FF4BC28BCDA2700CDBBFE /* Pods-FindTeamer.modulemap */,
+				693FF4BD28BCDA2700CDBBFE /* Pods-FindTeamer-acknowledgements.markdown */,
+				693FF4BE28BCDA2700CDBBFE /* Pods-FindTeamer-dummy.m */,
+				693FF4BF28BCDA2700CDBBFE /* Pods-FindTeamer.release.xcconfig */,
+				693FF4C028BCDA2700CDBBFE /* Pods-FindTeamer-acknowledgements.plist */,
+			);
+			path = "Pods-FindTeamer";
+			sourceTree = "<group>";
+		};
+		693FF4C128BCDA2700CDBBFE /* Pods-FindTeamerTests */ = {
+			isa = PBXGroup;
+			children = (
+				693FF4C228BCDA2700CDBBFE /* Pods-FindTeamerTests.debug.xcconfig */,
+				693FF4C328BCDA2700CDBBFE /* Pods-FindTeamerTests.modulemap */,
+				693FF4C428BCDA2700CDBBFE /* Pods-FindTeamerTests-acknowledgements.plist */,
+				693FF4C528BCDA2700CDBBFE /* Pods-FindTeamerTests-Info.plist */,
+				693FF4C628BCDA2700CDBBFE /* Pods-FindTeamerTests.release.xcconfig */,
+				693FF4C728BCDA2700CDBBFE /* Pods-FindTeamerTests-umbrella.h */,
+				693FF4C828BCDA2700CDBBFE /* Pods-FindTeamerTests-acknowledgements.markdown */,
+				693FF4C928BCDA2700CDBBFE /* Pods-FindTeamerTests-dummy.m */,
+			);
+			path = "Pods-FindTeamerTests";
+			sourceTree = "<group>";
+		};
+		693FF4CA28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				693FF4CB28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests.modulemap */,
+				693FF4CC28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests-acknowledgements.plist */,
+				693FF4CD28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests.debug.xcconfig */,
+				693FF4CE28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests-Info.plist */,
+				693FF4CF28BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests-umbrella.h */,
+				693FF4D028BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests-dummy.m */,
+				693FF4D128BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests.release.xcconfig */,
+				693FF4D228BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests-acknowledgements.markdown */,
+			);
+			path = "Pods-FindTeamer-FindTeamerUITests";
+			sourceTree = "<group>";
+		};
+		693FF4D328BCDA2700CDBBFE /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				693FF4D428BCDA2700CDBBFE /* SwiftLint.debug.xcconfig */,
+				693FF4D528BCDA2700CDBBFE /* SwiftLint.release.xcconfig */,
+			);
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		693FF4D728BCDA2700CDBBFE /* Local Podspecs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Local Podspecs";
+			sourceTree = "<group>";
+		};
+		693FF4D828BCDA2700CDBBFE /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		693FF4D928BCDA2700CDBBFE /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				693FF4DA28BCDA2700CDBBFE /* LICENSE */,
+				693FF4DB28BCDA2700CDBBFE /* swiftlint */,
+			);
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
 		69C92F4928A3D86D00F2E878 = {
 			isa = PBXGroup;
 			children = (
 				69C92F5428A3D86D00F2E878 /* FindTeamer */,
 				69C92F6A28A3D86F00F2E878 /* FindTeamerTests */,
 				69C92F7428A3D86F00F2E878 /* FindTeamerUITests */,
+				DA224C3D4FCA6912F41AD562 /* Pods */,
 				69C92F5328A3D86D00F2E878 /* Products */,
+				67CC2E9688A9A5BC64791EAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,17 +395,18 @@
 		69C92F5428A3D86D00F2E878 /* FindTeamer */ = {
 			isa = PBXGroup;
 			children = (
-				693D8D5F28B3A444005FE83C /* FirebaseManagement */,
 				D072E0B928AE53B100FE0D41 /* Errors */,
+				693D8D5F28B3A444005FE83C /* FirebaseManagement */,
 				6914668028ABCC4D003C2222 /* Models */,
-				69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */,
-				69327C2128AB7E5E004F7C99 /* ViewsContent */,
-				69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */,
-				69C92F5728A3D86D00F2E878 /* ContentView.swift */,
-				69C92F5928A3D86F00F2E878 /* Assets.xcassets */,
-				69C92F5E28A3D86F00F2E878 /* Persistence.swift */,
-				69C92F6028A3D86F00F2E878 /* FindTeamer.xcdatamodeld */,
 				69C92F5B28A3D86F00F2E878 /* Preview Content */,
+				693FF4AE28BB8B0800CDBBFE /* ViewModels */,
+				69327C2128AB7E5E004F7C99 /* ViewsContent */,
+				69C92F5928A3D86F00F2E878 /* Assets.xcassets */,
+				69C92F5728A3D86D00F2E878 /* ContentView.swift */,
+				69C92F6028A3D86F00F2E878 /* FindTeamer.xcdatamodeld */,
+				69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */,
+				69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */,
+				69C92F5E28A3D86F00F2E878 /* Persistence.swift */,
 			);
 			path = FindTeamer;
 			sourceTree = "<group>";
@@ -191,6 +444,19 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		DA224C3D4FCA6912F41AD562 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F69636143EDAC2022C2707DA /* Pods-FindTeamer.debug.xcconfig */,
+				26389BC0B14AEDC5784EB648 /* Pods-FindTeamer.release.xcconfig */,
+				65936D161F62317BFBB284E6 /* Pods-FindTeamer-FindTeamerUITests.debug.xcconfig */,
+				8013907F3E525CC2180781A8 /* Pods-FindTeamer-FindTeamerUITests.release.xcconfig */,
+				4DD438B02DADA8200452B4F8 /* Pods-FindTeamerTests.debug.xcconfig */,
+				FC0B5DDE579EBED5DCE3DF87 /* Pods-FindTeamerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,9 +464,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69C92F7B28A3D86F00F2E878 /* Build configuration list for PBXNativeTarget "FindTeamer" */;
 			buildPhases = (
+				3372E75EE65D0D515CD8F8D4 /* [CP] Check Pods Manifest.lock */,
 				69C92F4E28A3D86D00F2E878 /* Sources */,
 				69C92F4F28A3D86D00F2E878 /* Frameworks */,
 				69C92F5028A3D86D00F2E878 /* Resources */,
+				693FF4B228BCD8D100CDBBFE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -209,6 +477,11 @@
 			name = FindTeamer;
 			packageProductDependencies = (
 				69327C2728AB8BE1004F7C99 /* FirebaseAuth */,
+				693FF4A228BB780C00CDBBFE /* FirebaseAuth */,
+				693FF4A428BB780C00CDBBFE /* FirebaseDatabase */,
+				693FF4A628BB780C00CDBBFE /* FirebaseFirestore */,
+				693FF4A828BB780C00CDBBFE /* FirebaseStorage */,
+				691A010E28BE17F700E09018 /* FirebaseFirestoreSwift */,
 			);
 			productName = FindTeamer;
 			productReference = 69C92F5228A3D86D00F2E878 /* FindTeamer.app */;
@@ -218,6 +491,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69C92F7E28A3D86F00F2E878 /* Build configuration list for PBXNativeTarget "FindTeamerTests" */;
 			buildPhases = (
+				C9FEA12A3F0E028B0DCF9341 /* [CP] Check Pods Manifest.lock */,
 				69C92F6328A3D86F00F2E878 /* Sources */,
 				69C92F6428A3D86F00F2E878 /* Frameworks */,
 				69C92F6528A3D86F00F2E878 /* Resources */,
@@ -236,6 +510,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69C92F8128A3D86F00F2E878 /* Build configuration list for PBXNativeTarget "FindTeamerUITests" */;
 			buildPhases = (
+				322FE186603C0CBA74FD2C3A /* [CP] Check Pods Manifest.lock */,
 				69C92F6D28A3D86F00F2E878 /* Sources */,
 				69C92F6E28A3D86F00F2E878 /* Frameworks */,
 				69C92F6F28A3D86F00F2E878 /* Resources */,
@@ -284,9 +559,17 @@
 			mainGroup = 69C92F4928A3D86D00F2E878;
 			packageReferences = (
 				69327C2628AB8BE1004F7C99 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				693FF4A128BB780C00CDBBFE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				691A010D28BE17F700E09018 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 69C92F5328A3D86D00F2E878 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 693FF4B528BCDA2600CDBBFE /* Products */;
+					ProjectRef = 693FF4B428BCDA2600CDBBFE /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				69C92F5128A3D86D00F2E878 /* FindTeamer */,
@@ -295,6 +578,33 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		693FF4E128BCDA2700CDBBFE /* Pods-FindTeamer */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-FindTeamer";
+			path = Pods_FindTeamer.framework;
+			remoteRef = 693FF4E028BCDA2700CDBBFE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		693FF4E328BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-FindTeamer-FindTeamerUITests";
+			path = Pods_FindTeamer_FindTeamerUITests.framework;
+			remoteRef = 693FF4E228BCDA2700CDBBFE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		693FF4E528BCDA2700CDBBFE /* Pods-FindTeamerTests */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-FindTeamerTests";
+			path = Pods_FindTeamerTests.framework;
+			remoteRef = 693FF4E428BCDA2700CDBBFE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		69C92F5028A3D86D00F2E878 /* Resources */ = {
@@ -323,22 +633,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		322FE186603C0CBA74FD2C3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindTeamer-FindTeamerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3372E75EE65D0D515CD8F8D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindTeamer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		693FF4B228BCD8D100CDBBFE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		C9FEA12A3F0E028B0DCF9341 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindTeamerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		69C92F4E28A3D86D00F2E878 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				69C92F5F28A3D86F00F2E878 /* Persistence.swift in Sources */,
+				691A011128C0B12A00E09018 /* EventsViewModel.swift in Sources */,
+				693FF4AB28BB800C00CDBBFE /* CommonComponents.swift in Sources */,
 				69716CAC28B5143700520ECF /* MainContentView.swift in Sources */,
+				691A011828C2323900E09018 /* EventDetailsView.swift in Sources */,
 				6914668228ABCCA5003C2222 /* SignUpModel.swift in Sources */,
 				69C92F5828A3D86D00F2E878 /* ContentView.swift in Sources */,
+				693FF4AD28BB8AE400CDBBFE /* EventViewModel.swift in Sources */,
 				693D8D6128B3A454005FE83C /* FirebaseManager.swift in Sources */,
 				69C92F6228A3D86F00F2E878 /* FindTeamer.xcdatamodeld in Sources */,
 				69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */,
 				69327C2A28AB9E57004F7C99 /* SignUpView.swift in Sources */,
 				69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */,
+				693FF4A028BB756500CDBBFE /* CreateEventView.swift in Sources */,
 				690C16DB28B3B5C4003B9CCE /* AlertModel.swift in Sources */,
+				693FF4B028BB8B1B00CDBBFE /* EventModel.swift in Sources */,
 				D072E0BB28AE53D000FE0D41 /* ErrorConfigurator.swift in Sources */,
+				691A011428C2248F00E09018 /* MainComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +894,7 @@
 		};
 		69C92F7C28A3D86F00F2E878 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F69636143EDAC2022C2707DA /* Pods-FindTeamer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -520,6 +924,7 @@
 		};
 		69C92F7D28A3D86F00F2E878 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26389BC0B14AEDC5784EB648 /* Pods-FindTeamer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -549,6 +954,7 @@
 		};
 		69C92F7F28A3D86F00F2E878 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DD438B02DADA8200452B4F8 /* Pods-FindTeamerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -568,6 +974,7 @@
 		};
 		69C92F8028A3D86F00F2E878 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC0B5DDE579EBED5DCE3DF87 /* Pods-FindTeamerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -587,6 +994,7 @@
 		};
 		69C92F8228A3D86F00F2E878 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65936D161F62317BFBB284E6 /* Pods-FindTeamer-FindTeamerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -604,6 +1012,7 @@
 		};
 		69C92F8328A3D86F00F2E878 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8013907F3E525CC2180781A8 /* Pods-FindTeamer-FindTeamerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -661,6 +1070,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		691A010D28BE17F700E09018 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		69327C2628AB8BE1004F7C99 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -669,13 +1086,46 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		693FF4A128BB780C00CDBBFE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		691A010E28BE17F700E09018 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69327C2628AB8BE1004F7C99 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
 		69327C2728AB8BE1004F7C99 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 69327C2628AB8BE1004F7C99 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		693FF4A228BB780C00CDBBFE /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FF4A128BB780C00CDBBFE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		693FF4A428BB780C00CDBBFE /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FF4A128BB780C00CDBBFE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		693FF4A628BB780C00CDBBFE /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FF4A128BB780C00CDBBFE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		693FF4A828BB780C00CDBBFE /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 693FF4A128BB780C00CDBBFE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 
