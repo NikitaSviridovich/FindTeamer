@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import MessageUI
+
 
 struct EventDetailsView: View {
+    @State private var sendEmail = false
     var event: EventModel
     
     var body: some View {
@@ -21,15 +24,36 @@ struct EventDetailsView: View {
                     Text(event.eventType)
                     .font(.system(size: 14, weight: .black, design: .rounded))
                     .foregroundColor(.gray)
-                    Text(event.eventDescription)
-                    .font(.system(size: 10, weight: .medium, design: .rounded))
-                    .foregroundColor(Color.gray)
                 }
-                
             }
             .frame(maxWidth: .infinity, maxHeight: 60, alignment: .leading)            .background(Color.white.cornerRadius(5).shadow(radius: 3))
+            VStack(alignment: .leading) {
+                Text(event.eventTitle).padding()
+                .font(.system(size: 16, weight: .black, design: .rounded))
+                .foregroundColor(.gray)
+                Divider().background(Color.white).padding(.trailing, 128)
+                Text(event.eventAddress).padding()
+                .font(.system(size: 16, weight: .black, design: .rounded))
+                .foregroundColor(.gray)
+                Divider().background(Color.white).padding(.trailing, 128)
+                Text(event.eventDescription).padding()
+                .font(.system(size: 16, weight: .black, design: .rounded))
+                .foregroundColor(.gray)
+                Divider().background(Color.white).padding(.trailing, 128)
+            }
             Spacer()
+            if MFMailComposeViewController.canSendMail() {
+                Button(action: sendEmailAction) {
+                    ButtonContent(text: "Send Info on Email")
+                }.sheet(isPresented: $sendEmail) {
+                    EmailHelper(content: event.eventDescription, to: "",subject: event.eventTitle)
+                }
+            }
         }.padding()
+    }
+    
+    private func sendEmailAction() {
+        sendEmail.toggle()
     }
 }
 

@@ -51,9 +51,10 @@ struct LoginButtonContent : View {
     }
 }
 
-struct FinishButtonContent : View {
+struct ButtonContent : View {
+    @State var text: String = ""
     var body: some View {
-        Text("Let's Go!")
+        Text(text)
             .font(.callout)
             .foregroundColor(.white)
             .padding()
