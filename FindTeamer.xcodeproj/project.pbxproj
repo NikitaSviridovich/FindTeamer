@@ -16,6 +16,8 @@
 		691A011428C2248F00E09018 /* MainComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011328C2248F00E09018 /* MainComponents.swift */; };
 		691A011828C2323900E09018 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011728C2323900E09018 /* EventDetailsView.swift */; };
 		691A011D28CB44E900E09018 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011C28CB44E900E09018 /* EmailHelper.swift */; };
+		691A011F28CF1B9700E09018 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011E28CF1B9700E09018 /* RootViewModel.swift */; };
+		691A012128CF23A200E09018 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A012028CF23A200E09018 /* RootView.swift */; };
 		69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69327C2228AB7E8C004F7C99 /* LoginView.swift */; };
 		69327C2528AB8B2E004F7C99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */; };
 		69327C2828AB8BE1004F7C99 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 69327C2728AB8BE1004F7C99 /* FirebaseAuth */; };
@@ -92,6 +94,8 @@
 		691A011328C2248F00E09018 /* MainComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComponents.swift; sourceTree = "<group>"; };
 		691A011728C2323900E09018 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		691A011C28CB44E900E09018 /* EmailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
+		691A011E28CF1B9700E09018 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		691A012028CF23A200E09018 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		69327C2228AB7E8C004F7C99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		69327C2928AB9E57004F7C99 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				691A011228C2245E00E09018 /* MainContent */,
 				693FF49F28BB756500CDBBFE /* CreateEventView.swift */,
 				693FF4AA28BB800C00CDBBFE /* CommonComponents.swift */,
+				691A012028CF23A200E09018 /* RootView.swift */,
 			);
 			path = ViewsContent;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 			children = (
 				693FF4AC28BB8AE400CDBBFE /* EventViewModel.swift */,
 				691A011028C0B12A00E09018 /* EventsViewModel.swift */,
+				691A011E28CF1B9700E09018 /* RootViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -753,6 +759,8 @@
 				691A011D28CB44E900E09018 /* EmailHelper.swift in Sources */,
 				693FF4AD28BB8AE400CDBBFE /* EventViewModel.swift in Sources */,
 				693D8D6128B3A454005FE83C /* FirebaseManager.swift in Sources */,
+				691A011F28CF1B9700E09018 /* RootViewModel.swift in Sources */,
+				691A012128CF23A200E09018 /* RootView.swift in Sources */,
 				69C92F6228A3D86F00F2E878 /* FindTeamer.xcdatamodeld in Sources */,
 				69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */,
 				69327C2A28AB9E57004F7C99 /* SignUpView.swift in Sources */,
