@@ -11,7 +11,7 @@ struct MainContentView: View {
     @State var presentAddEventSheet = false
     @ObservedObject var viewModel = EventsViewModel()
     
-    init() { }
+    init() {}
 
     var body: some View {
         ZStack {

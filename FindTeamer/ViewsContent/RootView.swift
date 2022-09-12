@@ -12,9 +12,9 @@ struct RootView: View {
     
     var body: some View {
         if viewModel.isAuthorized {
-            AnyView(MainContentView())
+            NavigationView { MainContentView() }
         } else {
-            AnyView(LoginView())
+            LoginView()
         }
     }
 }
