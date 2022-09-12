@@ -9,16 +9,16 @@ import SwiftUI
 
 struct MainContentView: View {
     @State var presentAddEventSheet = false
-    @State var viewModel = EventsViewModel()
+    @ObservedObject var viewModel = EventsViewModel()
     
-    init() {
-        viewModel.initialLoadData()
-    }
+    init() {}
 
     var body: some View {
         ZStack {
             List(viewModel.events) { event in
                 eventCellGenerator(event: event)
+            }.onAppear {
+                viewModel.initialLoadData()
             }
             .navigationBarBackButtonHidden(true)
             .sheet(isPresented: self.$presentAddEventSheet) {

@@ -51,7 +51,7 @@ struct SignUpView: View {
             .foregroundColor(.red)
             .padding()
         Button(action: registerClicked) {
-            FinishButtonContent()
+            ButtonContent(text: "Let's Go!")
         }.opacity(buttonOpacity)
         .alert(isPresented: $presentAlert) {
             switch activeAlert {
