@@ -11,7 +11,6 @@
 		44177A9645EB65DAE6B503E5 /* Pods_FindTeamer_FindTeamerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5645F92DE7D85FC5457E538C /* Pods_FindTeamer_FindTeamerUITests.framework */; };
 		690C16DB28B3B5C4003B9CCE /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C16DA28B3B5C4003B9CCE /* AlertModel.swift */; };
 		6914668228ABCCA5003C2222 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914668128ABCCA5003C2222 /* SignUpModel.swift */; };
-		691A010F28BE17F700E09018 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 691A010E28BE17F700E09018 /* FirebaseFirestoreSwift */; };
 		691A011128C0B12A00E09018 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011028C0B12A00E09018 /* EventsViewModel.swift */; };
 		691A011428C2248F00E09018 /* MainComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011328C2248F00E09018 /* MainComponents.swift */; };
 		691A011828C2323900E09018 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011728C2323900E09018 /* EventDetailsView.swift */; };
@@ -31,7 +30,8 @@
 		693FF4AB28BB800C00CDBBFE /* CommonComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF4AA28BB800C00CDBBFE /* CommonComponents.swift */; };
 		693FF4AD28BB8AE400CDBBFE /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF4AC28BB8AE400CDBBFE /* EventViewModel.swift */; };
 		693FF4B028BB8B1B00CDBBFE /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF4AF28BB8B1B00CDBBFE /* EventModel.swift */; };
-		693FF4E628BCDA2F00CDBBFE /* Pods-FindTeamer in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FF4E128BCDA2700CDBBFE /* Pods-FindTeamer */; };
+		693FF4E628BCDA2F00CDBBFE /* Pods_FindTeamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FF4E128BCDA2700CDBBFE /* Pods_FindTeamer.framework */; };
+		694C1CEA28CF65A9002D95EB /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 694C1CE928CF65A9002D95EB /* FirebaseFirestoreSwift-Beta */; };
 		69716CAC28B5143700520ECF /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69716CAB28B5143700520ECF /* MainContentView.swift */; };
 		69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */; };
 		69C92F5A28A3D86F00F2E878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C92F5928A3D86F00F2E878 /* Assets.xcassets */; };
@@ -158,10 +158,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693FF4E628BCDA2F00CDBBFE /* Pods-FindTeamer in Frameworks */,
+				693FF4E628BCDA2F00CDBBFE /* Pods_FindTeamer.framework in Frameworks */,
 				693FF4A528BB780C00CDBBFE /* FirebaseDatabase in Frameworks */,
+				694C1CEA28CF65A9002D95EB /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				693FF4A728BB780C00CDBBFE /* FirebaseFirestore in Frameworks */,
-				691A010F28BE17F700E09018 /* FirebaseFirestoreSwift in Frameworks */,
 				69327C2828AB8BE1004F7C99 /* FirebaseAuth in Frameworks */,
 				693FF4A928BB780C00CDBBFE /* FirebaseStorage in Frameworks */,
 				693FF4A328BB780C00CDBBFE /* FirebaseAuth in Frameworks */,
@@ -297,9 +297,9 @@
 		693FF4B528BCDA2600CDBBFE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				693FF4E128BCDA2700CDBBFE /* Pods-FindTeamer */,
-				693FF4E328BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests */,
-				693FF4E528BCDA2700CDBBFE /* Pods-FindTeamerTests */,
+				693FF4E128BCDA2700CDBBFE /* Pods_FindTeamer.framework */,
+				693FF4E328BCDA2700CDBBFE /* Pods_FindTeamer_FindTeamerUITests.framework */,
+				693FF4E528BCDA2700CDBBFE /* Pods_FindTeamerTests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 				693FF4A428BB780C00CDBBFE /* FirebaseDatabase */,
 				693FF4A628BB780C00CDBBFE /* FirebaseFirestore */,
 				693FF4A828BB780C00CDBBFE /* FirebaseStorage */,
-				691A010E28BE17F700E09018 /* FirebaseFirestoreSwift */,
+				694C1CE928CF65A9002D95EB /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = FindTeamer;
 			productReference = 69C92F5228A3D86D00F2E878 /* FindTeamer.app */;
@@ -602,26 +602,23 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		693FF4E128BCDA2700CDBBFE /* Pods-FindTeamer */ = {
+		693FF4E128BCDA2700CDBBFE /* Pods_FindTeamer.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			name = "Pods-FindTeamer";
 			path = Pods_FindTeamer.framework;
 			remoteRef = 693FF4E028BCDA2700CDBBFE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		693FF4E328BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests */ = {
+		693FF4E328BCDA2700CDBBFE /* Pods_FindTeamer_FindTeamerUITests.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			name = "Pods-FindTeamer-FindTeamerUITests";
 			path = Pods_FindTeamer_FindTeamerUITests.framework;
 			remoteRef = 693FF4E228BCDA2700CDBBFE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		693FF4E528BCDA2700CDBBFE /* Pods-FindTeamerTests */ = {
+		693FF4E528BCDA2700CDBBFE /* Pods_FindTeamerTests.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			name = "Pods-FindTeamerTests";
 			path = Pods_FindTeamerTests.framework;
 			remoteRef = 693FF4E428BCDA2700CDBBFE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -1099,7 +1096,7 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 8.11.0;
 			};
 		};
 		69327C2628AB8BE1004F7C99 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -1107,25 +1104,20 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 8.11.0;
 			};
 		};
 		693FF4A128BB780C00CDBBFE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.11.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		691A010E28BE17F700E09018 /* FirebaseFirestoreSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 69327C2628AB8BE1004F7C99 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
-		};
 		69327C2728AB8BE1004F7C99 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 69327C2628AB8BE1004F7C99 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -1150,6 +1142,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 693FF4A128BB780C00CDBBFE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		694C1CE928CF65A9002D95EB /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69327C2628AB8BE1004F7C99 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */
 
