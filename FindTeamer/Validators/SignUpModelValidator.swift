@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class SignUpModelValidator: ObservableObject {
+final class SignUpModelValidator: ObservableObject {
     var errorMessages: [String : String] = [:]
     // MARK: ObservedObject
     @ObservedObject var modelState: SignUpModel

@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class SignUpViewModel: ObservableObject {
+final class SignUpViewModel: ObservableObject {
     let firebaseManager: FirebaseManager = FirebaseManager()
     // MARK: Publishers
     @Published var validator: SignUpModelValidator

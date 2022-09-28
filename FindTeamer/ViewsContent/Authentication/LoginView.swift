@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct LoginView: View {
+    private let alertModel: AlertModel = AlertModel()
+    // MARK: State
     @State private var presentAlert = false
     @State private var successLogin = false
-    let alertModel: AlertModel = AlertModel()
-    @ObservedObject var logInViewModel: LogInViewModel = LogInViewModel()
+    // MARK: ObservedObject
+    @ObservedObject private var logInViewModel: LogInViewModel = LogInViewModel()
+    // MARK: Initializator
     init(logInViewModel: LogInViewModel = LogInViewModel()) {
         self.logInViewModel = logInViewModel
     }
+    // MARK: Body
     var body: some View {
         NavigationView {
             VStack {
@@ -51,13 +55,15 @@ struct LoginView: View {
                             .frame(width: 300, height: 10)
                             .padding()
                             .foregroundColor(.white)
-                            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing))
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]),
+                                                       startPoint: .leading, endPoint: .trailing))
                             .cornerRadius(40)
                             .font(.callout)
                 }
             }.navigationBarHidden(true)
         }
     }
+    // MARK: Methods
     func logInClicked() {
         logInViewModel.signIn(email: logInViewModel.modelState.email,
                               password: logInViewModel.modelState.password, completionBlock: { (authResult, error) in
