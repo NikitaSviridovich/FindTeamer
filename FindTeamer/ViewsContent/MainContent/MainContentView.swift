@@ -10,13 +10,12 @@ import SwiftUI
 struct MainContentView: View {
     @State var presentAddEventSheet = false
     @ObservedObject var viewModel = EventsViewModel()
-    
     init() {}
 
     var body: some View {
         ZStack {
             List(viewModel.events) { event in
-                eventCellGenerator(event: event)
+                EventCellGenerator(event: event)
             }.onAppear {
                 viewModel.initialLoadData()
             }
@@ -47,7 +46,6 @@ struct MainContentView: View {
         }
     }
 }
-
 
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {

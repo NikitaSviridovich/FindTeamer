@@ -13,14 +13,15 @@ class RootViewModel: ObservableObject {
     @Published var isAuthorized: Bool = false
     var handle: AuthStateDidChangeListenerHandle?
     public init() {
-        self.linten()
+        self.listen()
     }
-    func linten() {
-        handle = Auth.auth().addStateDidChangeListener {(auth, user) in
+    func listen() {
+        handle = Auth.auth().addStateDidChangeListener { [weak self] (_, user) in
+            guard let strongSelf = self else { return }
             if user != nil {
-                self.isAuthorized = true
+                strongSelf.isAuthorized = true
             } else {
-                self.isAuthorized = false
+                strongSelf.isAuthorized = false
             }
         }
         removeListener()
@@ -28,6 +29,4 @@ class RootViewModel: ObservableObject {
     func removeListener() {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
-    
 }
-

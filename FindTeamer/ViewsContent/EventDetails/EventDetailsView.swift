@@ -8,11 +8,9 @@
 import SwiftUI
 import MessageUI
 
-
 struct EventDetailsView: View {
     @State private var sendEmail = false
     var event: EventModel
-    
     var body: some View {
         VStack {
             HStack {
@@ -91,15 +89,12 @@ struct EventDetailsView: View {
 //            }
         }.padding()
     }
-    
     private func sendEmailAction() {
         sendEmail.toggle()
     }
-    
     private func openMap(address: String) {
         UIApplication.shared.open(NSURL(string: "http://maps.apple.com/?address=\(address)")! as URL)
     }
-    
     private func makeACall(url: String) {
         UIApplication.shared.open(NSURL(string: url)! as URL)
     }

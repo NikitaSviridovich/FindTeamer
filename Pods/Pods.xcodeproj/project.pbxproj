@@ -15,7 +15,6 @@
 			dependencies = (
 			);
 			name = SwiftLint;
-			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
@@ -72,21 +71,21 @@
 		8257B0BD5754F06BF43A3359032E614A /* Pods-FindTeamerTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FindTeamerTests-Info.plist"; sourceTree = "<group>"; };
 		89B8A76098E5B14647D5C1AC2241F369 /* Pods-FindTeamer-FindTeamerUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FindTeamer-FindTeamerUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		92C018201A2A61134850A6016BAE5150 /* Pods-FindTeamer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FindTeamer.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AA4C2F725C29E90C57A63C4F7AE2AB4A /* Pods-FindTeamerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FindTeamerTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		AD31CD4939B1C844F0F6545E9BE40522 /* Pods_FindTeamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD31CD4939B1C844F0F6545E9BE40522 /* Pods-FindTeamer */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-FindTeamer"; path = Pods_FindTeamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7D6988D96A5B618CA882134539169C /* Pods-FindTeamer-FindTeamerUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FindTeamer-FindTeamerUITests-dummy.m"; sourceTree = "<group>"; };
 		C713050DCD02DC29431D6E5ABDDFF57C /* Pods-FindTeamer-FindTeamerUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FindTeamer-FindTeamerUITests.modulemap"; sourceTree = "<group>"; };
 		CE191B5F78D6F293654E873E83D4E81F /* Pods-FindTeamerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FindTeamerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFD1B2F518B9AB798B1028D0359779C6 /* Pods-FindTeamer-FindTeamerUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FindTeamer-FindTeamerUITests-Info.plist"; sourceTree = "<group>"; };
 		D058255B8C6FAAB5B9B0093868653F63 /* Pods-FindTeamer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FindTeamer-acknowledgements.plist"; sourceTree = "<group>"; };
 		D47CC37A5C068CDD41B9F26EECC34963 /* Pods-FindTeamer-FindTeamerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FindTeamer-FindTeamerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		D50DAA5A9D4ABBAF95A60E6D734F4D77 /* Pods_FindTeamerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D50DAA5A9D4ABBAF95A60E6D734F4D77 /* Pods-FindTeamerTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-FindTeamerTests"; path = Pods_FindTeamerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D528A35E9D18181563CDF7E124143214 /* Pods-FindTeamer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FindTeamer-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DA5B74359A1AC8F4BC5F7B063465E360 /* Pods-FindTeamer-FindTeamerUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FindTeamer-FindTeamerUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F1D2BA0D377955CF9898F1D67E2B095E /* Pods-FindTeamerTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FindTeamerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FA6BFDE6C7E2AA055F3140E625A3EFBF /* Pods-FindTeamer-FindTeamerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FindTeamer-FindTeamerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		FF649514BE22CBE82EC77F683BA7EABB /* Pods_FindTeamer_FindTeamerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamer_FindTeamerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF649514BE22CBE82EC77F683BA7EABB /* Pods-FindTeamer-FindTeamerUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-FindTeamer-FindTeamerUITests"; path = Pods_FindTeamer_FindTeamerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,15 +224,16 @@
 			children = (
 				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
 			);
+			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
 		E927E0EAF39ABEDE2653AD5ECC3721B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD31CD4939B1C844F0F6545E9BE40522 /* Pods_FindTeamer.framework */,
-				FF649514BE22CBE82EC77F683BA7EABB /* Pods_FindTeamer_FindTeamerUITests.framework */,
-				D50DAA5A9D4ABBAF95A60E6D734F4D77 /* Pods_FindTeamerTests.framework */,
+				AD31CD4939B1C844F0F6545E9BE40522 /* Pods-FindTeamer */,
+				FF649514BE22CBE82EC77F683BA7EABB /* Pods-FindTeamer-FindTeamerUITests */,
+				D50DAA5A9D4ABBAF95A60E6D734F4D77 /* Pods-FindTeamerTests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -284,7 +284,7 @@
 			);
 			name = "Pods-FindTeamer";
 			productName = Pods_FindTeamer;
-			productReference = AD31CD4939B1C844F0F6545E9BE40522 /* Pods_FindTeamer.framework */;
+			productReference = AD31CD4939B1C844F0F6545E9BE40522 /* Pods-FindTeamer */;
 			productType = "com.apple.product-type.framework";
 		};
 		AE0ED3D76025B35251A1737A473D888C /* Pods-FindTeamer-FindTeamerUITests */ = {
@@ -303,7 +303,7 @@
 			);
 			name = "Pods-FindTeamer-FindTeamerUITests";
 			productName = Pods_FindTeamer_FindTeamerUITests;
-			productReference = FF649514BE22CBE82EC77F683BA7EABB /* Pods_FindTeamer_FindTeamerUITests.framework */;
+			productReference = FF649514BE22CBE82EC77F683BA7EABB /* Pods-FindTeamer-FindTeamerUITests */;
 			productType = "com.apple.product-type.framework";
 		};
 		B9917F91ECE84EDD229C5D62CE0DCC5B /* Pods-FindTeamerTests */ = {
@@ -322,7 +322,7 @@
 			);
 			name = "Pods-FindTeamerTests";
 			productName = Pods_FindTeamerTests;
-			productReference = D50DAA5A9D4ABBAF95A60E6D734F4D77 /* Pods_FindTeamerTests.framework */;
+			productReference = D50DAA5A9D4ABBAF95A60E6D734F4D77 /* Pods-FindTeamerTests */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -332,7 +332,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -481,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -509,7 +509,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-FindTeamer-FindTeamerUITests/Pods-FindTeamer-FindTeamerUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -546,7 +546,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-FindTeamer/Pods-FindTeamer-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,7 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -600,7 +600,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-FindTeamerTests/Pods-FindTeamerTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -636,7 +636,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-FindTeamer-FindTeamerUITests/Pods-FindTeamer-FindTeamerUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -707,7 +707,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -734,7 +734,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-FindTeamer/Pods-FindTeamer-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -761,7 +761,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -786,7 +786,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-FindTeamerTests/Pods-FindTeamerTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

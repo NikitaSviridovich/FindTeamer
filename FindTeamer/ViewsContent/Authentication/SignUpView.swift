@@ -6,95 +6,92 @@
 //
 
 import SwiftUI
-import Firebase
 import Combine
 
-
 struct SignUpView: View {
-    @State var errorArray: String = ""
+    let alertModel: AlertModel = AlertModel()
+    // MARK: State variables
+    @State var errors: String = ""
     @State private var presentAlert = false
     @State private var activeAlert: ActiveAlert = .first
-    @ObservedObject var formModel: SignUpModel
+    // MARK: ObservedObject
+    @ObservedObject var signUpViewModel: SignUpViewModel
+    // MARK: Environment
     @Environment(\.presentationMode) var presentationMode
-    
-    let signUpManager: FirebaseManager = FirebaseManager()
-    let alertModel: AlertModel = AlertModel()
-    
-    init(formModel: SignUpModel = SignUpModel()) {
-          self.formModel = formModel
+    // MARK: Initializator
+    init(signUpViewModel: SignUpViewModel = SignUpViewModel()) {
+        self.signUpViewModel = signUpViewModel
     }
-    
+    // MARK: Body
     var body: some View {
         WelcomeIcon()
-        TextField("Name", text: $formModel.userName)
-                    .padding()
-                    .background(lightGreyColor)
-                    .cornerRadius(5.0)
-                    .padding(.horizontal, 20)
-        TextField("Email", text: $formModel.userEmail)
-                    .padding()
-                    .background(lightGreyColor)
-                    .cornerRadius(5.0)
-                    .padding(.horizontal, 20)
-        SecureField("Password", text: $formModel.userPassword)
-                    .padding()
-                    .background(lightGreyColor)
-                    .cornerRadius(5.0)
-                    .padding(.horizontal, 20)
-        SecureField("Repeat Password", text: $formModel.userRepeatPassword)
-                    .padding()
-                    .background(lightGreyColor)
-                    .cornerRadius(5.0)
-                    .padding(.horizontal, 20)
-        Text(errorArray)
+        TextField("Name", text: $signUpViewModel.modelState.userName)
+            .padding()
+            .background(lightGreyColor)
+            .cornerRadius(5.0)
+            .padding(.horizontal, 20)
+        TextField("Email", text: $signUpViewModel.modelState.userEmail)
+            .padding()
+            .background(lightGreyColor)
+            .cornerRadius(5.0)
+            .padding(.horizontal, 20)
+        SecureField("Password", text: $signUpViewModel.modelState.userPassword)
+            .padding()
+            .background(lightGreyColor)
+            .cornerRadius(5.0)
+            .padding(.horizontal, 20)
+        SecureField("Repeat Password", text: $signUpViewModel.modelState.userRepeatPassword)
+            .padding()
+            .background(lightGreyColor)
+            .cornerRadius(5.0)
+            .padding(.horizontal, 20)
+        Text(errors)
             .opacity(0.5)
             .foregroundColor(.red)
             .padding()
         Button(action: registerClicked) {
             ButtonContent(text: "Let's Go!")
         }.opacity(buttonOpacity)
-        .alert(isPresented: $presentAlert) {
-            switch activeAlert {
-            case .first:
-                return Alert (
-                    title: Text(alertModel.title),
-                    message: Text(alertModel.message),
-                    dismissButton: .default(Text(alertModel.buttonNaming)) {
-                        presentationMode.wrappedValue.dismiss()
-                    })
-            case .second:
-                return Alert (
-                    title: Text(alertModel.title),
-                    message: Text(alertModel.message),
-                    dismissButton: .default(Text(alertModel.buttonNaming)))
+            .alert(isPresented: $presentAlert) {
+                switch activeAlert {
+                case .first:
+                    return Alert(
+                        title: Text(alertModel.title),
+                        message: Text(alertModel.message),
+                        dismissButton: .default(Text(alertModel.buttonNaming)) {
+                            presentationMode.wrappedValue.dismiss()
+                        })
+                case .second:
+                    return Alert(
+                        title: Text(alertModel.title),
+                        message: Text(alertModel.message),
+                        dismissButton: .default(Text(alertModel.buttonNaming)))
+                }
             }
-        }
     }
-    
     var buttonOpacity: Double {
-        return formModel.isFormValid &&
-                formModel.errorMessages.count == 0 ? 1 : 0.5
+        return signUpViewModel.isFormValid &&
+        signUpViewModel.validator.errorMessages.isEmpty ? 1 : 0.5
     }
-    
     func registerClicked() {
-        self.errorArray = ""
-        if self.formModel.isFormValid && self.formModel.errorMessages.count == 0 {
-            signUpManager.createUser(email: self.formModel.userEmail, password: self.formModel.userPassword, completionBlock: { (success) in
-                    presentAlert = true
-                    if (success) {
-                        activeAlert = .first
-                        alertModel.title = "Success"
-                        alertModel.message = "Registration complete!"
-                    } else {
-                        activeAlert = .second
-                        alertModel.title = "Error"
-                        alertModel.message = "Registration failed. Please try again!"
-                        alertModel.buttonNaming = "OK"
+        self.errors = ""
+        if self.signUpViewModel.isFormValid && self.signUpViewModel.validator.errorMessages.isEmpty {
+            signUpViewModel.createUser(email: self.signUpViewModel.modelState.userEmail, password: self.signUpViewModel.modelState.userPassword, completionBlock: { (success) in
+                presentAlert = true
+                if (success) {
+                    activeAlert = .first
+                    alertModel.title = "Success"
+                    alertModel.message = "Registration complete!"
+                } else {
+                    activeAlert = .second
+                    alertModel.title = "Error"
+                    alertModel.message = "Registration failed. Please try again!"
+                    alertModel.buttonNaming = "OK"
                 }
             })
         } else {
-            for i in self.formModel.errorMessages {
-                self.errorArray += " " + i.value
+            for num in self.signUpViewModel.validator.errorMessages {
+                self.errors += " " + num.value
             }
         }
     }
@@ -108,5 +105,3 @@ struct SignUpView_Previews: PreviewProvider {
         }
     }
 }
-
-

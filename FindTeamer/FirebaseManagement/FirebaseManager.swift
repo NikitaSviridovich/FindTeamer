@@ -11,10 +11,10 @@ import FirebaseCore
 import FirebaseFirestore
 
 class FirebaseManager {
-    private var db = Firestore.firestore()
+    private var firebaseDB = Firestore.firestore()
     func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-            if let _ = authResult?.user {
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, _) in
+            if authResult?.user != nil {
                 completionBlock(true)
             } else {
                 completionBlock(false)
@@ -28,13 +28,10 @@ class FirebaseManager {
     }
     func addEvent(_ event: EventModel) {
         do {
-            let _ = try db.collection("events").addDocument(from: event)
+            _ = try firebaseDB.collection("events").addDocument(from: event)
         }
         catch {
             print(error)
         }
-    }
-    func getEvents() {
-        
     }
 }

@@ -12,18 +12,13 @@ import FirebaseFirestore
 class EventViewModel: ObservableObject {
     @Published var event: EventModel
     @Published var modified = false
-    
-    private var db = Firestore.firestore()
+    private var firebaseDB = Firestore.firestore()
     private var cancellables = Set<AnyCancellable>()
-    
-    
     let firebaseManager: FirebaseManager
-    
     init(event: EventModel = EventModel()) {
         self.event = event
         firebaseManager = FirebaseManager()
     }
-    
     private func addEvent(_ event: EventModel) {
         firebaseManager.addEvent(event)
     }

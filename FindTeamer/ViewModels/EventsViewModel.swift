@@ -11,14 +11,13 @@ import FirebaseFirestore
 
 class EventsViewModel: ObservableObject {
     @Published var events = [EventModel]()
-    
-    private var db = Firestore.firestore()
+    private var firebaseDB = Firestore.firestore()
     private var listenerRegistration: ListenerRegistration?
-    
     func initialLoadData() {
         do {
-            if listenerRegistration == nil && events.count == 0 {
-              listenerRegistration = db.collection("events").addSnapshotListener { (querySnapshot, error) in
+            if listenerRegistration == nil && events.isEmpty {
+              listenerRegistration = firebaseDB.collection("events")
+                    .addSnapshotListener {(querySnapshot, _) in
                 guard let documents = querySnapshot?.documents else { return }
                 self.events = documents.compactMap { queryDocumentSnapshot in
                   try? queryDocumentSnapshot.data(as: EventModel.self)
@@ -27,14 +26,12 @@ class EventsViewModel: ObservableObject {
             }
         }
     }
-    
     func reloadData() async throws -> [EventModel] {
         do {
-            let snapshot = try await db.collection("events").getDocuments()
+            let snapshot = try await firebaseDB.collection("events").getDocuments()
             return snapshot.documents.compactMap { queryDocumentSnapshot in
                 try? queryDocumentSnapshot.data(as: EventModel.self)
             }
         }
     }
-    
 }
