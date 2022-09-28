@@ -16,11 +16,9 @@ struct EmailHelper {
 
 extension EmailHelper: UIViewControllerRepresentable {
     typealias UIViewControllerType = MFMailComposeViewController
-    
     func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) { }
-
     func makeUIViewController(context: Context) -> MFMailComposeViewController {
-        if MFMailComposeViewController.canSendMail(){
+        if MFMailComposeViewController.canSendMail() {
             let view = MFMailComposeViewController()
             view.mailComposeDelegate = context.coordinator
             view.setToRecipients([to])
@@ -31,14 +29,12 @@ extension EmailHelper: UIViewControllerRepresentable {
             return MFMailComposeViewController()
         }
     }
-    
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
     }
-    
     class Coordinator : NSObject, MFMailComposeViewControllerDelegate {
         var parent : EmailHelper
-        init(_ parent: EmailHelper){
+        init(_ parent: EmailHelper) {
             self.parent = parent
         }
         func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
@@ -46,4 +42,3 @@ extension EmailHelper: UIViewControllerRepresentable {
         }
     }
 }
-

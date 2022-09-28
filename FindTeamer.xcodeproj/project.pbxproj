@@ -245,20 +245,20 @@
 			path = EventDetails;
 			sourceTree = "<group>";
 		};
-		691A011A28CB44CC00E09018 /* Services */ = {
+		691A011A28CB44CC00E09018 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				691A011B28CB44D700E09018 /* EmailService */,
+				691A011B28CB44D700E09018 /* EmailHelper */,
 			);
-			path = Services;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
-		691A011B28CB44D700E09018 /* EmailService */ = {
+		691A011B28CB44D700E09018 /* EmailHelper */ = {
 			isa = PBXGroup;
 			children = (
 				691A011C28CB44E900E09018 /* EmailHelper.swift */,
 			);
-			path = EmailService;
+			path = EmailHelper;
 			sourceTree = "<group>";
 		};
 		69327C2128AB7E5E004F7C99 /* ViewsContent */ = {
@@ -440,11 +440,11 @@
 			children = (
 				D072E0B928AE53B100FE0D41 /* Errors */,
 				693D8D5F28B3A444005FE83C /* FirebaseManagement */,
+				691A011A28CB44CC00E09018 /* Helpers */,
 				6914668028ABCC4D003C2222 /* Models */,
 				69C92F5B28A3D86F00F2E878 /* Preview Content */,
 				693FF4AE28BB8B0800CDBBFE /* ViewModels */,
 				69327C2128AB7E5E004F7C99 /* ViewsContent */,
-				691A011A28CB44CC00E09018 /* Services */,
 				697CF58E28E475BD00D5E5F9 /* Validators */,
 				69C92F5928A3D86F00F2E878 /* Assets.xcassets */,
 				69C92F6028A3D86F00F2E878 /* FindTeamer.xcdatamodeld */,

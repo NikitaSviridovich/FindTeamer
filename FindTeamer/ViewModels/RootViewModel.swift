@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
-import Combine
 import Firebase
 
 class RootViewModel: ObservableObject {
-    var handle: AuthStateDidChangeListenerHandle?
+    private var handle: AuthStateDidChangeListenerHandle?
     // MARK: Publishers
     @Published var isAuthorized: Bool = false
+    // MARK: Initializator
     public init() {
         self.listen()
     }
-    func listen() {
+    // MARK: Methods
+    private func listen() {
         handle = Auth.auth().addStateDidChangeListener { [weak self] (_, user) in
             guard let strongSelf = self else { return }
             if user != nil {
@@ -27,7 +28,7 @@ class RootViewModel: ObservableObject {
         }
         removeListener()
     }
-    func removeListener() {
+    private func removeListener() {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
 }
