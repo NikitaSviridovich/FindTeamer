@@ -41,7 +41,11 @@ struct CreateEventView: View {
                   }
                   
                   Section(header: Text("Email Contact")) {
-                      TextField("Email", text: $viewModel.event.eventUserCounter)
+                      TextField("Email", text: $viewModel.event.eventEmail)
+                  }
+                  
+                  Section(header: Text("Phone Number For Contact")) {
+                      TextField("Phone Number", text: $viewModel.event.eventPhoneNumber)
                   }
                   
                   Section(header: Text("Date and Time")) {

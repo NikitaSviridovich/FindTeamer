@@ -11,6 +11,7 @@
 		44177A9645EB65DAE6B503E5 /* Pods_FindTeamer_FindTeamerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5645F92DE7D85FC5457E538C /* Pods_FindTeamer_FindTeamerUITests.framework */; };
 		690C16DB28B3B5C4003B9CCE /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C16DA28B3B5C4003B9CCE /* AlertModel.swift */; };
 		6914668228ABCCA5003C2222 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914668128ABCCA5003C2222 /* SignUpModel.swift */; };
+		69167CBD28E0BDDA000E1D1F /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69167CBC28E0BDDA000E1D1F /* SingUpViewModel.swift */; };
 		691A011128C0B12A00E09018 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011028C0B12A00E09018 /* EventsViewModel.swift */; };
 		691A011428C2248F00E09018 /* MainComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011328C2248F00E09018 /* MainComponents.swift */; };
 		691A011828C2323900E09018 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011728C2323900E09018 /* EventDetailsView.swift */; };
@@ -89,6 +90,7 @@
 		65936D161F62317BFBB284E6 /* Pods-FindTeamer-FindTeamerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamer-FindTeamerUITests.debug.xcconfig"; path = "Target Support Files/Pods-FindTeamer-FindTeamerUITests/Pods-FindTeamer-FindTeamerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		690C16DA28B3B5C4003B9CCE /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		6914668128ABCCA5003C2222 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		69167CBC28E0BDDA000E1D1F /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
 		691A011028C0B12A00E09018 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		691A011328C2248F00E09018 /* MainComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComponents.swift; sourceTree = "<group>"; };
 		691A011728C2323900E09018 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
@@ -201,9 +203,9 @@
 		6914668028ABCC4D003C2222 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6914668128ABCCA5003C2222 /* SignUpModel.swift */,
 				690C16DA28B3B5C4003B9CCE /* AlertModel.swift */,
 				693FF4AF28BB8B1B00CDBBFE /* EventModel.swift */,
+				6914668128ABCCA5003C2222 /* SignUpModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,6 +279,7 @@
 				693FF4AC28BB8AE400CDBBFE /* EventViewModel.swift */,
 				691A011028C0B12A00E09018 /* EventsViewModel.swift */,
 				691A011E28CF1B9700E09018 /* RootViewModel.swift */,
+				69167CBC28E0BDDA000E1D1F /* SingUpViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				691A011F28CF1B9700E09018 /* RootViewModel.swift in Sources */,
 				691A012128CF23A200E09018 /* RootView.swift in Sources */,
 				69C92F6228A3D86F00F2E878 /* FindTeamer.xcdatamodeld in Sources */,
+				69167CBD28E0BDDA000E1D1F /* SingUpViewModel.swift in Sources */,
 				69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */,
 				69327C2A28AB9E57004F7C99 /* SignUpView.swift in Sources */,
 				69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */,

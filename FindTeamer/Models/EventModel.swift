@@ -12,7 +12,8 @@ class EventModel: Identifiable, Codable {
     @DocumentID var id: String?
     var eventType = ""
     var eventTitle = ""
-    var eventUserCounter = ""
+    var eventEmail = ""
+    var eventPhoneNumber = ""
     var eventAddress = ""
     var eventTime: Date = Date()
     var eventDescription = ""

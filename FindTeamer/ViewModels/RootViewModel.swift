@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 import Firebase
 
-
 class RootViewModel: ObservableObject {
     @Published var isAuthorized: Bool = false
     var handle: AuthStateDidChangeListenerHandle?
