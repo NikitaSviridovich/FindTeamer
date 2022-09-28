@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 class SignUpModel : ObservableObject {
+    // MARK: Publishers
     @Published var userName = ""
     @Published var userEmail = ""
     @Published var userPassword = ""

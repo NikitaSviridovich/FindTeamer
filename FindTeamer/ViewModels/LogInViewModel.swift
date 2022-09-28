@@ -9,8 +9,10 @@ import SwiftUI
 import FirebaseAuth
 
 class LogInViewModel: ObservableObject {
+    private let firebaseManager: FirebaseManager = FirebaseManager()
+    // MARK: ObservedObject
     @ObservedObject var modelState: LogInModel
-    let firebaseManager: FirebaseManager = FirebaseManager()
+    // MARK: Initializator
     init(modelState: LogInModel = LogInModel()) {
         self.modelState = modelState
     }

@@ -10,8 +10,9 @@ import Combine
 import Firebase
 
 class RootViewModel: ObservableObject {
-    @Published var isAuthorized: Bool = false
     var handle: AuthStateDidChangeListenerHandle?
+    // MARK: Publishers
+    @Published var isAuthorized: Bool = false
     public init() {
         self.listen()
     }

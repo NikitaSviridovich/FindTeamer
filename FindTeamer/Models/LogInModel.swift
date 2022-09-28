@@ -8,6 +8,7 @@
 import Foundation
 
 class LogInModel: ObservableObject {
+    // MARK: Publishers
     @Published var email: String = ""
     @Published var password: String = ""
 }

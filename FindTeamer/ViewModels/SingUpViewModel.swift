@@ -17,6 +17,7 @@ final class SignUpViewModel: ObservableObject {
     @ObservedObject var modelState: SignUpModel
     // MARK: Private props
     private var publishers = Set<AnyCancellable>()
+    // MARK: Initializator
     init(signUpModel: SignUpModel = SignUpModel()) {
         self.modelState = signUpModel
         self.validator = SignUpModelValidator(modelState: signUpModel)
@@ -25,6 +26,7 @@ final class SignUpViewModel: ObservableObject {
             .assign(to: \.isFormValid, on: self)
             .store(in: &publishers)
     }
+    // MARK: Props
     var isSignUpFormValidPublisher: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest4(
             self.validator.isNameValidPublisher,
