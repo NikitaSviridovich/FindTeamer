@@ -25,18 +25,18 @@ struct LoginView: View {
                 WelcomeText()
                 WelcomeIcon()
                 TextField("Email", text: $logInViewModel.modelState.email)
-                            .padding()
-                            .background(lightGreyColor)
-                            .cornerRadius(10.0)
-                            .padding(.horizontal, 20)
+                    .padding()
+                    .background(lightGreyColor)
+                    .cornerRadius(10.0)
+                    .padding(.horizontal, 20)
                 SecureField("Password", text: $logInViewModel.modelState.password)
-                            .padding()
-                            .background(lightGreyColor)
-                            .cornerRadius(10.0)
-                            .padding(.horizontal, 20)
+                    .padding()
+                    .background(lightGreyColor)
+                    .cornerRadius(10.0)
+                    .padding(.horizontal, 20)
                 NavigationLink(destination: MainContentView(), isActive: self.$successLogin) {
                     Button(action: logInClicked) {
-                            LoginButtonContent()
+                        LoginButtonContent()
                     }
                     .alert(isPresented: $presentAlert) {
                         return Alert(
@@ -47,18 +47,18 @@ struct LoginView: View {
                     }
                 }
                 Text("OR")
-                            .font(.footnote)
-                            .fontWeight(.semibold)
-                            .padding(.all, 30)
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                    .padding(.all, 30)
                 NavigationLink(destination: SignUpView()) {
                     Text("SIGN UP")
-                            .frame(width: 300, height: 10)
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]),
-                                                       startPoint: .leading, endPoint: .trailing))
-                            .cornerRadius(40)
-                            .font(.callout)
+                        .frame(width: 300, height: 10)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]),
+                                                   startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(40)
+                        .font(.callout)
                 }
             }.navigationBarHidden(true)
         }
