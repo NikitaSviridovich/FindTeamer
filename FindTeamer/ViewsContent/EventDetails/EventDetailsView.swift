@@ -9,22 +9,25 @@ import SwiftUI
 import MessageUI
 
 struct EventDetailsView: View {
+    var event: EventModel = EventModel()
+    // MARK: State fields
     @State private var sendEmail = false
-    var event: EventModel
+    // MARK: Body
     var body: some View {
         VStack {
             HStack {
                 Image(event.eventType.lowercased())
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 75, height: 75)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 75, height: 75)
                 VStack(alignment: .leading, spacing: 4) {
                     Text(event.eventType + " | " + event.eventTitle)
-                    .font(.system(size: 14, weight: .black, design: .rounded))
-                    .foregroundColor(.gray)
+                        .font(.system(size: 14, weight: .black, design: .rounded))
+                        .foregroundColor(.gray)
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: 60, alignment: .leading)            .background(Color.white.cornerRadius(5).shadow(radius: 3))
+            .frame(maxWidth: .infinity, maxHeight: 60, alignment: .leading)
+            .background(Color.white.cornerRadius(5).shadow(radius: 3))
             VStack(alignment: .leading) {
                 HStack {
                     Text(event.eventAddress).padding()
@@ -33,9 +36,7 @@ struct EventDetailsView: View {
                     Spacer()
                     Button(action: {
                         openMap(address: event.eventAddress)
-                    }) {
-                        Text("See on Map").font(.system(size: 12, weight: .light, design: .default))
-                    }
+                    }) { Text("See on Map").font(.system(size: 12, weight: .light, design: .default)) }
                 }
                 Divider().background(Color.white).padding(.trailing, 128)
                 HStack {
@@ -75,20 +76,13 @@ struct EventDetailsView: View {
                 }
                 Divider().background(Color.white).padding(.trailing, 128)
                 Text(event.eventDescription).padding()
-                .font(.system(size: 15, weight: .black, design: .rounded))
-                .foregroundColor(.gray)
+                    .font(.system(size: 15, weight: .black, design: .rounded))
+                    .foregroundColor(.gray)
                 Divider().background(Color.white).padding(.trailing, 128)
             }
-//            Spacer()
-//            if MFMailComposeViewController.canSendMail() {
-//                Button(action: sendEmailAction) {
-//                    ButtonContent(text: "Send Info on Email")
-//                }.sheet(isPresented: $sendEmail) {
-//                    EmailHelper(content: event.eventDescription, to: "",subject: event.eventTitle)
-//                }
-//            }
         }.padding()
     }
+    // MARK: Methods
     private func sendEmailAction() {
         sendEmail.toggle()
     }
@@ -97,14 +91,5 @@ struct EventDetailsView: View {
     }
     private func makeACall(url: String) {
         UIApplication.shared.open(NSURL(string: url)! as URL)
-    }
-}
-
-struct EventDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        let event = EventModel()
-        return NavigationView {
-            EventDetailsView(event: event)
-        }
     }
 }
