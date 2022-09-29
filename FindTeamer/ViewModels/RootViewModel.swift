@@ -5,7 +5,6 @@
 //  Created by Nikita Sviridovich on 12.09.22.
 //
 
-import SwiftUI
 import Firebase
 
 class RootViewModel: ObservableObject {
