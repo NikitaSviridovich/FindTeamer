@@ -9,12 +9,12 @@ import SwiftUI
 import Combine
 
 final class SignUpViewModel: ObservableObject {
-    let firebaseAuthManager: FirebaseAuthManager
     // MARK: Publishers
     @Published var validator: SignUpModelValidator
     @Published var isFormValid = false
     @Published var modelState: SignUpModel
     // MARK: Private props
+    private let firebaseAuthManager: FirebaseAuthManager
     private var publishers = Set<AnyCancellable>()
     private var cancellable: AnyCancellable!
     // MARK: Initializator

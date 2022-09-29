@@ -6,28 +6,20 @@
 //
 
 import Firebase
+import Combine
 
-class RootViewModel: ObservableObject {
-    private var handle: AuthStateDidChangeListenerHandle?
+final class RootViewModel: ObservableObject {
     // MARK: Publishers
     @Published var isAuthorized: Bool = false
+    // MARK: Private fields
+    private var cancellable: AnyCancellable!
+    private var firebaseAuthManager: FirebaseAuthManager
     // MARK: Initializator
-    public init() {
-        self.listen()
-    }
-    // MARK: Methods
-    private func listen() {
-        handle = Auth.auth().addStateDidChangeListener { [weak self] (_, user) in
-            guard let strongSelf = self else { return }
-            if user != nil {
-                strongSelf.isAuthorized = true
-            } else {
-                strongSelf.isAuthorized = false
-            }
+    public init(firebaseAuthManager: FirebaseAuthManager = FirebaseAuthManager()) {
+        self.firebaseAuthManager = firebaseAuthManager
+        cancellable = firebaseAuthManager.$isAuthorized.sink { [weak self] isAuthorized in
+        guard let strongSelf = self else { return }
+            strongSelf.isAuthorized = isAuthorized
         }
-        removeListener()
-    }
-    private func removeListener() {
-        Auth.auth().removeStateDidChangeListener(handle!)
     }
 }

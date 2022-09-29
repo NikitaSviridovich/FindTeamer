@@ -8,10 +8,11 @@
 import FirebaseFirestore
 
 final class FirebaseEventManager: ObservableObject {
-    private var firebaseDB = Firestore.firestore()
-    private var listenerRegistration: ListenerRegistration?
     // MARK: Publishers
     @Published var events = [EventModel]()
+    // MARK: Private fields
+    private var firebaseDB = Firestore.firestore()
+    private var listenerRegistration: ListenerRegistration?
     // MARK: Initializator
     init() { }
     // MARK: Methods

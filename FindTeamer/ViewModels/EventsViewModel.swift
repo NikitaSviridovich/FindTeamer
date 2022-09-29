@@ -7,7 +7,7 @@
 
 import Combine
 
-class EventsViewModel: ObservableObject {
+final class EventsViewModel: ObservableObject {
     // MARK: Publishers
     @Published var events = [EventModel]()
     // MARK: Private fields
