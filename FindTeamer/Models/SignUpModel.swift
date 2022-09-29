@@ -5,7 +5,6 @@
 //  Created by Nikita Sviridovich on 16.08.22.
 //
 
-import Foundation
 import Combine
 
 class SignUpModel : ObservableObject {

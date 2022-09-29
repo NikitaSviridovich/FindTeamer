@@ -9,22 +9,25 @@ import SwiftUI
 import Combine
 
 final class SignUpViewModel: ObservableObject {
-    let firebaseManager: FirebaseManager = FirebaseManager()
+    let firebaseAuthManager: FirebaseAuthManager
     // MARK: Publishers
     @Published var validator: SignUpModelValidator
     @Published var isFormValid = false
-    // MARK: ObservedObject
-    @ObservedObject var modelState: SignUpModel
+    @Published var modelState: SignUpModel
     // MARK: Private props
     private var publishers = Set<AnyCancellable>()
+    private var cancellable: AnyCancellable!
     // MARK: Initializator
-    init(signUpModel: SignUpModel = SignUpModel()) {
+    init(signUpModel: SignUpModel = SignUpModel(),
+         firebaseAuthManager: FirebaseAuthManager = FirebaseAuthManager()) {
         self.modelState = signUpModel
         self.validator = SignUpModelValidator(modelState: signUpModel)
+        self.firebaseAuthManager = firebaseAuthManager
         isSignUpFormValidPublisher
             .receive(on: RunLoop.main)
             .assign(to: \.isFormValid, on: self)
             .store(in: &publishers)
+        //cancellable = firebaseAuthManager
     }
     // MARK: Props
     var isSignUpFormValidPublisher: AnyPublisher<Bool, Never> {
@@ -40,6 +43,6 @@ final class SignUpViewModel: ObservableObject {
     }
     // MARK: Methods
     func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
-        firebaseManager.createUser(email: email, password: password, completionBlock: completionBlock)
+        firebaseAuthManager.createUser(email: email, password: password, completionBlock: completionBlock)
     }
 }

@@ -9,16 +9,18 @@ import SwiftUI
 import FirebaseAuth
 
 class LogInViewModel: ObservableObject {
-    private let firebaseManager: FirebaseManager = FirebaseManager()
+    private let firebaseAuthManager: FirebaseAuthManager
     // MARK: ObservedObject
     @ObservedObject var modelState: LogInModel
     // MARK: Initializator
-    init(modelState: LogInModel = LogInModel()) {
+    init(modelState: LogInModel = LogInModel(),
+         firebaseAuthManager: FirebaseAuthManager = FirebaseAuthManager()) {
         self.modelState = modelState
+        self.firebaseAuthManager = firebaseAuthManager
     }
     // MARK: Methods
     func signIn(email: String, password: String, completionBlock : @escaping (_ authResult: AuthDataResult?, _ error: Error?) -> Void) {
-        firebaseManager.signIn(email: email, password: password, completionBlock: { authResult, error in
+        firebaseAuthManager.signIn(email: email, password: password, completionBlock: { authResult, error in
             completionBlock(authResult, error)
         })
     }
