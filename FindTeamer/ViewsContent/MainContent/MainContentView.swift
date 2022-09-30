@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainContentView: View {
     @State var presentAddEventSheet = false
-    @ObservedObject var viewModel = EventsViewModel()
+    @ObservedObject var viewModel = EventsViewModel(eventManager: FirebaseEventService())
     init() { }
     var body: some View {
         ZStack {

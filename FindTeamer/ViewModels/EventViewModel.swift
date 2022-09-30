@@ -12,16 +12,16 @@ final class EventViewModel {
     @Published var event: EventModel
     @Published var modified = false
     // MARK: Private fields
-    private let firebaseEventManager: FirebaseEventManager
+    private let eventManager: EventManager
     private var cancellables = Set<AnyCancellable>()
     // MARK: Initializator
-    init(event: EventModel = EventModel(), firebaseEventManager: FirebaseEventManager = FirebaseEventManager()) {
+    init(event: EventModel = EventModel(), eventManager: EventManager) {
         self.event = event
-        self.firebaseEventManager = FirebaseEventManager()
+        self.eventManager = eventManager
     }
     // MARK: Methods
     private func addEvent(_ event: EventModel) {
-        firebaseEventManager.addEvent(event)
+        eventManager.addEvent(event: event)
     }
     func handleDoneTapped() {
         self.addEvent(event)

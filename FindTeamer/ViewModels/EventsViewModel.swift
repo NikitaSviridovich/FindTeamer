@@ -11,18 +11,19 @@ final class EventsViewModel: ObservableObject {
     // MARK: Publishers
     @Published var events = [EventModel]()
     // MARK: Private fields
-    private var cancellable: AnyCancellable!
-    private var firebaseEventManager: FirebaseEventManager
+    private var cancellable = Set<AnyCancellable>()
+    private let eventManager: EventManager
     // MARK: Initializator
-    init(firebaseEventManager: FirebaseEventManager = FirebaseEventManager()) {
-        self.firebaseEventManager = firebaseEventManager
-        cancellable = firebaseEventManager.$events.sink { [weak self] data in
-        guard let strongSelf = self else { return }
+    init(eventManager: EventManager) {
+        self.eventManager = eventManager
+        self.eventManager.eventsPublisher.sink { [weak self] data in
+            guard let strongSelf = self else { return }
             strongSelf.events = data
         }
+        .store(in: &cancellable)
     }
     // MARK: Methods
     func loadEventsData() {
-        firebaseEventManager.getEvents(events: events)
+        eventManager.addEventsListener()
     }
 }

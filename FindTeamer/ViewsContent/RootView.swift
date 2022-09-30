@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RootView: View {
-    @ObservedObject var viewModel: RootViewModel = RootViewModel()
+    @ObservedObject var viewModel: RootViewModel = RootViewModel(authManager: FirebaseAuthService())
     var body: some View {
         if viewModel.isAuthorized {
             NavigationView { MainContentView() }

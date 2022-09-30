@@ -7,16 +7,18 @@
 
 import FirebaseAuth
 
-final class FirebaseAuthManager {
-    // MARK: Publishers
+final class FirebaseAuthService : AuthManager {
+    // MARK: - Properties
     @Published var isAuthorized: Bool = false
-    // MARK: Private fields
+    var isAuthorizedPublisher: Published<Bool>.Publisher { $isAuthorized }
     private var handle: AuthStateDidChangeListenerHandle?
-    // MARK: Initializator
+    
+    // MARK: - Initializators
     init() {
         self.listener()
     }
-    // MARK: Methods
+    
+    // MARK: - Methods
     func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, _) in
             if authResult?.user != nil {
@@ -31,8 +33,7 @@ final class FirebaseAuthManager {
             completionBlock(authResult, error)
         }
     }
-    // MARK: Autologin
-    private func listener() {
+    func listener() {
         handle = Auth.auth().addStateDidChangeListener { [weak self] (_, user) in
             guard let strongSelf = self else { return }
             if user != nil {
@@ -43,7 +44,7 @@ final class FirebaseAuthManager {
         }
         removeListener()
     }
-    private func removeListener() {
+    func removeListener() {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
 }

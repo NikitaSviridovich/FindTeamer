@@ -12,16 +12,16 @@ final class LogInViewModel: ObservableObject {
     // MARK: ObservedObject
     @ObservedObject var modelState: LogInModel
     // MARK: Private fields
-    private let firebaseAuthManager: FirebaseAuthManager
+    private let authManager: AuthManager
     // MARK: Initializator
     init(modelState: LogInModel = LogInModel(),
-         firebaseAuthManager: FirebaseAuthManager = FirebaseAuthManager()) {
+         authManager: AuthManager) {
         self.modelState = modelState
-        self.firebaseAuthManager = firebaseAuthManager
+        self.authManager = authManager
     }
     // MARK: Methods
     func signIn(email: String, password: String, completionBlock : @escaping (_ authResult: AuthDataResult?, _ error: Error?) -> Void) {
-        firebaseAuthManager.signIn(email: email, password: password, completionBlock: { authResult, error in
+        authManager.signIn(email: email, password: password, completionBlock: { authResult, error in
             completionBlock(authResult, error)
         })
     }

@@ -13,11 +13,9 @@ struct LoginView: View {
     @State private var presentAlert = false
     @State private var successLogin = false
     // MARK: ObservedObject
-    @ObservedObject private var logInViewModel: LogInViewModel = LogInViewModel()
+    @ObservedObject private var logInViewModel: LogInViewModel = LogInViewModel(authManager: FirebaseAuthService())
     // MARK: Initializator
-    init(logInViewModel: LogInViewModel = LogInViewModel()) {
-        self.logInViewModel = logInViewModel
-    }
+    init() { }
     // MARK: Body
     var body: some View {
         NavigationView {

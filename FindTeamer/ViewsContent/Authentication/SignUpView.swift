@@ -19,7 +19,7 @@ struct SignUpView: View {
     // MARK: Environment
     @Environment(\.presentationMode) var presentationMode
     // MARK: Initializator
-    init(signUpViewModel: SignUpViewModel = SignUpViewModel()) {
+    init(signUpViewModel: SignUpViewModel = SignUpViewModel(authManager: FirebaseAuthService())) {
         self.signUpViewModel = signUpViewModel
     }
     // MARK: Body

@@ -11,7 +11,7 @@ import Firebase
 @main
 struct FindTeamerApp: App {
     let persistenceController = PersistenceController.shared
-    init(){
+    init() {
         FirebaseApp.configure()
     }
     var body: some Scene {
