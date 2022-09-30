@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 struct CreateEventView: View {
     @Environment(\.presentationMode) private var presentationMode
-    @State var viewModel = EventViewModel()
+    @State var viewModel = EventViewModel(eventManager: FirebaseEventService())
     @State private var selectionEventType = ""
     @State private var selectionEventDate = Date()
     let sports = ["Football", "Basketball", "Tennis", "Chess", "Gym"]

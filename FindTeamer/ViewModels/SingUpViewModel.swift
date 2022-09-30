@@ -14,20 +14,19 @@ final class SignUpViewModel: ObservableObject {
     @Published var isFormValid = false
     @Published var modelState: SignUpModel
     // MARK: Private props
-    private let firebaseAuthManager: FirebaseAuthManager
+    private let authManager: AuthManager
     private var publishers = Set<AnyCancellable>()
     private var cancellable: AnyCancellable!
     // MARK: Initializator
     init(signUpModel: SignUpModel = SignUpModel(),
-         firebaseAuthManager: FirebaseAuthManager = FirebaseAuthManager()) {
+         authManager: AuthManager) {
         self.modelState = signUpModel
         self.validator = SignUpModelValidator(modelState: signUpModel)
-        self.firebaseAuthManager = firebaseAuthManager
+        self.authManager = authManager
         isSignUpFormValidPublisher
             .receive(on: RunLoop.main)
             .assign(to: \.isFormValid, on: self)
             .store(in: &publishers)
-        //cancellable = firebaseAuthManager
     }
     // MARK: Props
     var isSignUpFormValidPublisher: AnyPublisher<Bool, Never> {
@@ -43,6 +42,6 @@ final class SignUpViewModel: ObservableObject {
     }
     // MARK: Methods
     func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
-        firebaseAuthManager.createUser(email: email, password: password, completionBlock: completionBlock)
+        authManager.createUser(email: email, password: password, completionBlock: completionBlock)
     }
 }
