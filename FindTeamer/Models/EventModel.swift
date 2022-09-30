@@ -6,15 +6,28 @@
 //
 
 import Foundation
-import FirebaseFirestoreSwift
 
-class EventModel: Identifiable, Codable {
-    @DocumentID var id: String?
-    var eventType = ""
-    var eventTitle = ""
-    var eventEmail = ""
-    var eventPhoneNumber = ""
-    var eventAddress = ""
-    var eventTime: Date = Date()
-    var eventDescription = ""
+struct EventModel: Identifiable {
+    // MARK: Fields
+    var id: String = UUID().uuidString
+    var eventType: String
+    var eventTitle : String
+    var eventEmail: String
+    var eventPhoneNumber: String
+    var eventAddress: String
+    var eventTime: Date
+    var eventDescription: String
+    // MARK: Initializator
+    init(eventType: String = "", eventTitle: String = "",
+         eventEmail: String = "", eventPhoneNumber: String = "",
+         eventAddress: String = "", eventTime: Date = Date(),
+         eventDescription: String = "") {
+        self.eventType = eventType
+        self.eventTitle = eventTitle
+        self.eventEmail = eventEmail
+        self.eventPhoneNumber = eventPhoneNumber
+        self.eventAddress = eventAddress
+        self.eventTime = eventTime
+        self.eventDescription = eventDescription
+    }
 }

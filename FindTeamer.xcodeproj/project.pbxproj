@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		03856E9BEDD70AB672B5BD76 /* Pods_FindTeamerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB181EC2E3C89C7B5D9132C /* Pods_FindTeamerTests.framework */; };
 		44177A9645EB65DAE6B503E5 /* Pods_FindTeamer_FindTeamerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5645F92DE7D85FC5457E538C /* Pods_FindTeamer_FindTeamerUITests.framework */; };
+		6901378A28E4B2B900DC9DDE /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6901378928E4B2B900DC9DDE /* LogInModel.swift */; };
+		6901379028E4B2ED00DC9DDE /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6901378F28E4B2ED00DC9DDE /* LogInViewModel.swift */; };
+		6901379228E4DC9000DC9DDE /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6901379128E4DC9000DC9DDE /* FirebaseAuthManager.swift */; };
 		690C16DB28B3B5C4003B9CCE /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C16DA28B3B5C4003B9CCE /* AlertModel.swift */; };
 		6914668228ABCCA5003C2222 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914668128ABCCA5003C2222 /* SignUpModel.swift */; };
 		69167CBD28E0BDDA000E1D1F /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69167CBC28E0BDDA000E1D1F /* SingUpViewModel.swift */; };
@@ -22,7 +25,7 @@
 		69327C2528AB8B2E004F7C99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */; };
 		69327C2828AB8BE1004F7C99 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 69327C2728AB8BE1004F7C99 /* FirebaseAuth */; };
 		69327C2A28AB9E57004F7C99 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69327C2928AB9E57004F7C99 /* SignUpView.swift */; };
-		693D8D6128B3A454005FE83C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D8D6028B3A454005FE83C /* FirebaseManager.swift */; };
+		693D8D6128B3A454005FE83C /* FirebaseEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D8D6028B3A454005FE83C /* FirebaseEventManager.swift */; };
 		693FF4A028BB756500CDBBFE /* CreateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF49F28BB756500CDBBFE /* CreateEventView.swift */; };
 		693FF4A328BB780C00CDBBFE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 693FF4A228BB780C00CDBBFE /* FirebaseAuth */; };
 		693FF4A528BB780C00CDBBFE /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 693FF4A428BB780C00CDBBFE /* FirebaseDatabase */; };
@@ -31,9 +34,10 @@
 		693FF4AB28BB800C00CDBBFE /* CommonComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF4AA28BB800C00CDBBFE /* CommonComponents.swift */; };
 		693FF4AD28BB8AE400CDBBFE /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF4AC28BB8AE400CDBBFE /* EventViewModel.swift */; };
 		693FF4B028BB8B1B00CDBBFE /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF4AF28BB8B1B00CDBBFE /* EventModel.swift */; };
-		693FF4E628BCDA2F00CDBBFE /* Pods_FindTeamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FF4E128BCDA2700CDBBFE /* Pods_FindTeamer.framework */; };
+		693FF4E628BCDA2F00CDBBFE /* Pods-FindTeamer in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FF4E128BCDA2700CDBBFE /* Pods-FindTeamer */; };
 		694C1CEA28CF65A9002D95EB /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 694C1CE928CF65A9002D95EB /* FirebaseFirestoreSwift-Beta */; };
 		69716CAC28B5143700520ECF /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69716CAB28B5143700520ECF /* MainContentView.swift */; };
+		697CF59028E475D500D5E5F9 /* SignUpModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697CF58F28E475D500D5E5F9 /* SignUpModelValidator.swift */; };
 		69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */; };
 		69C92F5A28A3D86F00F2E878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C92F5928A3D86F00F2E878 /* Assets.xcassets */; };
 		69C92F5D28A3D86F00F2E878 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C92F5C28A3D86F00F2E878 /* Preview Assets.xcassets */; };
@@ -42,7 +46,8 @@
 		69C92F6C28A3D86F00F2E878 /* FindTeamerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F6B28A3D86F00F2E878 /* FindTeamerTests.swift */; };
 		69C92F7628A3D86F00F2E878 /* FindTeamerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F7528A3D86F00F2E878 /* FindTeamerUITests.swift */; };
 		69C92F7828A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F7728A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift */; };
-		D072E0BB28AE53D000FE0D41 /* ErrorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072E0BA28AE53D000FE0D41 /* ErrorConfigurator.swift */; };
+		D072E0BB28AE53D000FE0D41 /* ErrorSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072E0BA28AE53D000FE0D41 /* ErrorSelection.swift */; };
+		DF155732D05A4342DB5C5F39 /* Pods_FindTeamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7CA5C17C0D7DC039B8338E /* Pods_FindTeamer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +93,9 @@
 		4DD438B02DADA8200452B4F8 /* Pods-FindTeamerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamerTests.debug.xcconfig"; path = "Target Support Files/Pods-FindTeamerTests/Pods-FindTeamerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5645F92DE7D85FC5457E538C /* Pods_FindTeamer_FindTeamerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamer_FindTeamerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65936D161F62317BFBB284E6 /* Pods-FindTeamer-FindTeamerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamer-FindTeamerUITests.debug.xcconfig"; path = "Target Support Files/Pods-FindTeamer-FindTeamerUITests/Pods-FindTeamer-FindTeamerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6901378928E4B2B900DC9DDE /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
+		6901378F28E4B2ED00DC9DDE /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		6901379128E4DC9000DC9DDE /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		690C16DA28B3B5C4003B9CCE /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		6914668128ABCCA5003C2222 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		69167CBC28E0BDDA000E1D1F /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
@@ -100,7 +108,7 @@
 		69327C2228AB7E8C004F7C99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		69327C2428AB8B2E004F7C99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		69327C2928AB9E57004F7C99 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		693D8D6028B3A454005FE83C /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		693D8D6028B3A454005FE83C /* FirebaseEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEventManager.swift; sourceTree = "<group>"; };
 		693FF49F28BB756500CDBBFE /* CreateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventView.swift; sourceTree = "<group>"; };
 		693FF4AA28BB800C00CDBBFE /* CommonComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonComponents.swift; sourceTree = "<group>"; };
 		693FF4AC28BB8AE400CDBBFE /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
@@ -136,6 +144,7 @@
 		693FF4DA28BCDA2700CDBBFE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		693FF4DB28BCDA2700CDBBFE /* swiftlint */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = swiftlint; sourceTree = "<group>"; };
 		69716CAB28B5143700520ECF /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
+		697CF58F28E475D500D5E5F9 /* SignUpModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModelValidator.swift; sourceTree = "<group>"; };
 		69C92F5228A3D86D00F2E878 /* FindTeamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTeamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamerApp.swift; sourceTree = "<group>"; };
 		69C92F5928A3D86F00F2E878 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,7 +159,7 @@
 		7D7CA5C17C0D7DC039B8338E /* Pods_FindTeamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8013907F3E525CC2180781A8 /* Pods-FindTeamer-FindTeamerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamer-FindTeamerUITests.release.xcconfig"; path = "Target Support Files/Pods-FindTeamer-FindTeamerUITests/Pods-FindTeamer-FindTeamerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CBB181EC2E3C89C7B5D9132C /* Pods_FindTeamerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D072E0BA28AE53D000FE0D41 /* ErrorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorConfigurator.swift; sourceTree = "<group>"; };
+		D072E0BA28AE53D000FE0D41 /* ErrorSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSelection.swift; sourceTree = "<group>"; };
 		F69636143EDAC2022C2707DA /* Pods-FindTeamer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamer.debug.xcconfig"; path = "Target Support Files/Pods-FindTeamer/Pods-FindTeamer.debug.xcconfig"; sourceTree = "<group>"; };
 		FC0B5DDE579EBED5DCE3DF87 /* Pods-FindTeamerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamerTests.release.xcconfig"; path = "Target Support Files/Pods-FindTeamerTests/Pods-FindTeamerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,13 +169,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693FF4E628BCDA2F00CDBBFE /* Pods_FindTeamer.framework in Frameworks */,
+				693FF4E628BCDA2F00CDBBFE /* Pods-FindTeamer in Frameworks */,
 				693FF4A528BB780C00CDBBFE /* FirebaseDatabase in Frameworks */,
 				694C1CEA28CF65A9002D95EB /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				693FF4A728BB780C00CDBBFE /* FirebaseFirestore in Frameworks */,
 				69327C2828AB8BE1004F7C99 /* FirebaseAuth in Frameworks */,
 				693FF4A928BB780C00CDBBFE /* FirebaseStorage in Frameworks */,
 				693FF4A328BB780C00CDBBFE /* FirebaseAuth in Frameworks */,
+				DF155732D05A4342DB5C5F39 /* Pods_FindTeamer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +216,7 @@
 				690C16DA28B3B5C4003B9CCE /* AlertModel.swift */,
 				693FF4AF28BB8B1B00CDBBFE /* EventModel.swift */,
 				6914668128ABCCA5003C2222 /* SignUpModel.swift */,
+				6901378928E4B2B900DC9DDE /* LogInModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,20 +247,20 @@
 			path = EventDetails;
 			sourceTree = "<group>";
 		};
-		691A011A28CB44CC00E09018 /* Services */ = {
+		691A011A28CB44CC00E09018 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				691A011B28CB44D700E09018 /* EmailService */,
+				691A011B28CB44D700E09018 /* EmailHelper */,
 			);
-			path = Services;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
-		691A011B28CB44D700E09018 /* EmailService */ = {
+		691A011B28CB44D700E09018 /* EmailHelper */ = {
 			isa = PBXGroup;
 			children = (
 				691A011C28CB44E900E09018 /* EmailHelper.swift */,
 			);
-			path = EmailService;
+			path = EmailHelper;
 			sourceTree = "<group>";
 		};
 		69327C2128AB7E5E004F7C99 /* ViewsContent */ = {
@@ -268,7 +279,8 @@
 		693D8D5F28B3A444005FE83C /* FirebaseManagement */ = {
 			isa = PBXGroup;
 			children = (
-				693D8D6028B3A454005FE83C /* FirebaseManager.swift */,
+				6901379128E4DC9000DC9DDE /* FirebaseAuthManager.swift */,
+				693D8D6028B3A454005FE83C /* FirebaseEventManager.swift */,
 			);
 			path = FirebaseManagement;
 			sourceTree = "<group>";
@@ -280,6 +292,7 @@
 				691A011028C0B12A00E09018 /* EventsViewModel.swift */,
 				691A011E28CF1B9700E09018 /* RootViewModel.swift */,
 				69167CBC28E0BDDA000E1D1F /* SingUpViewModel.swift */,
+				6901378F28E4B2ED00DC9DDE /* LogInViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -300,9 +313,9 @@
 		693FF4B528BCDA2600CDBBFE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				693FF4E128BCDA2700CDBBFE /* Pods_FindTeamer.framework */,
-				693FF4E328BCDA2700CDBBFE /* Pods_FindTeamer_FindTeamerUITests.framework */,
-				693FF4E528BCDA2700CDBBFE /* Pods_FindTeamerTests.framework */,
+				693FF4E128BCDA2700CDBBFE /* Pods-FindTeamer */,
+				693FF4E328BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests */,
+				693FF4E528BCDA2700CDBBFE /* Pods-FindTeamerTests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -395,6 +408,14 @@
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
+		697CF58E28E475BD00D5E5F9 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				697CF58F28E475D500D5E5F9 /* SignUpModelValidator.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
 		69C92F4928A3D86D00F2E878 = {
 			isa = PBXGroup;
 			children = (
@@ -422,11 +443,12 @@
 			children = (
 				D072E0B928AE53B100FE0D41 /* Errors */,
 				693D8D5F28B3A444005FE83C /* FirebaseManagement */,
+				691A011A28CB44CC00E09018 /* Helpers */,
 				6914668028ABCC4D003C2222 /* Models */,
 				69C92F5B28A3D86F00F2E878 /* Preview Content */,
 				693FF4AE28BB8B0800CDBBFE /* ViewModels */,
 				69327C2128AB7E5E004F7C99 /* ViewsContent */,
-				691A011A28CB44CC00E09018 /* Services */,
+				697CF58E28E475BD00D5E5F9 /* Validators */,
 				69C92F5928A3D86F00F2E878 /* Assets.xcassets */,
 				69C92F6028A3D86F00F2E878 /* FindTeamer.xcdatamodeld */,
 				69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */,
@@ -464,7 +486,7 @@
 		D072E0B928AE53B100FE0D41 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				D072E0BA28AE53D000FE0D41 /* ErrorConfigurator.swift */,
+				D072E0BA28AE53D000FE0D41 /* ErrorSelection.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -493,7 +515,7 @@
 				69C92F4E28A3D86D00F2E878 /* Sources */,
 				69C92F4F28A3D86D00F2E878 /* Frameworks */,
 				69C92F5028A3D86D00F2E878 /* Resources */,
-				693FF4B228BCD8D100CDBBFE /* ShellScript */,
+				697CF58D28E45F8500D5E5F9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -605,23 +627,26 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		693FF4E128BCDA2700CDBBFE /* Pods_FindTeamer.framework */ = {
+		693FF4E128BCDA2700CDBBFE /* Pods-FindTeamer */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
+			name = "Pods-FindTeamer";
 			path = Pods_FindTeamer.framework;
 			remoteRef = 693FF4E028BCDA2700CDBBFE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		693FF4E328BCDA2700CDBBFE /* Pods_FindTeamer_FindTeamerUITests.framework */ = {
+		693FF4E328BCDA2700CDBBFE /* Pods-FindTeamer-FindTeamerUITests */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
+			name = "Pods-FindTeamer-FindTeamerUITests";
 			path = Pods_FindTeamer_FindTeamerUITests.framework;
 			remoteRef = 693FF4E228BCDA2700CDBBFE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		693FF4E528BCDA2700CDBBFE /* Pods_FindTeamerTests.framework */ = {
+		693FF4E528BCDA2700CDBBFE /* Pods-FindTeamerTests */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
+			name = "Pods-FindTeamerTests";
 			path = Pods_FindTeamerTests.framework;
 			remoteRef = 693FF4E428BCDA2700CDBBFE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -700,7 +725,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		693FF4B228BCD8D100CDBBFE /* ShellScript */ = {
+		697CF58D28E45F8500D5E5F9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -715,7 +740,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		C9FEA12A3F0E028B0DCF9341 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -750,23 +775,27 @@
 				691A011128C0B12A00E09018 /* EventsViewModel.swift in Sources */,
 				693FF4AB28BB800C00CDBBFE /* CommonComponents.swift in Sources */,
 				69716CAC28B5143700520ECF /* MainContentView.swift in Sources */,
+				6901379028E4B2ED00DC9DDE /* LogInViewModel.swift in Sources */,
 				691A011828C2323900E09018 /* EventDetailsView.swift in Sources */,
 				6914668228ABCCA5003C2222 /* SignUpModel.swift in Sources */,
 				691A011D28CB44E900E09018 /* EmailHelper.swift in Sources */,
 				693FF4AD28BB8AE400CDBBFE /* EventViewModel.swift in Sources */,
-				693D8D6128B3A454005FE83C /* FirebaseManager.swift in Sources */,
+				693D8D6128B3A454005FE83C /* FirebaseEventManager.swift in Sources */,
 				691A011F28CF1B9700E09018 /* RootViewModel.swift in Sources */,
 				691A012128CF23A200E09018 /* RootView.swift in Sources */,
 				69C92F6228A3D86F00F2E878 /* FindTeamer.xcdatamodeld in Sources */,
 				69167CBD28E0BDDA000E1D1F /* SingUpViewModel.swift in Sources */,
 				69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */,
+				697CF59028E475D500D5E5F9 /* SignUpModelValidator.swift in Sources */,
 				69327C2A28AB9E57004F7C99 /* SignUpView.swift in Sources */,
+				6901378A28E4B2B900DC9DDE /* LogInModel.swift in Sources */,
 				69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */,
 				693FF4A028BB756500CDBBFE /* CreateEventView.swift in Sources */,
 				690C16DB28B3B5C4003B9CCE /* AlertModel.swift in Sources */,
 				693FF4B028BB8B1B00CDBBFE /* EventModel.swift in Sources */,
-				D072E0BB28AE53D000FE0D41 /* ErrorConfigurator.swift in Sources */,
+				D072E0BB28AE53D000FE0D41 /* ErrorSelection.swift in Sources */,
 				691A011428C2248F00E09018 /* MainComponents.swift in Sources */,
+				6901379228E4DC9000DC9DDE /* FirebaseAuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

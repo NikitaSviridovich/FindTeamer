@@ -1,5 +1,5 @@
 //
-//  ErrorConfigurator.swift
+//  ErrorSelection.swift
 //  FindTeamer
 //
 //  Created by Mikita Svirydovich on 18/08/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ErrorNaming: String {
+public enum ErrorTitle: String {
     case nameError = "nameError"
     case emailError = "emailError"
     case shortPassword = "shortPassword"
@@ -15,14 +15,14 @@ public enum ErrorNaming: String {
     case repeatedPassword = "repeatedPassword"
 }
 
-public enum ErrorConfigurator: Error {
+public enum ErrorCases: Error {
     case nameError
     case emailError
     case shortPassword
     case longPassword
     case repeatedPassword
 }
-extension ErrorConfigurator: LocalizedError {
+extension ErrorCases: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .nameError:

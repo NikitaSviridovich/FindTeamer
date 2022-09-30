@@ -7,10 +7,8 @@
 
 import SwiftUI
 
-
-struct eventCellGenerator : View  {
+struct EventCellGenerator : View  {
     @State var event: EventModel
-    
     var body: some View {
         NavigationLink(destination: EventDetailsView(event: event)) {
             Image(event.eventType.lowercased())

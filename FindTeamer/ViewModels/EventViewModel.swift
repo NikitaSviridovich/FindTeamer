@@ -5,27 +5,23 @@
 //  Created by Nikita Sviridovich on 28.08.22.
 //
 
-import Foundation
 import Combine
-import FirebaseFirestore
 
-class EventViewModel: ObservableObject {
+final class EventViewModel {
+    // MARK: Publishers
     @Published var event: EventModel
     @Published var modified = false
-    
-    private var db = Firestore.firestore()
+    // MARK: Private fields
+    private let firebaseEventManager: FirebaseEventManager
     private var cancellables = Set<AnyCancellable>()
-    
-    
-    let firebaseManager: FirebaseManager
-    
-    init(event: EventModel = EventModel()) {
+    // MARK: Initializator
+    init(event: EventModel = EventModel(), firebaseEventManager: FirebaseEventManager = FirebaseEventManager()) {
         self.event = event
-        firebaseManager = FirebaseManager()
+        self.firebaseEventManager = FirebaseEventManager()
     }
-    
+    // MARK: Methods
     private func addEvent(_ event: EventModel) {
-        firebaseManager.addEvent(event)
+        firebaseEventManager.addEvent(event)
     }
     func handleDoneTapped() {
         self.addEvent(event)

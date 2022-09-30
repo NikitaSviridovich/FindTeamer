@@ -5,29 +5,21 @@
 //  Created by Nikita Sviridovich on 12.09.22.
 //
 
-import SwiftUI
-import Combine
 import Firebase
+import Combine
 
-class RootViewModel: ObservableObject {
+final class RootViewModel: ObservableObject {
+    // MARK: Publishers
     @Published var isAuthorized: Bool = false
-    var handle: AuthStateDidChangeListenerHandle?
-    public init() {
-        self.linten()
-    }
-    func linten() {
-        handle = Auth.auth().addStateDidChangeListener {(auth, user) in
-            if user != nil {
-                self.isAuthorized = true
-            } else {
-                self.isAuthorized = false
-            }
+    // MARK: Private fields
+    private var cancellable: AnyCancellable!
+    private var firebaseAuthManager: FirebaseAuthManager
+    // MARK: Initializator
+    public init(firebaseAuthManager: FirebaseAuthManager = FirebaseAuthManager()) {
+        self.firebaseAuthManager = firebaseAuthManager
+        cancellable = firebaseAuthManager.$isAuthorized.sink { [weak self] isAuthorized in
+        guard let strongSelf = self else { return }
+            strongSelf.isAuthorized = isAuthorized
         }
-        removeListener()
     }
-    func removeListener() {
-        Auth.auth().removeStateDidChangeListener(handle!)
-    }
-    
 }
-
