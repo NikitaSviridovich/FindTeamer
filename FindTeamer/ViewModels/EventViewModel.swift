@@ -8,18 +8,21 @@
 import Combine
 
 final class EventViewModel {
-    // MARK: Publishers
+    // MARK: - Public properties
     @Published var event: EventModel
     @Published var modified = false
-    // MARK: Private fields
+    
+    // MARK: - Private properties
     private let eventManager: EventManager
     private var cancellables = Set<AnyCancellable>()
-    // MARK: Initializator
+    
+    // MARK: - Initializators
     init(event: EventModel = EventModel(), eventManager: EventManager) {
         self.event = event
         self.eventManager = eventManager
     }
-    // MARK: Methods
+    
+    // MARK: - Methods
     private func addEvent(_ event: EventModel) {
         eventManager.addEvent(event: event)
     }

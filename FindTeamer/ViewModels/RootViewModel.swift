@@ -9,17 +9,18 @@ import Firebase
 import Combine
 
 final class RootViewModel: ObservableObject {
-    // MARK: Publishers
-    @Published var isAuthorized: Bool = false
-    // MARK: Private fields
-    private var cancellable: AnyCancellable!
-    private var authManager: AuthManager
-    // MARK: Initializator
+    // MARK: - Public properties
+    @Published private(set) var isAuthorized: Bool = false
+    
+    // MARK: - Private properties
+    private var cancellable = Set<AnyCancellable>()
+    private let authManager: AuthManager
+    
+    // MARK: - Initializators
     public init(authManager: AuthManager) {
         self.authManager = authManager
-        cancellable = self.authManager.isAuthorizedPublisher.sink { [weak self] isAuthorized in
-        guard let strongSelf = self else { return }
-            strongSelf.isAuthorized = isAuthorized
-        }
+        authManager.observeAuthenticationChanges()
+            .map { $0 != nil }
+            .assign(to: &$isAuthorized)
     }
 }

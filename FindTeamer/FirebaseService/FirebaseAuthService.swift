@@ -6,17 +6,18 @@
 //
 
 import FirebaseAuth
+import Combine
 
 final class FirebaseAuthService : AuthManager {
-    // MARK: - Properties
+    // MARK: - Public properties
     @Published var isAuthorized: Bool = false
     var isAuthorizedPublisher: Published<Bool>.Publisher { $isAuthorized }
-    private var handle: AuthStateDidChangeListenerHandle?
+    
+    // MARK: - Private properties
+    private var handler: AuthStateDidChangeListenerHandle?
     
     // MARK: - Initializators
-    init() {
-        self.listener()
-    }
+    init() { }
     
     // MARK: - Methods
     func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
@@ -33,18 +34,7 @@ final class FirebaseAuthService : AuthManager {
             completionBlock(authResult, error)
         }
     }
-    func listener() {
-        handle = Auth.auth().addStateDidChangeListener { [weak self] (_, user) in
-            guard let strongSelf = self else { return }
-            if user != nil {
-                strongSelf.isAuthorized = true
-            } else {
-                strongSelf.isAuthorized = false
-            }
-        }
-        removeListener()
-    }
-    func removeListener() {
-        Auth.auth().removeStateDidChangeListener(handle!)
+    func observeAuthenticationChanges() -> AnyPublisher<User?, Never> {
+        Publishers.AuthenticationPublisher().eraseToAnyPublisher()
     }
 }
