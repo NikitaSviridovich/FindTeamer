@@ -6,12 +6,12 @@
 //
 
 import FirebaseFirestore
+import Combine
 
 final class FirebaseEventService: EventManager {
     
     // MARK: - Public properties
     @Published var events = [EventModel]()
-    var eventsPublisher: Published<[EventModel]>.Publisher { $events }
     
     // MARK: - Private properties
     private var firebaseDB = Firestore.firestore()
@@ -33,8 +33,8 @@ final class FirebaseEventService: EventManager {
         ]
         _ = firebaseDB.collection("events").addDocument(data: eventData)
     }
-    func addEventsListener() {
-        guard listenerRegistration == nil && events.isEmpty else { return }
+    func getEvents() -> AnyPublisher<[EventModel], Never> {
+        let subject = PassthroughSubject<[EventModel], Never>()
         listenerRegistration = firebaseDB.collection("events")
             .addSnapshotListener { [weak self] (querySnapshot, _) in
                 guard let documents = querySnapshot?.documents, let strongSelf = self else { return }
@@ -48,6 +48,8 @@ final class FirebaseEventService: EventManager {
                                       eventTime: data["eventTime"] as? Date ?? Date(),
                                       eventDescription: data["eventDesctiption"] as? String ?? "")
                 }
+                subject.send(strongSelf.events)
             }
+        return subject.eraseToAnyPublisher()
     }
 }

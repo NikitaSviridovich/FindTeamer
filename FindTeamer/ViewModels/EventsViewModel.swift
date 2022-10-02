@@ -8,22 +8,19 @@
 import Combine
 
 final class EventsViewModel: ObservableObject {
-    // MARK: Publishers
+    // MARK: - Public properties
     @Published var events = [EventModel]()
-    // MARK: Private fields
+    
+    // MARK: - Private properties
     private var cancellable = Set<AnyCancellable>()
     private let eventManager: EventManager
-    // MARK: Initializator
+    
+    // MARK: - Initializators
     init(eventManager: EventManager) {
         self.eventManager = eventManager
-        self.eventManager.eventsPublisher.sink { [weak self] data in
+        self.eventManager.getEvents().sink { [weak self] data in
             guard let strongSelf = self else { return }
             strongSelf.events = data
-        }
-        .store(in: &cancellable)
-    }
-    // MARK: Methods
-    func loadEventsData() {
-        eventManager.addEventsListener()
+        }.store(in: &cancellable)
     }
 }

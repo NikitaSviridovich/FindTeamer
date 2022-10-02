@@ -15,8 +15,6 @@ struct MainContentView: View {
         ZStack {
             List(viewModel.events) { event in
                 EventCellGenerator(event: event)
-            }.onAppear {
-                viewModel.loadEventsData()
             }
             .navigationBarBackButtonHidden(true)
             .sheet(isPresented: self.$presentAddEventSheet) {
