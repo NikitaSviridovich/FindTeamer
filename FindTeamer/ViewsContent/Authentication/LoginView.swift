@@ -8,20 +8,33 @@
 import SwiftUI
 
 struct LoginView: View {
+    // MARK: - Private properties
     private let alertModel: AlertModel = AlertModel()
-    // MARK: State
+    private let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
+    
+    // MARK: - Public properties
     @State private var presentAlert = false
     @State private var successLogin = false
-    // MARK: ObservedObject
     @ObservedObject private var logInViewModel: LogInViewModel = LogInViewModel(authManager: FirebaseAuthService())
-    // MARK: Initializator
+    
+    // MARK: - Initializators
     init() { }
-    // MARK: Body
+    
+    // MARK: - Body
     var body: some View {
         NavigationView {
             VStack {
-                WelcomeText()
-                WelcomeIcon()
+                Text("FindTeamer")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                    .padding(.bottom, 20)
+                Image("WelcomeIcon")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 150, height: 150)
+                    .clipped()
+                    .cornerRadius(10)
+                    .padding(.bottom, 35)
                 TextField("Email", text: $logInViewModel.modelState.email)
                     .padding()
                     .background(lightGreyColor)
@@ -34,7 +47,13 @@ struct LoginView: View {
                     .padding(.horizontal, 20)
                 NavigationLink(destination: MainContentView(), isActive: self.$successLogin) {
                     Button(action: logInClicked) {
-                        LoginButtonContent()
+                        Text("LOG IN")
+                            .font(.callout)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 330, height: 40)
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(45.0)
                     }
                     .alert(isPresented: $presentAlert) {
                         return Alert(
@@ -61,10 +80,10 @@ struct LoginView: View {
             }.navigationBarHidden(true)
         }
     }
-    // MARK: Methods
+    
+    // MARK: - Methods
     func logInClicked() {
-        logInViewModel.signIn(email: logInViewModel.modelState.email,
-                              password: logInViewModel.modelState.password, completionBlock: { (authResult, error) in
+        logInViewModel.signIn(completionBlock: { (authResult, error) in
             if let error = error, authResult == nil {
                 presentAlert = true
                 alertModel.title = "Sign In Failed"

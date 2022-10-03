@@ -42,7 +42,13 @@ final class SignUpViewModel: ObservableObject {
     }
 
     // MARK: - Methods
-    func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
-        authManager.createUser(email: email, password: password, completionBlock: completionBlock)
+    func createUser(completionBlock: @escaping (_ success: Bool) -> Void) {
+        if self.isFormValid && self.validator.errorMessages.isEmpty {
+            authManager.createUser(email: modelState.userEmail, password: modelState.userPassword, completionBlock: completionBlock)
+        } else {
+            for num in self.validator.errorMessages {
+                //self.errors += " " + num.value
+            }
+        }
     }
 }
