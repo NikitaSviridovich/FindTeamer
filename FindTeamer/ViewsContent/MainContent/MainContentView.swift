@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct MainContentView: View {
+    // MARK: - Public properties
     @State var presentAddEventSheet = false
     @ObservedObject var viewModel = EventsViewModel(eventManager: FirebaseEventService())
+    
+    // MARK: - Initializators
     init() { }
+    
+    // MARK: - Body
     var body: some View {
         ZStack {
             List(viewModel.events) { event in
-                EventCellGenerator(event: event)
+                EventCell(event: event)
             }
             .navigationBarBackButtonHidden(true)
             .sheet(isPresented: self.$presentAddEventSheet) {
@@ -41,11 +46,5 @@ struct MainContentView: View {
                 }
             }.navigationBarTitleDisplayMode(.inline)
         }
-    }
-}
-
-struct MainContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainContentView()
     }
 }

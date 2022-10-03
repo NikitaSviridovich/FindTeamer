@@ -23,8 +23,8 @@ final class LogInViewModel: ObservableObject {
     }
     
     // MARK: - Methods
-    func signIn(email: String, password: String, completionBlock : @escaping (_ authResult: AuthDataResult?, _ error: Error?) -> Void) {
-        authManager.signIn(email: email, password: password, completionBlock: { authResult, error in
+    func signIn(completionBlock : @escaping (_ authResult: AuthDataResult?, _ error: Error?) -> Void) {
+        authManager.signIn(email: modelState.email, password: modelState.password, completionBlock: { authResult, error in
             completionBlock(authResult, error)
         })
     }

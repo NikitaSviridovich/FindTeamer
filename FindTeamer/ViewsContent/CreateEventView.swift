@@ -6,20 +6,17 @@
 //
 
 import SwiftUI
-import FirebaseCore
-import FirebaseAuth
-import FirebaseDatabase
 
 struct CreateEventView: View {
+    // MARK: - Public properties
     @Environment(\.presentationMode) private var presentationMode
     @State var viewModel = EventViewModel(eventManager: FirebaseEventService())
-    @State private var selectionEventType = ""
-    @State private var selectionEventDate = Date()
     let sports = ["Football", "Basketball", "Tennis", "Chess", "Gym"]
-    var ref: DatabaseReference!
-    init() {
-        ref = Database.database().reference()
-    }
+    
+    // MARK: - Initializators
+    init() { }
+    
+    // MARK: - Body
     var body: some View {
         NavigationView {
             Form {
@@ -27,7 +24,7 @@ struct CreateEventView: View {
                     TextField("Title", text: $viewModel.event.eventTitle)
                 }
                 Section(header: Text("Kind of sport")) {
-                    Picker("Select kind of sport", selection: $selectionEventType) {
+                    Picker("Select kind of sport", selection: $viewModel.event.eventType) {
                         ForEach(sports, id: \.self) {
                             Text($0)
                         }
@@ -43,7 +40,7 @@ struct CreateEventView: View {
                     TextField("Phone Number", text: $viewModel.event.eventPhoneNumber)
                 }
                 Section(header: Text("Date and Time")) {
-                    DatePicker("Pick the time", selection: $selectionEventDate)
+                    DatePicker("Pick the time", selection: $viewModel.event.eventTime)
                         .datePickerStyle(.graphical)
                         .frame(maxHeight: 400)
                 }
@@ -63,22 +60,16 @@ struct CreateEventView: View {
                 .disabled(false))
         }
     }
-    func handleCancelTapped() {
+    
+    // MARK: - Methods
+    private func handleCancelTapped() {
         dismiss()
     }
-    func handleDoneTapped() {
-        self.viewModel.event.eventTime = selectionEventDate
-        self.viewModel.event.eventType = selectionEventType
+    private func handleDoneTapped() {
         self.viewModel.handleDoneTapped()
         dismiss()
     }
-    func dismiss() {
+    private func dismiss() {
         self.presentationMode.wrappedValue.dismiss()
-    }
-}
-
-struct CreateEventView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateEventView()
     }
 }

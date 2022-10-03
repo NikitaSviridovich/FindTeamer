@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventCellGenerator : View  {
+struct EventCell : View  {
     @State var event: EventModel
     var body: some View {
         NavigationLink(destination: EventDetailsView(event: event)) {

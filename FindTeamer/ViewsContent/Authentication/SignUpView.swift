@@ -9,22 +9,35 @@ import SwiftUI
 import Combine
 
 struct SignUpView: View {
+    // MARK: - Public properties
     let alertModel: AlertModel = AlertModel()
-    // MARK: State variables
     @State var errors: String = ""
     @State private var presentAlert = false
     @State private var activeAlert: ActiveAlert = .first
-    // MARK: ObservedObject
     @ObservedObject var signUpViewModel: SignUpViewModel
-    // MARK: Environment
     @Environment(\.presentationMode) var presentationMode
-    // MARK: Initializator
+    var buttonOpacity: Double {
+        return signUpViewModel.isFormValid &&
+        signUpViewModel.validator.errorMessages.isEmpty ? 1 : 0.5
+    }
+    
+    // MARK: - Private properties
+    private let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
+    
+    // MARK: - Initializators
     init(signUpViewModel: SignUpViewModel = SignUpViewModel(authManager: FirebaseAuthService())) {
         self.signUpViewModel = signUpViewModel
     }
-    // MARK: Body
+    
+    // MARK: - Body
     var body: some View {
-        WelcomeIcon()
+        Image("WelcomeIcon")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 150, height: 150)
+            .clipped()
+            .cornerRadius(10)
+            .padding(.bottom, 35)
         TextField("Name", text: $signUpViewModel.modelState.userName)
             .padding()
             .background(lightGreyColor)
@@ -50,7 +63,13 @@ struct SignUpView: View {
             .foregroundColor(.red)
             .padding()
         Button(action: registerClicked) {
-            ButtonContent(text: "Let's Go!")
+            Text("Let's Go!")
+                .font(.callout)
+                .foregroundColor(.white)
+                .padding()
+                .frame(width: 330, height: 40)
+                .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                .cornerRadius(45.0)
         }.opacity(buttonOpacity)
             .alert(isPresented: $presentAlert) {
                 switch activeAlert {
@@ -69,30 +88,22 @@ struct SignUpView: View {
                 }
             }
     }
-    var buttonOpacity: Double {
-        return signUpViewModel.isFormValid &&
-        signUpViewModel.validator.errorMessages.isEmpty ? 1 : 0.5
-    }
+    
+    // MARK: - Methods
     func registerClicked() {
         self.errors = ""
-        if self.signUpViewModel.isFormValid && self.signUpViewModel.validator.errorMessages.isEmpty {
-            signUpViewModel.createUser(email: self.signUpViewModel.modelState.userEmail, password: self.signUpViewModel.modelState.userPassword, completionBlock: { (success) in
-                presentAlert = true
-                if (success) {
-                    activeAlert = .first
-                    alertModel.title = "Success"
-                    alertModel.message = "Registration complete!"
-                } else {
-                    activeAlert = .second
-                    alertModel.title = "Error"
-                    alertModel.message = "Registration failed. Please try again!"
-                    alertModel.buttonNaming = "OK"
-                }
-            })
-        } else {
-            for num in self.signUpViewModel.validator.errorMessages {
-                self.errors += " " + num.value
+        signUpViewModel.createUser(completionBlock: { (success) in
+            presentAlert = true
+            if (success) {
+                activeAlert = .first
+                alertModel.title = "Success"
+                alertModel.message = "Registration complete!"
+            } else {
+                activeAlert = .second
+                alertModel.title = "Error"
+                alertModel.message = "Registration failed. Please try again!"
+                alertModel.buttonNaming = "OK"
             }
-        }
+        })
     }
 }

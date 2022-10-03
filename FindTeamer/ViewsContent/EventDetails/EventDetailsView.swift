@@ -9,10 +9,19 @@ import SwiftUI
 import MessageUI
 
 struct EventDetailsView: View {
-    var event: EventModel = EventModel()
-    // MARK: State fields
+    // MARK: - Public properties
+    var event: EventModel
     @State private var sendEmail = false
-    // MARK: Body
+    
+    // MARK: - Private properties
+    private let urlForMap: String = "http://maps.apple.com/?address="
+    
+    // MARK: - Initializators
+    init(event: EventModel = EventModel()) {
+        self.event = event
+    }
+    
+    // MARK: - Body
     var body: some View {
         VStack {
             HStack {
@@ -35,7 +44,7 @@ struct EventDetailsView: View {
                         .foregroundColor(.gray)
                     Spacer()
                     Button(action: {
-                        openMap(address: event.eventAddress)
+                        openURLLink(url: urlForMap + event.eventAddress)
                     }) { Text("See on Map").font(.system(size: 12, weight: .light, design: .default)) }
                 }
                 Divider().background(Color.white).padding(.trailing, 128)
@@ -45,7 +54,7 @@ struct EventDetailsView: View {
                         .foregroundColor(.gray)
                     Spacer()
                     Button(action: {
-                        makeACall(url: "tel:" + event.eventPhoneNumber)
+                        openURLLink(url: "tel:" + event.eventPhoneNumber)
                     }) {
                         Text("Make a Call").font(.system(size: 12, weight: .light, design: .default))
                     }
@@ -56,10 +65,8 @@ struct EventDetailsView: View {
                         .font(.system(size: 15, weight: .black, design: .rounded))
                         .foregroundColor(.gray)
                     Spacer()
-                    Button(action: {
-                        makeACall(url: "tel:" + event.eventPhoneNumber)
-                    }) {
-                        Text("Sent an Email").font(.system(size: 12, weight: .light, design: .default))
+                    Text("Copy the Email").font(.system(size: 12, weight: .light, design: .default)).onTapGesture(count: 1) {
+                        UIPasteboard.general.string = event.eventEmail
                     }
                 }
                 Divider().background(Color.white).padding(.trailing, 128)
@@ -69,7 +76,7 @@ struct EventDetailsView: View {
                         .foregroundColor(.gray)
                     Spacer()
                     Button(action: {
-                        makeACall(url: "tel:" + event.eventPhoneNumber)
+                        openURLLink(url: "tel:" + event.eventPhoneNumber)
                     }) {
                         Text("Add Notification").font(.system(size: 12, weight: .light, design: .default))
                     }
@@ -82,14 +89,9 @@ struct EventDetailsView: View {
             }
         }.padding()
     }
-    // MARK: Methods
-    private func sendEmailAction() {
-        sendEmail.toggle()
-    }
-    private func openMap(address: String) {
-        UIApplication.shared.open(NSURL(string: "http://maps.apple.com/?address=\(address)")! as URL)
-    }
-    private func makeACall(url: String) {
+    
+    // MARK: - Methods
+    private func openURLLink(url: String) {
         UIApplication.shared.open(NSURL(string: url)! as URL)
     }
 }
