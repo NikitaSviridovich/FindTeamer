@@ -9,5 +9,5 @@ import Combine
 
 protocol EventManager {
     func addEvent(event: EventModel)
-    func getEvents() -> AnyPublisher<[EventModel], Never>
+    func observeEvents() -> AnyPublisher<[EventModel], Never>
 }
