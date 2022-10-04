@@ -8,7 +8,6 @@
 import Foundation
 
 class LogInModel {
-    // MARK: Publishers
     @Published var email: String = ""
     @Published var password: String = ""
 }

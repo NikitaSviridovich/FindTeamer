@@ -9,14 +9,12 @@ import SwiftUI
 
 struct LoginView: View {
     // MARK: - Private properties
-    private let alertModel: AlertModel = AlertModel()
-    private let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
-    
-    // MARK: - Public properties
     @State private var presentAlert = false
     @State private var successLogin = false
     @ObservedObject private var logInViewModel: LogInViewModel = LogInViewModel(authManager: FirebaseAuthService())
-    
+    private let alertModel: AlertModel = AlertModel()
+    private let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
+
     // MARK: - Initializators
     init() { }
     

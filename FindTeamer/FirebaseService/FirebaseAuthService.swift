@@ -9,7 +9,7 @@ import FirebaseAuth
 import Combine
 
 final class FirebaseAuthService : AuthManager {
-    // MARK: - Public properties
+    // MARK: - Internal properties
     @Published var isAuthorized: Bool = false
     
     // MARK: - Private properties

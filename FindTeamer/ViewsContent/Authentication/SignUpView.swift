@@ -9,19 +9,17 @@ import SwiftUI
 import Combine
 
 struct SignUpView: View {
-    // MARK: - Public properties
-    let alertModel: AlertModel = AlertModel()
-    @State var errors: String = ""
+    // MARK: - Private properties
+    @State private var errors: String = ""
+    private let alertModel: AlertModel = AlertModel()
     @State private var presentAlert = false
     @State private var activeAlert: ActiveAlert = .first
-    @ObservedObject var signUpViewModel: SignUpViewModel
-    @Environment(\.presentationMode) var presentationMode
-    var buttonOpacity: Double {
+    @ObservedObject private var signUpViewModel: SignUpViewModel
+    @Environment(\.presentationMode) private var presentationMode
+    private var buttonOpacity: Double {
         return signUpViewModel.isFormValid &&
         signUpViewModel.validator.errorMessages.isEmpty ? 1 : 0.5
     }
-    
-    // MARK: - Private properties
     private let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
     
     // MARK: - Initializators

@@ -9,11 +9,9 @@ import SwiftUI
 import MessageUI
 
 struct EventDetailsView: View {
-    // MARK: - Public properties
-    var event: EventModel
-    @State private var sendEmail = false
-    
     // MARK: - Private properties
+    private var event: EventModel
+    @State private var sendEmail = false
     private let urlForMap: String = "http://maps.apple.com/?address="
     
     // MARK: - Initializators

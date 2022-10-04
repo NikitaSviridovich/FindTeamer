@@ -8,7 +8,7 @@
 import Foundation
 
 final class LogInViewModel: ObservableObject {
-    // MARK: - Public properties
+    // MARK: - Internal properties
     @Published var modelState: LogInModel
     
     // MARK: - Private properties

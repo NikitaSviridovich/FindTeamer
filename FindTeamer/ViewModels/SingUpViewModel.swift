@@ -9,11 +9,13 @@ import SwiftUI
 import Combine
 
 final class SignUpViewModel: ObservableObject {
-    // MARK: - Public properties
+    // MARK: - Internal properties
     @Published var validator: SignUpModelValidator
     @Published var isFormValid = false
     @Published var modelState: SignUpModel
-    var isSignUpFormValidPublisher: AnyPublisher<Bool, Never> {
+    
+    // MARK: - Private properties
+    private var isSignUpFormValidPublisher: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest4(
             self.validator.isNameValidPublisher,
             self.validator.isEmailValidPublisher,

@@ -8,7 +8,7 @@
 import Combine
 
 final class EventsViewModel: ObservableObject {
-    // MARK: - Public properties
+    // MARK: - Internal properties
     @Published var events = [EventModel]()
     
     // MARK: - Private properties

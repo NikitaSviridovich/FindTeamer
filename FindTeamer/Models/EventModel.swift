@@ -8,7 +8,6 @@
 import Foundation
 
 struct EventModel: Identifiable {
-    // MARK: Fields
     var id: String = UUID().uuidString
     var eventType: String
     var eventTitle : String

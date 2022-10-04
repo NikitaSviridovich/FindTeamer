@@ -7,8 +7,7 @@
 
 import Combine
 
-class SignUpModel : ObservableObject {
-    // MARK: Publishers
+class SignUpModel {
     @Published var userName = ""
     @Published var userEmail = ""
     @Published var userPassword = ""

@@ -8,7 +8,7 @@
 import Combine
 
 final class EventViewModel {
-    // MARK: - Public properties
+    // MARK: - Internal properties
     @Published var event: EventModel
     @Published var modified = false
     
