@@ -11,7 +11,6 @@ import Combine
 final class FirebaseAuthService : AuthManager {
     // MARK: - Public properties
     @Published var isAuthorized: Bool = false
-    var isAuthorizedPublisher: Published<Bool>.Publisher { $isAuthorized }
     
     // MARK: - Private properties
     private var handler: AuthStateDidChangeListenerHandle?

@@ -9,7 +9,6 @@ import Combine
 import FirebaseAuth
 
 protocol AuthManager {
-    var isAuthorizedPublisher: Published<Bool>.Publisher { get }
     func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void)
     func signIn(email: String, password: String, completionBlock : @escaping (_ authResult: AuthDataResult?, _ error: Error?) -> Void)
     func observeAuthenticationChanges() -> AnyPublisher<User?, Never>
