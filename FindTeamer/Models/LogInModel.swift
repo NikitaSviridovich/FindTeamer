@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LogInModel: ObservableObject {
+class LogInModel {
     // MARK: Publishers
     @Published var email: String = ""
     @Published var password: String = ""

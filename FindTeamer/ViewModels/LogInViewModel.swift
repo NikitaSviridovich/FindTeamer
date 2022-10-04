@@ -5,12 +5,11 @@
 //  Created by Nikita Sviridovich on 28.09.22.
 //
 
-import SwiftUI
-import FirebaseAuth
+import Foundation
 
 final class LogInViewModel: ObservableObject {
     // MARK: - Public properties
-    @ObservedObject var modelState: LogInModel
+    @Published var modelState: LogInModel
     
     // MARK: - Private properties
     private let authManager: AuthManager
@@ -23,9 +22,9 @@ final class LogInViewModel: ObservableObject {
     }
     
     // MARK: - Methods
-    func signIn(completionBlock : @escaping (_ authResult: AuthDataResult?, _ error: Error?) -> Void) {
-        authManager.signIn(email: modelState.email, password: modelState.password, completionBlock: { authResult, error in
-            completionBlock(authResult, error)
+    func signIn(completionBlock : @escaping (_ error: Error?) -> Void) {
+        authManager.signIn(email: modelState.email, password: modelState.password, completionBlock: { error in
+            completionBlock(error)
         })
     }
 }
