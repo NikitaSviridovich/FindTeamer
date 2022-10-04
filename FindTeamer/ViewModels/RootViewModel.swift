@@ -5,7 +5,6 @@
 //  Created by Nikita Sviridovich on 12.09.22.
 //
 
-import Firebase
 import Combine
 
 final class RootViewModel: ObservableObject {
@@ -20,7 +19,6 @@ final class RootViewModel: ObservableObject {
     public init(authManager: AuthManager) {
         self.authManager = authManager
         authManager.observeAuthenticationChanges()
-            .map { $0 != nil }
             .assign(to: &$isAuthorized)
     }
 }

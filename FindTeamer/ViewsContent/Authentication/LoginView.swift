@@ -83,8 +83,8 @@ struct LoginView: View {
     
     // MARK: - Methods
     func logInClicked() {
-        logInViewModel.signIn(completionBlock: { (authResult, error) in
-            if let error = error, authResult == nil {
+        logInViewModel.signIn(completionBlock: { error in
+            if let error = error {
                 presentAlert = true
                 alertModel.title = "Sign In Failed"
                 alertModel.message = error.localizedDescription
