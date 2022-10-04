@@ -18,7 +18,7 @@ final class EventsViewModel: ObservableObject {
     // MARK: - Initializators
     init(eventManager: EventManager) {
         self.eventManager = eventManager
-        self.eventManager.getEvents().sink { [weak self] data in
+        self.eventManager.observeEvents().sink { [weak self] data in
             guard let strongSelf = self else { return }
             strongSelf.events = data
         }.store(in: &cancellable)
