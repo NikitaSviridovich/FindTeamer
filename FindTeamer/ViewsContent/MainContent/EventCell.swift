@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct EventCell : View  {
+    // MARK: - Internal properties
     @State var event: EventModel
+    
+    // MARK: - Body
     var body: some View {
         NavigationLink(destination: EventDetailsView(event: event)) {
             Image(event.eventType.lowercased())

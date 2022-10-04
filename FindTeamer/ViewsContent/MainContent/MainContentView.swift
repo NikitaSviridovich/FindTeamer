@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MainContentView: View {
-    // MARK: - Public properties
-    @State var presentAddEventSheet = false
-    @ObservedObject var viewModel = EventsViewModel(eventManager: FirebaseEventService())
+    // MARK: - Private properties
+    @State private var presentAddEventSheet = false
+    @ObservedObject private var viewModel = EventsViewModel(eventManager: FirebaseEventService())
     
     // MARK: - Initializators
     init() { }

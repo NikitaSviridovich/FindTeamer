@@ -9,18 +9,8 @@ import SwiftUI
 import Combine
 
 final class SignUpModelValidator: ObservableObject {
-    var errorMessages: [String : String] = [:]
-    // MARK: ObservedObject
-    @ObservedObject var modelState: SignUpModel
-    // MARK: Min and max fields length
-    let minNameLength = 2
-    let minPasswordLength = 8
-    let maxPasswordLength = 24
-    // MARK: Initializator
-    init(modelState: SignUpModel = SignUpModel()) {
-        self.modelState = modelState
-    }
-    // MARK: Name field validation
+    // MARK: - Internal properties
+    @Published var modelState: SignUpModel
     var isNameValidPublisher: AnyPublisher<Bool, Never> {
         modelState.$userName
             .map { name in
@@ -32,7 +22,6 @@ final class SignUpModelValidator: ObservableObject {
             }
             .eraseToAnyPublisher()
     }
-    // MARK: Email field validation
     var isEmailValidPublisher: AnyPublisher<Bool, Never> {
         modelState.$userEmail
             .map { email in
@@ -46,7 +35,6 @@ final class SignUpModelValidator: ObservableObject {
             }
             .eraseToAnyPublisher()
     }
-    // MARK: Password field validation
     var isPasswordValidPublisher: AnyPublisher<Bool, Never> {
         modelState.$userPassword
             .map { password in
@@ -61,7 +49,6 @@ final class SignUpModelValidator: ObservableObject {
             }
             .eraseToAnyPublisher()
     }
-    // MARK: Password match validation
     var isPasswordMatchesValidPublisher: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest(modelState.$userPassword, modelState.$userRepeatPassword)
             .map { password, repeatPassword in
@@ -71,5 +58,16 @@ final class SignUpModelValidator: ObservableObject {
                 }
                 return password == repeatPassword
             }.eraseToAnyPublisher()
+    }
+    
+    // MARK: - Private properties
+    private var errorMessages: [String : String] = [:]
+    private let minNameLength = 2
+    private let minPasswordLength = 8
+    private let maxPasswordLength = 24
+    
+    // MARK: - Initializators
+    init(modelState: SignUpModel = SignUpModel()) {
+        self.modelState = modelState
     }
 }

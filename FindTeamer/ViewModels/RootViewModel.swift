@@ -8,10 +8,8 @@
 import Combine
 
 final class RootViewModel: ObservableObject {
-    // MARK: - Public properties
-    @Published private(set) var isAuthorized: Bool = false
-    
     // MARK: - Private properties
+    @Published private(set) var isAuthorized: Bool = false
     private var cancellable = Set<AnyCancellable>()
     private let authManager: AuthManager
     

@@ -9,10 +9,11 @@ import SwiftUI
 
 struct CreateEventView: View {
     // MARK: - Public properties
-    @Environment(\.presentationMode) private var presentationMode
     @State var viewModel = EventViewModel(eventManager: FirebaseEventService())
-    let sports = ["Football", "Basketball", "Tennis", "Chess", "Gym"]
     
+    // MARK: - Private properties
+    @Environment(\.presentationMode) private var presentationMode
+    private let sports = ["Football", "Basketball", "Tennis", "Chess", "Gym"]
     // MARK: - Initializators
     init() { }
     
