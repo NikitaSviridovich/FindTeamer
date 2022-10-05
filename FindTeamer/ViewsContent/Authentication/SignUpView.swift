@@ -10,15 +10,13 @@ import Combine
 
 struct SignUpView: View {
     // MARK: - Private properties
-    @State private var errors: String = ""
     private let alertModel: AlertModel = AlertModel()
     @State private var presentAlert = false
     @State private var activeAlert: ActiveAlert = .first
     @ObservedObject private var signUpViewModel: SignUpViewModel
     @Environment(\.presentationMode) private var presentationMode
     private var buttonOpacity: Double {
-        return signUpViewModel.isFormValid &&
-        signUpViewModel.validator.errorMessages.isEmpty ? 1 : 0.5
+        return signUpViewModel.isFormValid ? 1 : 0.5
     }
     private let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
     
@@ -56,10 +54,6 @@ struct SignUpView: View {
             .background(lightGreyColor)
             .cornerRadius(5.0)
             .padding(.horizontal, 20)
-        Text(errors)
-            .opacity(0.5)
-            .foregroundColor(.red)
-            .padding()
         Button(action: registerClicked) {
             Text("Let's Go!")
                 .font(.callout)
@@ -89,7 +83,6 @@ struct SignUpView: View {
     
     // MARK: - Methods
     func registerClicked() {
-        self.errors = ""
         signUpViewModel.createUser(completionBlock: { (success) in
             presentAlert = true
             if (success) {
