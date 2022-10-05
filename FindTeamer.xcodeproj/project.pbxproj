@@ -20,7 +20,6 @@
 		691A011128C0B12A00E09018 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011028C0B12A00E09018 /* EventsViewModel.swift */; };
 		691A011428C2248F00E09018 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011328C2248F00E09018 /* EventCell.swift */; };
 		691A011828C2323900E09018 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011728C2323900E09018 /* EventDetailsView.swift */; };
-		691A011D28CB44E900E09018 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011C28CB44E900E09018 /* EmailHelper.swift */; };
 		691A011F28CF1B9700E09018 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A011E28CF1B9700E09018 /* RootViewModel.swift */; };
 		691A012128CF23A200E09018 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A012028CF23A200E09018 /* RootView.swift */; };
 		69327C2328AB7E8C004F7C99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69327C2228AB7E8C004F7C99 /* LoginView.swift */; };
@@ -105,7 +104,6 @@
 		691A011028C0B12A00E09018 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		691A011328C2248F00E09018 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		691A011728C2323900E09018 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
-		691A011C28CB44E900E09018 /* EmailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
 		691A011E28CF1B9700E09018 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		691A012028CF23A200E09018 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		69327C2228AB7E8C004F7C99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -263,22 +261,6 @@
 				691A011728C2323900E09018 /* EventDetailsView.swift */,
 			);
 			path = EventDetails;
-			sourceTree = "<group>";
-		};
-		691A011A28CB44CC00E09018 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				691A011B28CB44D700E09018 /* EmailHelper */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		691A011B28CB44D700E09018 /* EmailHelper */ = {
-			isa = PBXGroup;
-			children = (
-				691A011C28CB44E900E09018 /* EmailHelper.swift */,
-			);
-			path = EmailHelper;
 			sourceTree = "<group>";
 		};
 		69327C2128AB7E5E004F7C99 /* ViewsContent */ = {
@@ -462,7 +444,6 @@
 				6901379A28E6FBE500DC9DDE /* AuthManagement */,
 				6901379528E6FBD500DC9DDE /* EventManagement */,
 				693D8D5F28B3A444005FE83C /* FirebaseService */,
-				691A011A28CB44CC00E09018 /* Helpers */,
 				6914668028ABCC4D003C2222 /* Models */,
 				69C92F5B28A3D86F00F2E878 /* Preview Content */,
 				693FF4AE28BB8B0800CDBBFE /* ViewModels */,
@@ -789,7 +770,6 @@
 				6901379028E4B2ED00DC9DDE /* LogInViewModel.swift in Sources */,
 				691A011828C2323900E09018 /* EventDetailsView.swift in Sources */,
 				6914668228ABCCA5003C2222 /* SignUpModel.swift in Sources */,
-				691A011D28CB44E900E09018 /* EmailHelper.swift in Sources */,
 				693FF4AD28BB8AE400CDBBFE /* EventViewModel.swift in Sources */,
 				693D8D6128B3A454005FE83C /* FirebaseEventService.swift in Sources */,
 				691A011F28CF1B9700E09018 /* RootViewModel.swift in Sources */,
