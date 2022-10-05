@@ -11,6 +11,12 @@ final class EventViewModel {
     // MARK: - Internal properties
     @Published var event: EventModel
     @Published var modified = false
+    // will be from coreData
+    let sports = ["Football",
+                  "Basketball",
+                  "Tennis",
+                  "Chess",
+                  "Gym"]
     
     // MARK: - Private properties
     private let eventManager: EventManager

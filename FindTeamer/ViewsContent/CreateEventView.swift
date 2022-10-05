@@ -13,7 +13,6 @@ struct CreateEventView: View {
     
     // MARK: - Private properties
     @Environment(\.presentationMode) private var presentationMode
-    private let sports = ["Football", "Basketball", "Tennis", "Chess", "Gym"]
     // MARK: - Initializators
     init() { }
     
@@ -26,7 +25,7 @@ struct CreateEventView: View {
                 }
                 Section(header: Text("Kind of sport")) {
                     Picker("Select kind of sport", selection: $viewModel.event.eventType) {
-                        ForEach(sports, id: \.self) {
+                        ForEach(viewModel.sports, id: \.self) {
                             Text($0)
                         }
                     }.pickerStyle(.menu)
