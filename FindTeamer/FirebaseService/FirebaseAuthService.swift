@@ -18,7 +18,7 @@ final class FirebaseAuthService : AuthManager {
     // MARK: - Initializators
     init() { }
     
-    // MARK: - Methods
+    // MARK: - Internal Methods
     func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, _) in
             if authResult?.user != nil {
@@ -28,11 +28,21 @@ final class FirebaseAuthService : AuthManager {
             }
         }
     }
+
     func signIn(email: String, password: String, completionBlock : @escaping (_ error: Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { _, error in
             completionBlock(error)
         }
     }
+
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
+
     func observeAuthenticationChanges() -> AnyPublisher<Bool, Never> {
         Publishers.AuthenticationPublisher().eraseToAnyPublisher()
     }
