@@ -8,14 +8,14 @@
 import Foundation
 
 struct EventModel: Identifiable {
-    var id: String = UUID().uuidString
-    var eventType: String
-    var eventTitle : String
-    var eventEmail: String
-    var eventPhoneNumber: String
-    var eventAddress: String
-    var eventTime: Date
-    var eventDescription: String
+    @Published var id: String = UUID().uuidString
+    @Published var eventType: String
+    @Published var eventTitle : String
+    @Published var eventEmail: String
+    @Published var eventPhoneNumber: String
+    @Published var eventAddress: String
+    @Published var eventTime: Date
+    @Published var eventDescription: String
     // MARK: Initializator
     init(eventType: String = "", eventTitle: String = "",
          eventEmail: String = "", eventPhoneNumber: String = "",
