@@ -13,8 +13,8 @@ struct RootView: View {
     
     // MARK: - Body
     var body: some View {
-        if viewModel.isAuthorized {
-            NavigationView { MainContentView() }
+        if viewModel.isAuthorized || !NetworkReachability.isConnectedToNetwork() {
+            NavigationView { MainContentView(eventManager: NetworkReachability.isConnectedToNetwork() ? FirebaseEventService() : CoreDataService()) }
         } else {
             LoginView()
         }

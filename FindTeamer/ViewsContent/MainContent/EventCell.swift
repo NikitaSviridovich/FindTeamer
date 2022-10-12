@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventCell : View  {
+struct EventCell: View  {
     // MARK: - Internal properties
     @State var event: EventModel
     
