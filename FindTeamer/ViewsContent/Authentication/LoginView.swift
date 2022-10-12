@@ -43,7 +43,7 @@ struct LoginView: View {
                     .background(lightGreyColor)
                     .cornerRadius(10.0)
                     .padding(.horizontal, 20)
-                NavigationLink(destination: MainContentView(), isActive: self.$successLogin) {
+                NavigationLink(destination: MainContentView(eventManager: FirebaseEventService()), isActive: self.$successLogin) {
                     Button(action: logInClicked) {
                         Text("LOG IN")
                             .font(.callout)

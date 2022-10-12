@@ -29,4 +29,14 @@ struct EventModel: Identifiable {
         self.eventTime = eventTime
         self.eventDescription = eventDescription
     }
+    
+    init(from event: Event) {
+        self.eventType = event.eventType ?? ""
+        self.eventTitle = event.eventTitle ?? ""
+        self.eventEmail = event.eventEmail ?? ""
+        self.eventPhoneNumber = event.eventPhoneNumber ?? ""
+        self.eventAddress = event.eventAddress ?? ""
+        self.eventTime = event.eventTime ?? Date()
+        self.eventDescription = event.eventDescription ?? ""
+    }
 }

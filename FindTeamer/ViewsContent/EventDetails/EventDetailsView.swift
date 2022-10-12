@@ -11,7 +11,6 @@ struct EventDetailsView: View {
     // MARK: - Private properties
     private var event: EventModel
     private var viewModel: EventDetailsViewModel
-    @State private var sendEmail = false
     private let urlForMap: String = "http://maps.apple.com/?address="
     private let commonTextSize = 15.0
     private let linkTextSize = 12.0

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CreateEventView: View {
     // MARK: - Public properties
-    @State var viewModel = EventViewModel(eventManager: FirebaseEventService())
+    @State var viewModel = EventViewModel(eventManager: FirebaseEventService(), repository: CoreDataService())
     
     // MARK: - Private properties
     @Environment(\.presentationMode) private var presentationMode

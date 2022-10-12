@@ -15,7 +15,7 @@ final class FirebaseEventService: EventManager {
     
     // MARK: - Initializators
     init() { }
-    
+
     // MARK: - Methods
     func addEvent(event: EventModel) {
         let eventData: [String: Any] = [
