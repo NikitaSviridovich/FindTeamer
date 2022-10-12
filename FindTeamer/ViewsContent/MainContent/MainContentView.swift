@@ -11,6 +11,7 @@ struct MainContentView: View {
     // MARK: - Private properties
     @State private var presentAddEventSheet = false
     @ObservedObject private var viewModel: EventsViewModel
+    private let logInViewModel: LogInViewModel = LogInViewModel(authManager: FirebaseAuthService())
     
     // MARK: - Initializators
     init(eventManager: EventManager) {
@@ -51,7 +52,7 @@ struct MainContentView: View {
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button(action: {
-                                self.storeEvents()
+                                self.signOut()
                             }, label: {
                                 Text("Logout")
                             })
@@ -61,7 +62,7 @@ struct MainContentView: View {
         }
     }
 
-    private func storeEvents() {
-
+    private func signOut() {
+        logInViewModel.signOut()
     }
 }

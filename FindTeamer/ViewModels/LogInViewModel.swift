@@ -27,4 +27,8 @@ final class LogInViewModel: ObservableObject {
             completionBlock(error)
         })
     }
+
+    func signOut() {
+        authManager.signOut()
+    }
 }
