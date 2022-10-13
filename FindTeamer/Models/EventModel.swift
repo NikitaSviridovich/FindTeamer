@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Combine
 
-struct EventModel: Identifiable {
+class EventModel: Identifiable {
     @Published var id: String = UUID().uuidString
     @Published var eventType: String
     @Published var eventTitle : String

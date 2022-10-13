@@ -41,20 +41,13 @@ final class EventModelValidator: ObservableObject {
             }
             .eraseToAnyPublisher()
     }
-    var isEventDescriptionValidPublisher: AnyPublisher<Bool, Never> {
-        modelState.$eventDescription
-            .map { eventTitle in
-                return eventDescription.count > self.minDescLength
-            }
-            .eraseToAnyPublisher()
-    }
 
     // MARK: - Private properties
     private let minFieldLength = 3
     private let minDescLength = 16
     
     // MARK: - Initializators
-    init(modelState: SignUpModel = SignUpModel()) {
+    init(modelState: EventModel = EventModel()) {
         self.modelState = modelState
     }
 }

@@ -29,7 +29,6 @@ final class SignUpViewModel: ObservableObject {
     // MARK: - Private properties
     private let authManager: AuthManager
     private var publishers = Set<AnyCancellable>()
-    private var cancellable: AnyCancellable!
     
     // MARK: - Initializators
     init(signUpModel: SignUpModel = SignUpModel(),

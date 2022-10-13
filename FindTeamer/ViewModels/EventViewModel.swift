@@ -19,26 +19,19 @@ final class EventViewModel {
                   "Tennis",
                   "Chess",
                   "Gym"]
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(
-        entity: Event.entity(),
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \Event.eventType, ascending: true)
-        ]
-    )
-    var events: FetchedResults<Event>
     // MARK: - Private properties
+    @Published private var validator: EventModelValidator
     private let eventManager: EventManager
     private var cancellables = Set<AnyCancellable>()
-    private var validator = EventModelValidator
+    private var publishers = Set<AnyCancellable>()
     private var isEventFormValidPublisher: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest4(
-            self.validator.isNameValidPublisher,
-            self.validator.isEmailValidPublisher,
-            self.validator.isPasswordValidPublisher,
-            self.validator.isPasswordMatchesValidPublisher)
-        .map { isNameValid, isEmailValid, isPasswordValid, passwordMatches in
-            return isNameValid && isEmailValid && isPasswordValid && passwordMatches
+            self.validator.isEventTypeValidPublisher,
+            self.validator.isEventEmailValidPublisher,
+            self.validator.isEventTitleValidPublisher,
+            self.validator.isEventPhoneNumberValidPublisher)
+        .map { isEventTypeValid, isEventEmailValid, isEventTitleValid, isEventPhoneNumber in
+            return isEventTypeValid && isEventEmailValid && isEventTitleValid && isEventPhoneNumber
         }
         .eraseToAnyPublisher()
     }
@@ -49,10 +42,16 @@ final class EventViewModel {
         self.eventManager = eventManager
         self.repository = repository
         self.validator = EventModelValidator(modelState: event)
+        isEventFormValidPublisher
+            .receive(on: RunLoop.main)
+            .assign(to: \.isFormValid, on: self)
+            .store(in: &publishers)
     }
     // MARK: - Methods
     private func addEvent(_ event: EventModel) {
-        eventManager.addEvent(event: event)
+        if isFormValid {
+            eventManager.addEvent(event: event)
+        }
     }
     func handleDoneTapped() {
         self.addEvent(event)
