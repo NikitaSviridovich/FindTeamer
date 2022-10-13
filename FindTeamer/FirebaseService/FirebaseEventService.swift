@@ -19,6 +19,7 @@ final class FirebaseEventService: EventManager {
     // MARK: - Methods
     func addEvent(event: EventModel) {
         let eventData: [String: Any] = [
+            "id" : event.id,
             "eventAddress" : event.eventAddress,
             "eventDesctiption" : event.eventDescription,
             "eventEmail" : event.eventEmail,
@@ -36,7 +37,8 @@ final class FirebaseEventService: EventManager {
                 guard let documents = querySnapshot?.documents else { return }
                 subject.send(documents.map { queryDocumentSnapshot -> EventModel in
                     let data = queryDocumentSnapshot.data()
-                    return EventModel(eventType: data["eventType"] as? String ?? "",
+                    return EventModel(id: queryDocumentSnapshot.documentID,
+                                      eventType: data["eventType"] as? String ?? "",
                                       eventTitle: data["eventTitle"] as? String ?? "",
                                       eventEmail: data["eventEmail"] as? String ?? "",
                                       eventPhoneNumber: data["eventPhoneNumber"] as? String ?? "",

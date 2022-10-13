@@ -22,7 +22,7 @@ final class EventsViewModel: ObservableObject {
         self.eventManager.observeEvents().sink { [weak self] data in
             guard let strongSelf = self else { return }
             strongSelf.events = data
-            strongSelf.coreDataService.storeEventsInCoreData(fromFirebase: strongSelf.events)
+            strongSelf.coreDataService.save(events: strongSelf.events)
         }.store(in: &cancellable)
     }
 }
