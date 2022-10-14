@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CreateEventView: View {
     // MARK: - Public properties
-    @State var viewModel = EventViewModel(eventManager: FirebaseEventService(), repository: CoreDataService())
+    @State var viewModel = EventViewModel(eventManager: FirebaseEventService())
     
     // MARK: - Private properties
     @Environment(\.presentationMode) private var presentationMode
     // MARK: - Initializators
     init() { }
-    
+
     // MARK: - Body
     var body: some View {
         NavigationView {
@@ -60,8 +60,9 @@ struct CreateEventView: View {
                 .disabled(false))
         }
     }
-    
-    // MARK: - Methods
+
+    // MARK: - Private methods
+
     private func handleCancelTapped() {
         dismiss()
     }
