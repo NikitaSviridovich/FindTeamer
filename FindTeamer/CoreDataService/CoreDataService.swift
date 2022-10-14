@@ -10,17 +10,20 @@ import CoreData
 import Combine
 
 final class CoreDataService : EventManager {
+
     // MARK: - Private properties
+
     private var context: NSManagedObjectContext!
 
     // MARK: - Initializators
+
     init(context: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
         self.context = context
     }
 
-    // MARK: - Methods
+    // MARK: - Internal methods
+
     func observeEvents() -> AnyPublisher<[EventModel], Never> {
-        debugPrint(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         let subject = CurrentValueSubject<[EventModel], Never>([EventModel]())
         subject.send(getEvents())
         return subject.eraseToAnyPublisher()
@@ -39,8 +42,17 @@ final class CoreDataService : EventManager {
         saveContext()
     }
 
+    func save(events: [EventModel]) {
+        debugPrint(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        for event in events where getEventById(id: event.id) == nil {
+            addEvent(event: event)
+        }
+    }
+
+    // MARK: - Private methods
+
     private func getEvents() -> [EventModel] {
-        let fetchRequest = NSFetchRequest<Event>(entityName: "Event")
+        let fetchRequest = NSFetchRequest<Event>(entityName: Event.entity().name!)
         do {
             let events = try context.fetch(fetchRequest)
             return events.map {
@@ -54,22 +66,30 @@ final class CoreDataService : EventManager {
             return [EventModel]()
         }
     }
+
+    private func getEventById(id: String) -> EventModel? {
+        let fetchRequest = NSFetchRequest<Event>(entityName: Event.entity().name!)
+        fetchRequest.predicate = NSPredicate(format: "id == %@ ", id)
+        do {
+            let event = try context.fetch(fetchRequest).first
+            guard let event = event else { return nil }
+            return EventModel(id: event.id ?? "", eventType: event.eventType ?? "", eventTitle: event.eventTitle ?? "",
+                              eventEmail: event.eventEmail ?? "", eventPhoneNumber: event.eventPhoneNumber ?? "",
+                              eventAddress: event.eventAddress ?? "", eventTime: event.eventTime ?? Date(),
+                              eventDescription: event.eventDescription ?? "")
+
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return nil
+        }
+    }
+
     private func saveContext() {
         guard let context = self.context else { return }
         do {
             try context.save()
         } catch {
             print("Error saving managed object context: \(error)")
-        }
-    }
-
-    func save(events: [EventModel]) {
-        debugPrint(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-        let eventsData = getEvents()
-        for event in events {
-            if !eventsData.contains(where: { $0.id == event.id }) {
-                addEvent(event: event)
-            }
         }
     }
 }
