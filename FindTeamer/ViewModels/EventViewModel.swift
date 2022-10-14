@@ -35,12 +35,10 @@ final class EventViewModel {
         }
         .eraseToAnyPublisher()
     }
-    var repository:CoreDataService!
     // MARK: - Initializators
-    init(event: EventModel = EventModel(), eventManager: EventManager, repository: CoreDataService) {
+    init(event: EventModel = EventModel(), eventManager: EventManager) {
         self.event = event
         self.eventManager = eventManager
-        self.repository = repository
         self.validator = EventModelValidator(modelState: event)
         isEventFormValidPublisher
             .receive(on: RunLoop.main)

@@ -17,11 +17,13 @@ class EventModel: Identifiable {
     @Published var eventAddress: String
     @Published var eventTime: Date
     @Published var eventDescription: String
-    // MARK: Initializator
-    init(eventType: String = "", eventTitle: String = "",
+
+    // MARK: - Initializators
+    init(id: String = "", eventType: String = "", eventTitle: String = "",
          eventEmail: String = "", eventPhoneNumber: String = "",
          eventAddress: String = "", eventTime: Date = Date(),
          eventDescription: String = "") {
+        self.id = id
         self.eventType = eventType
         self.eventTitle = eventTitle
         self.eventEmail = eventEmail
@@ -30,8 +32,9 @@ class EventModel: Identifiable {
         self.eventTime = eventTime
         self.eventDescription = eventDescription
     }
-    
+
     init(from event: Event) {
+        self.id = event.id ?? ""
         self.eventType = event.eventType ?? ""
         self.eventTitle = event.eventTitle ?? ""
         self.eventEmail = event.eventEmail ?? ""

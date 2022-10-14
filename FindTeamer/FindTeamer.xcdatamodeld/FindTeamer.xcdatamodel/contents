@@ -8,8 +8,9 @@
         <attribute name="eventTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="eventTitle" optional="YES" attributeType="String"/>
         <attribute name="eventType" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-9" width="128" height="148"/>
+        <element name="Event" positionX="-63" positionY="-9" width="128" height="149"/>
     </elements>
 </model>
