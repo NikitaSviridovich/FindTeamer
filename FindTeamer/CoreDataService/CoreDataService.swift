@@ -44,8 +44,9 @@ final class CoreDataService : EventManager {
 
     func save(events: [EventModel]) {
         debugPrint(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-        for event in events where getEventById(id: event.id) == nil {
+        for event in events where getEventById(id: event.id ?? "") == nil {
             addEvent(event: event)
+
         }
     }
 

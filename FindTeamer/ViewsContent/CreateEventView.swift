@@ -21,7 +21,7 @@ struct CreateEventView: View {
         NavigationView {
             Form {
                 Section(header: Text("Title")) {
-                    TextField("Title", text: $viewModel.event.eventTitle)
+                    TextField("Title", text: $viewModel.event.eventTitle.toUnwrapped(defaultValue: ""))
                 }
                 Section(header: Text("Kind of sport")) {
                     Picker("Select kind of sport", selection: $viewModel.event.eventType) {
@@ -31,21 +31,21 @@ struct CreateEventView: View {
                     }.pickerStyle(.menu)
                 }
                 Section(header: Text("Address")) {
-                    TextField("Address", text: $viewModel.event.eventAddress)
+                    TextField("Address", text: $viewModel.event.eventAddress.toUnwrapped(defaultValue: ""))
                 }
                 Section(header: Text("Email Contact")) {
-                    TextField("Email", text: $viewModel.event.eventEmail)
+                    TextField("Email", text: $viewModel.event.eventEmail.toUnwrapped(defaultValue: ""))
                 }
                 Section(header: Text("Phone Number For Contact")) {
-                    TextField("Phone Number", text: $viewModel.event.eventPhoneNumber)
+                    TextField("Phone Number", text: $viewModel.event.eventPhoneNumber.toUnwrapped(defaultValue: ""))
                 }
                 Section(header: Text("Date and Time")) {
-                    DatePicker("Pick the time", selection: $viewModel.event.eventTime)
+                    DatePicker("Pick the time", selection: $viewModel.event.eventTime.toUnwrapped(defaultValue: Date()))
                         .datePickerStyle(.graphical)
                         .frame(maxHeight: 400)
                 }
                 Section(header: Text("Description")) {
-                    TextField("Please add your additional contacts", text: $viewModel.event.eventDescription)
+                    TextField("Please add your additional contacts", text: $viewModel.event.eventDescription.toUnwrapped(defaultValue: ""))
                         .frame(height: 150, alignment: .topLeading)
                 }
             }

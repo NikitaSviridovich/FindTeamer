@@ -14,6 +14,7 @@ final class EventModelValidator: ObservableObject {
     var isEventTypeValidPublisher: AnyPublisher<Bool, Never> {
         modelState.$eventType
             .map { eventType in
+                guard let eventType = eventType else { return false }
                 return !eventType.isEmpty
             }
             .eraseToAnyPublisher()
@@ -29,7 +30,9 @@ final class EventModelValidator: ObservableObject {
     var isEventTitleValidPublisher: AnyPublisher<Bool, Never> {
         modelState.$eventTitle
             .map { eventTitle in
+                guard let eventTitle = eventTitle else { return false }
                 return eventTitle.count > self.minFieldLength
+
             }
             .eraseToAnyPublisher()
     }

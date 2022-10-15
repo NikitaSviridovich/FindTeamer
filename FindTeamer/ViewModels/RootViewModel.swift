@@ -6,6 +6,7 @@
 //
 
 import Combine
+import SwiftUI
 
 final class RootViewModel: ObservableObject {
     // MARK: - Private properties
@@ -18,5 +19,10 @@ final class RootViewModel: ObservableObject {
         self.authManager = authManager
         authManager.observeAuthenticationChanges()
             .assign(to: &$isAuthorized)
+    }
+}
+extension Binding {
+     func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
+        Binding<T>(get: { self.wrappedValue ?? defaultValue }, set: { self.wrappedValue = $0 })
     }
 }
