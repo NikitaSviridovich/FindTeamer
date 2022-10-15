@@ -9,20 +9,21 @@ import Foundation
 import Combine
 
 class EventModel: Identifiable {
-    @Published var id: String = UUID().uuidString
-    @Published var eventType: String
-    @Published var eventTitle : String
-    @Published var eventEmail: String
-    @Published var eventPhoneNumber: String
-    @Published var eventAddress: String
-    @Published var eventTime: Date
-    @Published var eventDescription: String
+    @Published var id: String? = UUID().uuidString
+    @Published var eventType: String?
+    @Published var eventTitle : String?
+    @Published var eventEmail: String?
+    @Published var eventPhoneNumber: String?
+    @Published var eventAddress: String?
+    @Published var eventTime: Date?
+    @Published var eventDescription: String?
 
     // MARK: - Initializators
-    init(id: String = "", eventType: String = "", eventTitle: String = "",
-         eventEmail: String = "", eventPhoneNumber: String = "",
-         eventAddress: String = "", eventTime: Date = Date(),
-         eventDescription: String = "") {
+    init() { }
+    init(id: String?, eventType: String?, eventTitle: String?,
+         eventEmail: String?, eventPhoneNumber: String?,
+         eventAddress: String?, eventTime: Date?,
+         eventDescription: String?) {
         self.id = id
         self.eventType = eventType
         self.eventTitle = eventTitle
@@ -34,13 +35,13 @@ class EventModel: Identifiable {
     }
 
     init(from event: Event) {
-        self.id = event.id ?? ""
-        self.eventType = event.eventType ?? ""
-        self.eventTitle = event.eventTitle ?? ""
-        self.eventEmail = event.eventEmail ?? ""
-        self.eventPhoneNumber = event.eventPhoneNumber ?? ""
-        self.eventAddress = event.eventAddress ?? ""
-        self.eventTime = event.eventTime ?? Date()
-        self.eventDescription = event.eventDescription ?? ""
+        self.id = event.id
+        self.eventType = event.eventType
+        self.eventTitle = event.eventTitle
+        self.eventEmail = event.eventEmail
+        self.eventPhoneNumber = event.eventPhoneNumber
+        self.eventAddress = event.eventAddress
+        self.eventTime = event.eventTime
+        self.eventDescription = event.eventDescription
     }
 }
