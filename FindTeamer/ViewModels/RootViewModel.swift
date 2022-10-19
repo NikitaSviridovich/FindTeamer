@@ -10,11 +10,13 @@ import SwiftUI
 
 final class RootViewModel: ObservableObject {
     // MARK: - Private properties
+
     @Published private(set) var isAuthorized: Bool = false
     private var cancellable = Set<AnyCancellable>()
     private let authManager: AuthManager
-    
+
     // MARK: - Initializators
+
     public init(authManager: AuthManager) {
         self.authManager = authManager
         authManager.observeAuthenticationChanges()
@@ -22,7 +24,7 @@ final class RootViewModel: ObservableObject {
     }
 }
 extension Binding {
-     func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
+     func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == T? {
         Binding<T>(get: { self.wrappedValue ?? defaultValue }, set: { self.wrappedValue = $0 })
     }
 }

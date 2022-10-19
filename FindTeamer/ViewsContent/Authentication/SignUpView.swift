@@ -88,7 +88,7 @@ struct SignUpView: View {
                 }
             }
     }
-    
+
     // MARK: - Methods
 
     func registerClicked() {

@@ -9,19 +9,22 @@ import SwiftUI
 
 struct EventDetailsView: View {
     // MARK: - Private properties
+
     private var event: EventModel
     private var viewModel: EventDetailsViewModel
     private let urlForMap: String = "http://maps.apple.com/?address="
     private let commonTextSize = 15.0
     private let linkTextSize = 12.0
-    
+
     // MARK: - Initializators
+
     init(event: EventModel = EventModel(), viewModel: EventDetailsViewModel = EventDetailsViewModel()) {
         self.event = event
         self.viewModel = viewModel
     }
-    
+
     // MARK: - Body
+
     var body: some View {
         VStack {
             HStack {
@@ -44,7 +47,7 @@ struct EventDetailsView: View {
                         .foregroundColor(.gray)
                     Spacer()
                     Button(action: {
-                        viewModel.openURLLink(url: urlForMap + (event.eventAddress ?? ""))
+                        openURLLink(url: urlForMap + (event.eventAddress ?? ""))
                     }) { Text("See on Map").font(.system(size: linkTextSize, weight: .light, design: .default)) }
                 }
                 Divider().background(Color.white).padding(.trailing, 128)
@@ -54,7 +57,7 @@ struct EventDetailsView: View {
                         .foregroundColor(.gray)
                     Spacer()
                     Button(action: {
-                        viewModel.openURLLink(url: "tel:" + (event.eventPhoneNumber ?? ""))
+                        openURLLink(url: "tel:" + (event.eventPhoneNumber ?? ""))
                     }) {
                         Text("Make a Call").font(.system(size: linkTextSize, weight: .light, design: .default))
                     }
@@ -83,5 +86,8 @@ struct EventDetailsView: View {
             }
             Spacer()
         }.padding()
+    }
+    func openURLLink(url: String) {
+        viewModel.openURLLink(url: url)
     }
 }

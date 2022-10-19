@@ -10,6 +10,7 @@ import Combine
 
 final class SignUpModelValidator: ObservableObject {
     // MARK: - Internal properties
+
     @Published var modelState: SignUpModel
     var isNameValidPublisher: AnyPublisher<Bool, Never> {
         modelState.$userName
@@ -39,13 +40,15 @@ final class SignUpModelValidator: ObservableObject {
                 return password == repeatPassword
             }.eraseToAnyPublisher()
     }
-    
+
     // MARK: - Private properties
+
     private let minNameLength = 2
     private let minPasswordLength = 8
     private let maxPasswordLength = 24
-    
+
     // MARK: - Initializators
+
     init(modelState: SignUpModel = SignUpModel()) {
         self.modelState = modelState
     }

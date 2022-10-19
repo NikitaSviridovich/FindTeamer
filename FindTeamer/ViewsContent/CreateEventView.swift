@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct CreateEventView: View {
-    // MARK: - Public properties
+    // MARK: - Invernal properties
+
     @State var viewModel = EventViewModel(eventManager: FirebaseEventService())
-    
+
     // MARK: - Private properties
+
     @Environment(\.presentationMode) private var presentationMode
+
     // MARK: - Initializators
+
     init() { }
 
     // MARK: - Body
+
     var body: some View {
         NavigationView {
             Form {
