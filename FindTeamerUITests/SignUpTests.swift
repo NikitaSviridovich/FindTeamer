@@ -15,34 +15,52 @@ class SignUpTests: XCTestCase {
         app.launch()
     }
 
-    override func tearDownWithError() throws { }
+    override func tearDownWithError() throws {
+        XCUIDevice.shared.press(.home)
+        XCUIApplication().activate()
+    }
 
-    func testSignUpButton() throws {
+    func test_ShouldBeSignupButton_WhenOpenLoginView() throws {
         let signUp = app.buttons["SIGN UP"]
         XCTAssert(signUp.exists)
     }
 
-    func testSignUpView() throws {
+    func test_ShouldBeNameField_WhenUserOpenSignupView() throws {
         let signUp = app.buttons["SIGN UP"]
         signUp.tap()
-
-        let registrationText = app.staticTexts.element(boundBy: 0)
-        XCTAssert(registrationText.exists)
-        XCTAssertEqual(registrationText.label, "Registration")
-
         let name = app.textFields["Name"]
         XCTAssert(name.exists)
-        let email = app.secureTextFields["Email"]
+    }
+
+    func test_ShouldBeEmailField_WhenUserOpenSignupView() throws {
+        let signUp = app.buttons["SIGN UP"]
+        signUp.tap()
+        let email = app.textFields["Email"]
         XCTAssert(email.exists)
+    }
+
+    func test_ShouldBePasswordField_WhenUserOpenSignupView() throws {
+        let signUp = app.buttons["SIGN UP"]
+        signUp.tap()
         let password = app.secureTextFields["Password"]
         XCTAssert(password.exists)
+    }
+
+    func test_ShouldBeRepeatPasswordField_WhenUserOpenSignupView() throws {
+        let signUp = app.buttons["SIGN UP"]
+        signUp.tap()
         let repeatPassword = app.secureTextFields["Repeat Password"]
         XCTAssert(repeatPassword.exists)
+    }
+
+    func test_ShouldBeLetsGoButton_WhenUserOpenSignupView() throws {
+        let signUp = app.buttons["SIGN UP"]
+        signUp.tap()
         let letsGoButton = app.buttons["Let's Go!"]
         XCTAssert(letsGoButton.exists)
     }
 
-    func testSignUpViewValidation() throws {
+    func test_ShouldBeAlert_WhenClickOnLetsGoButtonWithEmptyFields() throws {
         let signUp = app.buttons["SIGN UP"]
         signUp.tap()
 

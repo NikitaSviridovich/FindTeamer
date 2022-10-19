@@ -51,7 +51,6 @@
 		69C92F6228A3D86F00F2E878 /* FindTeamer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F6028A3D86F00F2E878 /* FindTeamer.xcdatamodeld */; };
 		69C92F6C28A3D86F00F2E878 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F6B28A3D86F00F2E878 /* EventTests.swift */; };
 		69C92F7628A3D86F00F2E878 /* LogInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F7528A3D86F00F2E878 /* LogInUITests.swift */; };
-		69C92F7828A3D86F00F2E878 /* LogInUILaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F7728A3D86F00F2E878 /* LogInUILaunchTests.swift */; };
 		D034000928ED767B00AFD19A /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034000828ED767B00AFD19A /* EventDetailsViewModel.swift */; };
 		D034002928F6DEB400AFD19A /* EventModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034002828F6DEB400AFD19A /* EventModelValidator.swift */; };
 		DF155732D05A4342DB5C5F39 /* Pods_FindTeamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7CA5C17C0D7DC039B8338E /* Pods_FindTeamer.framework */; };
@@ -168,7 +167,6 @@
 		69C92F6B28A3D86F00F2E878 /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		69C92F7128A3D86F00F2E878 /* FindTeamerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindTeamerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C92F7528A3D86F00F2E878 /* LogInUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInUITests.swift; sourceTree = "<group>"; };
-		69C92F7728A3D86F00F2E878 /* LogInUILaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInUILaunchTests.swift; sourceTree = "<group>"; };
 		7D7CA5C17C0D7DC039B8338E /* Pods_FindTeamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8013907F3E525CC2180781A8 /* Pods-FindTeamer-FindTeamerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamer-FindTeamerUITests.release.xcconfig"; path = "Target Support Files/Pods-FindTeamer-FindTeamerUITests/Pods-FindTeamer-FindTeamerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CBB181EC2E3C89C7B5D9132C /* Pods_FindTeamerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -522,7 +520,6 @@
 			isa = PBXGroup;
 			children = (
 				69C92F7528A3D86F00F2E878 /* LogInUITests.swift */,
-				69C92F7728A3D86F00F2E878 /* LogInUILaunchTests.swift */,
 				693E9D1C28FD8CC000A7FD07 /* SignUpTests.swift */,
 			);
 			path = FindTeamerUITests;
@@ -856,7 +853,6 @@
 			files = (
 				69C92F7628A3D86F00F2E878 /* LogInUITests.swift in Sources */,
 				693E9D1D28FD8CC000A7FD07 /* SignUpTests.swift in Sources */,
-				69C92F7828A3D86F00F2E878 /* LogInUILaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

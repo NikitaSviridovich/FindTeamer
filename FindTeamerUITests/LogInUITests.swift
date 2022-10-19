@@ -15,27 +15,28 @@ class LogInUITests: XCTestCase {
         app.launch()
     }
     override func tearDownWithError() throws {
-        app.terminate()
+        XCUIDevice.shared.press(.home)
+        XCUIApplication().activate()
     }
 
-    func testWelcomeTest() throws {
+    func test_ShouldBeText_WhenOpenLoginView() throws {
         let welcome = app.staticTexts.element(boundBy: 0)
         XCTAssert(welcome.exists)
         XCTAssertEqual(welcome.label, "FindTeamer")
     }
 
-    func testLogInButton() throws {
+    func test_ShouldBeLoginButton_WhenOpenLoginView() throws {
         let logIn = app.buttons["loginButton"]
         XCTAssert(logIn.exists)
         XCTAssertEqual(logIn.label, "LOG IN")
     }
 
-    func testSignUpButton() throws {
+    func test_ShouldBeSignupButton_WhenOpenLoginView() throws {
         let signUp = app.buttons["SIGN UP"]
         XCTAssert(signUp.exists)
     }
 
-    func testTapOnLogIn() throws {
+    func test_ShouldBeAlert_WhenClickOnLoginButtonWithEmptyFields() throws {
         try login(email: "", password: "")
         XCTAssert(app.alerts.element.waitForExistence(timeout: 1.5))
         let alertTitle = app.staticTexts["Sign In Failed"]
@@ -44,7 +45,7 @@ class LogInUITests: XCTestCase {
         XCTAssertFalse(app.alerts.element.exists)
     }
 
-    func testTapOnSignUp() throws {
+    func test_ShouldSeeSignupView_WhenClickOnSignupButton() throws {
         let loginButton = app.buttons["loginButton"]
         let signUp = app.buttons["SIGN UP"]
         XCTAssert(signUp.exists)
@@ -52,7 +53,7 @@ class LogInUITests: XCTestCase {
         XCTAssertFalse(loginButton.waitForExistence(timeout: 1.0))
     }
 
-    func testLogIn() throws {
+    func test_ShouldBeFailAlert_WhenClickOnLoginButtonWithWrongCredentials() throws {
         let email = app.textFields["Email"]
         XCTAssert(email.exists)
         let password = app.secureTextFields["Password"]
@@ -69,7 +70,7 @@ class LogInUITests: XCTestCase {
         XCTAssertFalse(app.alerts.element.exists)
     }
 
-    func testCorrectLogIn() throws {
+    func test_ShouldBeSucceesLogin_WhenClickOnLoginButtonWithCorrectCredentials() throws {
         let email = app.textFields["Email"]
         XCTAssert(email.exists)
         let password = app.secureTextFields["Password"]
@@ -78,7 +79,10 @@ class LogInUITests: XCTestCase {
         XCTAssert(loginButton.exists)
 
         try login(email: "Qwe@qwe.wee", password: "123123123")
-        XCTAssertFalse(loginButton.waitForExistence(timeout: 3.0)) // ??
+        XCTAssertFalse(loginButton.waitForExistence(timeout: 3.0))
+
+        let logoutButton = app.buttons["Logout"]
+        logoutButton.tap()
     }
 
     private func login(email: String, password: String) throws {
