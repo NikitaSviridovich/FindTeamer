@@ -7,7 +7,7 @@
 
 import XCTest
 
-class FindTeamerUITestsLaunchTests: XCTestCase {
+class LogInUILaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

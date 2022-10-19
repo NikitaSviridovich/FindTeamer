@@ -10,7 +10,7 @@ import Combine
 final class EventsViewModel: ObservableObject {
     // MARK: - Internal properties
     @Published var events = [EventModel]()
-    
+
     // MARK: - Private properties
     private var cancellable = Set<AnyCancellable>()
     private let eventManager: EventManager

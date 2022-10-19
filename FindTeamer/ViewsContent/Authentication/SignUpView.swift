@@ -9,7 +9,9 @@ import SwiftUI
 import Combine
 
 struct SignUpView: View {
+
     // MARK: - Private properties
+
     private let alertModel: AlertModel = AlertModel()
     @State private var presentAlert = false
     @State private var activeAlert: ActiveAlert = .first
@@ -19,14 +21,20 @@ struct SignUpView: View {
         return signUpViewModel.isFormValid ? 1 : 0.5
     }
     private let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
-    
+
     // MARK: - Initializators
+
     init(signUpViewModel: SignUpViewModel = SignUpViewModel(authManager: FirebaseAuthService())) {
         self.signUpViewModel = signUpViewModel
     }
-    
+
     // MARK: - Body
+
     var body: some View {
+        Text("Registration")
+            .font(.largeTitle)
+            .fontWeight(.semibold)
+            .padding(.bottom, 20)
         Image("WelcomeIcon")
             .resizable()
             .aspectRatio(contentMode: .fill)
@@ -82,6 +90,7 @@ struct SignUpView: View {
     }
     
     // MARK: - Methods
+
     func registerClicked() {
         signUpViewModel.createUser(completionBlock: { (success) in
             presentAlert = true

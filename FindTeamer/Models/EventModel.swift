@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 class EventModel: Identifiable {
+
     @Published var id: String? = UUID().uuidString
     @Published var eventType: String?
     @Published var eventTitle : String?
