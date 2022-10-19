@@ -29,6 +29,8 @@
 		69327C2A28AB9E57004F7C99 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69327C2928AB9E57004F7C99 /* SignUpView.swift */; };
 		693D8D6128B3A454005FE83C /* FirebaseEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D8D6028B3A454005FE83C /* FirebaseEventService.swift */; };
 		693E9D1028F45A3800A7FD07 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E9D0F28F45A3800A7FD07 /* NetworkReachability.swift */; };
+		693E9D1D28FD8CC000A7FD07 /* SignUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E9D1C28FD8CC000A7FD07 /* SignUpTests.swift */; };
+		693E9D2028FEB9F900A7FD07 /* EventManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E9D1F28FEB9F900A7FD07 /* EventManagerMock.swift */; };
 		693FF4A028BB756500CDBBFE /* CreateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF49F28BB756500CDBBFE /* CreateEventView.swift */; };
 		693FF4A328BB780C00CDBBFE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 693FF4A228BB780C00CDBBFE /* FirebaseAuth */; };
 		693FF4A528BB780C00CDBBFE /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 693FF4A428BB780C00CDBBFE /* FirebaseDatabase */; };
@@ -37,7 +39,9 @@
 		693FF4AD28BB8AE400CDBBFE /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF4AC28BB8AE400CDBBFE /* EventViewModel.swift */; };
 		693FF4B028BB8B1B00CDBBFE /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF4AF28BB8B1B00CDBBFE /* EventModel.swift */; };
 		693FF4E628BCDA2F00CDBBFE /* Pods-FindTeamer in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FF4E128BCDA2700CDBBFE /* Pods-FindTeamer */; };
+		69407B5E28FF0A3C008301D6 /* AuthManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69407B5D28FF0A3C008301D6 /* AuthManagerMock.swift */; };
 		694C1CEA28CF65A9002D95EB /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 694C1CE928CF65A9002D95EB /* FirebaseFirestoreSwift-Beta */; };
+		694D420B28FF04470026F65C /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D420A28FF04470026F65C /* AuthenticationTests.swift */; };
 		69716CAC28B5143700520ECF /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69716CAB28B5143700520ECF /* MainContentView.swift */; };
 		697CF59028E475D500D5E5F9 /* SignUpModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697CF58F28E475D500D5E5F9 /* SignUpModelValidator.swift */; };
 		69C92F5628A3D86D00F2E878 /* FindTeamerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F5528A3D86D00F2E878 /* FindTeamerApp.swift */; };
@@ -45,9 +49,8 @@
 		69C92F5D28A3D86F00F2E878 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C92F5C28A3D86F00F2E878 /* Preview Assets.xcassets */; };
 		69C92F5F28A3D86F00F2E878 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F5E28A3D86F00F2E878 /* Persistence.swift */; };
 		69C92F6228A3D86F00F2E878 /* FindTeamer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F6028A3D86F00F2E878 /* FindTeamer.xcdatamodeld */; };
-		69C92F6C28A3D86F00F2E878 /* FindTeamerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F6B28A3D86F00F2E878 /* FindTeamerTests.swift */; };
-		69C92F7628A3D86F00F2E878 /* FindTeamerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F7528A3D86F00F2E878 /* FindTeamerUITests.swift */; };
-		69C92F7828A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F7728A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift */; };
+		69C92F6C28A3D86F00F2E878 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F6B28A3D86F00F2E878 /* EventTests.swift */; };
+		69C92F7628A3D86F00F2E878 /* LogInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C92F7528A3D86F00F2E878 /* LogInUITests.swift */; };
 		D034000928ED767B00AFD19A /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034000828ED767B00AFD19A /* EventDetailsViewModel.swift */; };
 		D034002928F6DEB400AFD19A /* EventModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034002828F6DEB400AFD19A /* EventModelValidator.swift */; };
 		DF155732D05A4342DB5C5F39 /* Pods_FindTeamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7CA5C17C0D7DC039B8338E /* Pods_FindTeamer.framework */; };
@@ -115,6 +118,8 @@
 		69327C2928AB9E57004F7C99 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		693D8D6028B3A454005FE83C /* FirebaseEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEventService.swift; sourceTree = "<group>"; };
 		693E9D0F28F45A3800A7FD07 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		693E9D1C28FD8CC000A7FD07 /* SignUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTests.swift; sourceTree = "<group>"; };
+		693E9D1F28FEB9F900A7FD07 /* EventManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManagerMock.swift; sourceTree = "<group>"; };
 		693FF49F28BB756500CDBBFE /* CreateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventView.swift; sourceTree = "<group>"; };
 		693FF4AC28BB8AE400CDBBFE /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		693FF4AF28BB8B1B00CDBBFE /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
@@ -148,6 +153,8 @@
 		693FF4D628BCDA2700CDBBFE /* Manifest.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Manifest.lock; sourceTree = "<group>"; };
 		693FF4DA28BCDA2700CDBBFE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		693FF4DB28BCDA2700CDBBFE /* swiftlint */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = swiftlint; sourceTree = "<group>"; };
+		69407B5D28FF0A3C008301D6 /* AuthManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManagerMock.swift; sourceTree = "<group>"; };
+		694D420A28FF04470026F65C /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
 		69716CAB28B5143700520ECF /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		697CF58F28E475D500D5E5F9 /* SignUpModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModelValidator.swift; sourceTree = "<group>"; };
 		69C92F5228A3D86D00F2E878 /* FindTeamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTeamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,10 +164,9 @@
 		69C92F5E28A3D86F00F2E878 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		69C92F6128A3D86F00F2E878 /* FindTeamer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FindTeamer.xcdatamodel; sourceTree = "<group>"; };
 		69C92F6728A3D86F00F2E878 /* FindTeamerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindTeamerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		69C92F6B28A3D86F00F2E878 /* FindTeamerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamerTests.swift; sourceTree = "<group>"; };
+		69C92F6B28A3D86F00F2E878 /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		69C92F7128A3D86F00F2E878 /* FindTeamerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindTeamerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		69C92F7528A3D86F00F2E878 /* FindTeamerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamerUITests.swift; sourceTree = "<group>"; };
-		69C92F7728A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTeamerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		69C92F7528A3D86F00F2E878 /* LogInUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInUITests.swift; sourceTree = "<group>"; };
 		7D7CA5C17C0D7DC039B8338E /* Pods_FindTeamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8013907F3E525CC2180781A8 /* Pods-FindTeamer-FindTeamerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindTeamer-FindTeamerUITests.release.xcconfig"; path = "Target Support Files/Pods-FindTeamer-FindTeamerUITests/Pods-FindTeamer-FindTeamerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CBB181EC2E3C89C7B5D9132C /* Pods_FindTeamerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindTeamerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -304,6 +310,15 @@
 				693E9D0F28F45A3800A7FD07 /* NetworkReachability.swift */,
 			);
 			path = NetworkReachabilityService;
+			sourceTree = "<group>";
+		};
+		693E9D1E28FEB9D300A7FD07 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				69407B5D28FF0A3C008301D6 /* AuthManagerMock.swift */,
+				693E9D1F28FEB9F900A7FD07 /* EventManagerMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		693FF4AE28BB8B0800CDBBFE /* ViewModels */ = {
@@ -494,7 +509,9 @@
 		69C92F6A28A3D86F00F2E878 /* FindTeamerTests */ = {
 			isa = PBXGroup;
 			children = (
-				69C92F6B28A3D86F00F2E878 /* FindTeamerTests.swift */,
+				693E9D1E28FEB9D300A7FD07 /* Mocks */,
+				694D420A28FF04470026F65C /* AuthenticationTests.swift */,
+				69C92F6B28A3D86F00F2E878 /* EventTests.swift */,
 			);
 			path = FindTeamerTests;
 			sourceTree = "<group>";
@@ -502,8 +519,8 @@
 		69C92F7428A3D86F00F2E878 /* FindTeamerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				69C92F7528A3D86F00F2E878 /* FindTeamerUITests.swift */,
-				69C92F7728A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift */,
+				69C92F7528A3D86F00F2E878 /* LogInUITests.swift */,
+				693E9D1C28FD8CC000A7FD07 /* SignUpTests.swift */,
 			);
 			path = FindTeamerUITests;
 			sourceTree = "<group>";
@@ -823,7 +840,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69C92F6C28A3D86F00F2E878 /* FindTeamerTests.swift in Sources */,
+				694D420B28FF04470026F65C /* AuthenticationTests.swift in Sources */,
+				693E9D2028FEB9F900A7FD07 /* EventManagerMock.swift in Sources */,
+				69C92F6C28A3D86F00F2E878 /* EventTests.swift in Sources */,
+				69407B5E28FF0A3C008301D6 /* AuthManagerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,8 +851,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69C92F7628A3D86F00F2E878 /* FindTeamerUITests.swift in Sources */,
-				69C92F7828A3D86F00F2E878 /* FindTeamerUITestsLaunchTests.swift in Sources */,
+				69C92F7628A3D86F00F2E878 /* LogInUITests.swift in Sources */,
+				693E9D1D28FD8CC000A7FD07 /* SignUpTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

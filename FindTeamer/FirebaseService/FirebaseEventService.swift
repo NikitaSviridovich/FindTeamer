@@ -12,13 +12,13 @@ final class FirebaseEventService: EventManager {
     // MARK: - Private properties
     private var firebaseDB = Firestore.firestore()
     private var listenerRegistration: ListenerRegistration?
-    
+
     // MARK: - Initializators
     init() { }
 
     // MARK: - Methods
     func addEvent(event: EventModel) {
-        let eventData: [String: Any] = [
+        let eventData: [String: Any?] = [
             "id" : event.id,
             "eventAddress" : event.eventAddress,
             "eventDesctiption" : event.eventDescription,

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
+
     // MARK: - Private properties
+
     @State private var presentAlert = false
     @State private var successLogin = false
     @ObservedObject private var logInViewModel: LogInViewModel = LogInViewModel(authManager: FirebaseAuthService())
@@ -16,9 +18,11 @@ struct LoginView: View {
     private let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
 
     // MARK: - Initializators
+
     init() { }
     
     // MARK: - Body
+
     var body: some View {
         NavigationView {
             VStack {
@@ -59,7 +63,7 @@ struct LoginView: View {
                             message: Text(alertModel.message),
                             dismissButton: .destructive(Text(alertModel.buttonNaming))
                         )
-                    }
+                    }.accessibilityIdentifier("loginButton")
                 }
                 Text("OR")
                     .font(.footnote)
@@ -78,8 +82,9 @@ struct LoginView: View {
             }.navigationBarHidden(true)
         }
     }
-    
+
     // MARK: - Methods
+
     func logInClicked() {
         logInViewModel.signIn(completionBlock: { error in
             if let error = error {
