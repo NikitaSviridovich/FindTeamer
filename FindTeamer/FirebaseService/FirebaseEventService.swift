@@ -28,7 +28,7 @@ final class FirebaseEventService: EventManager {
             "eventTitle" : event.eventTitle,
             "eventType" : event.eventType
         ]
-        _ = firebaseDB.collection("events").addDocument(data: eventData)
+        _ = firebaseDB.collection("events").addDocument(data: eventData as [String : Any])
     }
     func observeEvents() -> AnyPublisher<[EventModel], Never> {
         let subject = PassthroughSubject<[EventModel], Never>()

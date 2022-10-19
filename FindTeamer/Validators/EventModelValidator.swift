@@ -48,7 +48,7 @@ final class EventModelValidator: ObservableObject {
     // MARK: - Private properties
     private let minFieldLength = 3
     private let minDescLength = 16
-    
+
     // MARK: - Initializators
     init(modelState: EventModel = EventModel()) {
         self.modelState = modelState

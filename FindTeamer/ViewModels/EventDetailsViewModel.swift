@@ -9,9 +9,11 @@ import SwiftUI
 
 final class EventDetailsViewModel {
     // MARK: - Initializators
+
     init() { }
-    
+
     // MARK: - Methods
+
     func openURLLink(url: String) {
         UIApplication.shared.open(NSURL(string: url)! as URL)
     }

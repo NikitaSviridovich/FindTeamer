@@ -9,16 +9,19 @@ import SwiftUI
 
 struct MainContentView: View {
     // MARK: - Private properties
+
     @State private var presentAddEventSheet = false
     @ObservedObject private var viewModel: EventsViewModel
     private let logInViewModel: LogInViewModel = LogInViewModel(authManager: FirebaseAuthService())
-    
+
     // MARK: - Initializators
+
     init(eventManager: EventManager) {
         self.viewModel = EventsViewModel(eventManager: eventManager)
     }
 
     // MARK: - Body
+
     var body: some View {
         ZStack {
             List(viewModel.events) { event in

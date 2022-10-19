@@ -20,7 +20,7 @@ struct LoginView: View {
     // MARK: - Initializators
 
     init() { }
-    
+
     // MARK: - Body
 
     var body: some View {
