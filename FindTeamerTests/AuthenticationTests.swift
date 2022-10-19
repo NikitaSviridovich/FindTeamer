@@ -7,8 +7,8 @@
 
 import XCTest
 import Combine
-
 @testable import FindTeamer
+
 class AuthenticationTests: XCTestCase {
     var loginModel: LogInModel!
     var signupModel = SignUpModel()
@@ -57,7 +57,7 @@ class AuthenticationTests: XCTestCase {
         signupModel.userEmail = "test@test.com"
         signupModel.userPassword = "Test123123"
         signupModel.userRepeatPassword = "Test123123"
-        RunLoop.main.run(mode: .default, before: .distantPast) // make UT wait for one event
+        RunLoop.main.run(mode: .default, before: .distantPast)
         XCTAssert(signUpViewModel.isFormValid, "Form absolutely valid!")
     }
 
@@ -89,5 +89,4 @@ class AuthenticationTests: XCTestCase {
         loginViewModel.signOut()
         XCTAssertTrue(authManagerMock.signOutFlag)
     }
-
 }

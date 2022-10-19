@@ -73,7 +73,7 @@ class EventTests: XCTestCase {
         event.eventEmail = "test@gmail.com"
         event.eventPhoneNumber = "+48902789123"
         event.eventAddress = "Test Address"
-        RunLoop.main.run(mode: .default, before: .distantPast) // make UT wait for one event
+        RunLoop.main.run(mode: .default, before: .distantPast)
         XCTAssert(eventViewModel.isFormValid, "Form absolutely valid!")
     }
 
@@ -84,7 +84,7 @@ class EventTests: XCTestCase {
         event.eventEmail = "test@gmail.com"
         event.eventPhoneNumber = "+48902789123"
         event.eventAddress = "Test Address"
-        RunLoop.main.run(mode: .default, before: .distantPast) // make UT wait for one event
+        RunLoop.main.run(mode: .default, before: .distantPast)
         eventViewModel.handleDoneTapped()
         XCTAssertEqual(eventManagerMock.addEventCalled, true)
     }
