@@ -1,6 +1,6 @@
 //
-//  EventViewModelTests.swift
-//  EventViewModelTests
+//  EventTests.swift
+//  EventTests
 //
 //  Created by Nikita Sviridovich on 10.08.22.
 //
@@ -9,7 +9,7 @@ import XCTest
 import Combine
 @testable import FindTeamer
 
-class EventViewModelTests: XCTestCase {
+class EventTests: XCTestCase {
     var event: EventModel!
     var eventViewModel: EventViewModel!
     var eventsViewModel: EventsViewModel!
@@ -29,54 +29,67 @@ class EventViewModelTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func eventTitle_ShouldBeInstalled_WhenGivenValue() throws {
+    func testEventTitle_ShouldBeInstalled_WhenGivenValue() throws {
         let expected = "Footbal indoor"
         event.eventTitle = "Footbal indoor"
         XCTAssertEqual(eventViewModel.event.eventTitle, expected)
     }
 
-    func eventDescription_ShouldBeInstalled_WhenGivenValue() throws {
+    func testEventDescription_ShouldBeInstalled_WhenGivenValue() throws {
         let expected = "Desc_Desc_Desc_Desc_Desc"
         event.eventDescription = "Desc_Desc_Desc_Desc_Desc"
         XCTAssertEqual(eventViewModel.event.eventDescription, expected)
     }
 
-    func eventType_ShouldBeInstalled_WhenGivenValue() throws {
+    func testEventType_ShouldBeInstalled_WhenGivenValue() throws {
         let expected = "Tennis"
         event.eventType = "Tennis"
         XCTAssertEqual(eventViewModel.event.eventType, expected)
     }
 
-    func eventEmail_ShouldBeInstalled_WhenGivenValue() throws {
+    func testEventEmail_ShouldBeInstalled_WhenGivenValue() throws {
         let expected = "test@gmail.com"
         event.eventEmail = "test@gmail.com"
         XCTAssertEqual(eventViewModel.event.eventEmail, expected)
     }
 
-    func eventPhoneNumber_ShouldBeInstalled_WhenGivenValue() throws {
+    func testEventPhoneNumber_ShouldBeInstalled_WhenGivenValue() throws {
         let expected = "+48902789123"
         event.eventPhoneNumber = "+48902789123"
         XCTAssertEqual(eventViewModel.event.eventPhoneNumber, expected)
     }
 
-    func eventAddress_ShouldBeInstalled_WhenGivenValue() throws {
+    func testEventAddress_ShouldBeInstalled_WhenGivenValue() throws {
         let expected = "Test Address"
         event.eventAddress = "Test Address"
         XCTAssertEqual(eventViewModel.event.eventAddress, expected)
     }
 
 
-    func isFormValid_ShouldBeTrue_WhenEventModelIsNotEmpty() throws {
+    func testIsFormValid_ShouldBeTrue_WhenEventModelIsNotEmpty() throws {
+        event.eventTitle = "Footbal indoor"
+        event.eventDescription = "Desc_Desc_Desc_Desc_Desc"
+        event.eventType = "Tennis"
+        event.eventEmail = "test@gmail.com"
+        event.eventPhoneNumber = "+48902789123"
+        event.eventAddress = "Test Address"
         RunLoop.main.run(mode: .default, before: .distantPast) // make UT wait for one event
         XCTAssert(eventViewModel.isFormValid, "Form absolutely valid!")
     }
 
-    func addEventCalled_ShouldBeTrue_WhenHandleDoneTapped() throws {
+    func testAddEventCalled_ShouldBeTrue_WhenHandleDoneTapped() throws {
+        event.eventTitle = "Footbal indoor"
+        event.eventDescription = "Desc_Desc_Desc_Desc_Desc"
+        event.eventType = "Tennis"
+        event.eventEmail = "test@gmail.com"
+        event.eventPhoneNumber = "+48902789123"
+        event.eventAddress = "Test Address"
+        RunLoop.main.run(mode: .default, before: .distantPast) // make UT wait for one event
         eventViewModel.handleDoneTapped()
         XCTAssertEqual(eventManagerMock.addEventCalled, true)
     }
 
-    func events_ShouldBeNotNil_WhenViewModelIntitialized() throws {
+    func testEvents_ShouldBeNotNil_WhenViewModelIntitialized() throws {
         eventsViewModel = EventsViewModel(eventManager: eventManagerMock)
         XCTAssertNotNil(eventsViewModel.events)
     }

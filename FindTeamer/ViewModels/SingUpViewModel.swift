@@ -10,11 +10,13 @@ import Combine
 
 final class SignUpViewModel: ObservableObject {
     // MARK: - Internal properties
+
     @Published var validator: SignUpModelValidator
     @Published var isFormValid = false
     @Published var modelState: SignUpModel
     
     // MARK: - Private properties
+
     private var isSignUpFormValidPublisher: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest4(
             self.validator.isNameValidPublisher,
@@ -26,10 +28,12 @@ final class SignUpViewModel: ObservableObject {
         }
         .eraseToAnyPublisher()
     }
+
     // MARK: - Private properties
+
     private let authManager: AuthManager
     private var publishers = Set<AnyCancellable>()
-    
+
     // MARK: - Initializators
     init(signUpModel: SignUpModel = SignUpModel(),
          authManager: AuthManager) {
@@ -43,6 +47,7 @@ final class SignUpViewModel: ObservableObject {
     }
 
     // MARK: - Methods
+    
     func createUser(completionBlock: @escaping (_ success: Bool) -> Void) {
         if isFormValid {
             authManager.createUser(email: modelState.userEmail, password: modelState.userPassword, completionBlock: completionBlock)

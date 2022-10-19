@@ -10,20 +10,24 @@ import Combine
 @testable import FindTeamer
 
 class AuthManagerMock: AuthManager {
+    var signOutFlag: Bool = false
     func createUser(email: String, password: String, completionBlock: @escaping (Bool) -> Void) {
-        <#code#>
+        completionBlock(true)
     }
 
     func signIn(email: String, password: String, completionBlock: @escaping (Error?) -> Void) {
-        <#code#>
+        let errorTemp = NSError(domain:"TEST", code: 200)
+        completionBlock(errorTemp)
     }
 
     func signOut() {
-        <#code#>
+        signOutFlag = true
     }
 
     func observeAuthenticationChanges() -> AnyPublisher<Bool, Never> {
-        <#code#>
+        let subject = CurrentValueSubject<Bool, Never>(true)
+        subject.send(true)
+        return subject.eraseToAnyPublisher()
     }
 
     
