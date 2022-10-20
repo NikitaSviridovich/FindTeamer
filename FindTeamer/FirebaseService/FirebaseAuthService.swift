@@ -8,12 +8,13 @@
 import FirebaseAuth
 import Combine
 
-final class FirebaseAuthService : AuthManager {
+final class FirebaseAuthService: AuthManager {
     // MARK: - Internal properties
 
     @Published var isAuthorized: Bool = false
 
     // MARK: - Private properties
+
     private var handler: AuthStateDidChangeListenerHandle?
 
     // MARK: - Initializators
@@ -32,7 +33,7 @@ final class FirebaseAuthService : AuthManager {
         }
     }
 
-    func signIn(email: String, password: String, completionBlock : @escaping (_ error: Error?) -> Void) {
+    func signIn(email: String, password: String, completionBlock: @escaping (_ error: Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { _, error in
             completionBlock(error)
         }
@@ -57,7 +58,8 @@ extension Publishers {
         typealias Failure = Never
 
         // MARK: - Methods
-        func receive<S>(subscriber: S) where S : Subscriber, Failure == S.Failure, Output == S.Input {
+
+        func receive<S>(subscriber: S) where S: Subscriber, Failure == S.Failure, Output == S.Input {
             let authSubscription = AuthenticationSubscription(subscriber: subscriber)
             subscriber.receive(subscription: authSubscription)
         }

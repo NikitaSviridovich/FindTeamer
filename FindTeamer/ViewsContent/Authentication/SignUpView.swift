@@ -94,7 +94,7 @@ struct SignUpView: View {
     func registerClicked() {
         signUpViewModel.createUser(completionBlock: { (success) in
             presentAlert = true
-            if (success) {
+            if success {
                 activeAlert = .first
                 alertModel.title = "Success"
                 alertModel.message = "Registration complete!"

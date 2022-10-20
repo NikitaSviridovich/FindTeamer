@@ -12,7 +12,7 @@ class EventModel: Identifiable {
 
     @Published var id: String? = UUID().uuidString
     @Published var eventType: String?
-    @Published var eventTitle : String?
+    @Published var eventTitle: String?
     @Published var eventEmail: String?
     @Published var eventPhoneNumber: String?
     @Published var eventAddress: String?
@@ -21,6 +21,7 @@ class EventModel: Identifiable {
 
     // MARK: - Initializators
     init() { }
+
     init(id: String?, eventType: String?, eventTitle: String?,
          eventEmail: String?, eventPhoneNumber: String?,
          eventAddress: String?, eventTime: Date?,

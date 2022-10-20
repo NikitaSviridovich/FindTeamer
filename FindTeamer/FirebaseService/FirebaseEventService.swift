@@ -10,25 +10,28 @@ import Combine
 
 final class FirebaseEventService: EventManager {
     // MARK: - Private properties
+
     private var firebaseDB = Firestore.firestore()
     private var listenerRegistration: ListenerRegistration?
 
     // MARK: - Initializators
+
     init() { }
 
     // MARK: - Methods
+
     func addEvent(event: EventModel) {
         let eventData: [String: Any?] = [
-            "id" : event.id,
-            "eventAddress" : event.eventAddress,
-            "eventDesctiption" : event.eventDescription,
-            "eventEmail" : event.eventEmail,
-            "eventPhoneNumber" : event.eventPhoneNumber,
-            "eventTime" : event.eventTime,
-            "eventTitle" : event.eventTitle,
-            "eventType" : event.eventType
+            "id": event.id,
+            "eventAddress": event.eventAddress,
+            "eventDesctiption": event.eventDescription,
+            "eventEmail": event.eventEmail,
+            "eventPhoneNumber": event.eventPhoneNumber,
+            "eventTime": event.eventTime,
+            "eventTitle": event.eventTitle,
+            "eventType": event.eventType
         ]
-        _ = firebaseDB.collection("events").addDocument(data: eventData as [String : Any])
+        _ = firebaseDB.collection("events").addDocument(data: eventData as [String: Any])
     }
     func observeEvents() -> AnyPublisher<[EventModel], Never> {
         let subject = PassthroughSubject<[EventModel], Never>()

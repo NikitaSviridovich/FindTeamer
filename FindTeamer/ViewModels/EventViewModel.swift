@@ -10,6 +10,7 @@ import SwiftUI
 
 final class EventViewModel {
     // MARK: - Internal properties
+
     @Published var event: EventModel
     @Published var isFormValid = false
     // will be from coreData
@@ -18,7 +19,9 @@ final class EventViewModel {
                   "Tennis",
                   "Chess",
                   "Gym"]
+
     // MARK: - Private properties
+
     @Published private var validator: EventModelValidator
     private let eventManager: EventManager
     private var cancellables = Set<AnyCancellable>()
@@ -34,7 +37,9 @@ final class EventViewModel {
         }
         .eraseToAnyPublisher()
     }
+
     // MARK: - Initializators
+
     init(event: EventModel = EventModel(), eventManager: EventManager) {
         self.event = event
         self.eventManager = eventManager
@@ -44,7 +49,9 @@ final class EventViewModel {
             .assign(to: \.isFormValid, on: self)
             .store(in: &publishers)
     }
+
     // MARK: - Methods
+
     func handleDoneTapped() {
         if isFormValid {
             eventManager.addEvent(event: event)
