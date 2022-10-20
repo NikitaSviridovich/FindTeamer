@@ -10,11 +10,12 @@ import Combine
 
 final class EventModelValidator: ObservableObject {
     // MARK: - Internal properties
+
     @Published var modelState: EventModel
     var isEventEmailValidPublisher: AnyPublisher<Bool, Never> {
         modelState.$eventEmail
             .map { email in
-                return NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
+                return NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
                     .evaluate(with: email)
             }
             .eraseToAnyPublisher()
@@ -31,7 +32,7 @@ final class EventModelValidator: ObservableObject {
     var isEventPhoneNumberValidPublisher: AnyPublisher<Bool, Never> {
         modelState.$eventPhoneNumber
             .map { eventPhoneNumber in
-                return NSPredicate(format:"SELF MATCHES %@", "^[0-9+]{0,1}+[0-9]{5,16}$")
+                return NSPredicate(format: "SELF MATCHES %@", "^[0-9+]{0,1}+[0-9]{5,16}$")
                     .evaluate(with: eventPhoneNumber)
             }
             .eraseToAnyPublisher()
@@ -46,10 +47,12 @@ final class EventModelValidator: ObservableObject {
     }
 
     // MARK: - Private properties
+
     private let minFieldLength = 3
     private let minDescLength = 16
 
     // MARK: - Initializators
+
     init(modelState: EventModel = EventModel()) {
         self.modelState = modelState
     }

@@ -13,6 +13,7 @@ struct RootView: View {
     @ObservedObject var viewModel: RootViewModel = RootViewModel(authManager: FirebaseAuthService())
 
     // MARK: - Body
+
     var body: some View {
         if viewModel.isAuthorized || !NetworkReachability.isConnectedToNetwork() {
             NavigationView { MainContentView(eventManager: NetworkReachability.isConnectedToNetwork() ? FirebaseEventService() : CoreDataService()) }

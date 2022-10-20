@@ -9,14 +9,17 @@ import Combine
 
 final class EventsViewModel: ObservableObject {
     // MARK: - Internal properties
+
     @Published var events = [EventModel]()
 
     // MARK: - Private properties
+
     private var cancellable = Set<AnyCancellable>()
     private let eventManager: EventManager
     private let coreDataService: CoreDataService = CoreDataService()
 
     // MARK: - Initializators
+
     init(eventManager: EventManager) {
         self.eventManager = eventManager
         self.eventManager.observeEvents().sink { [weak self] data in

@@ -1,6 +1,6 @@
 //
-//  EventTests.swift
-//  EventTests
+//  EventViewModelTests.swift
+//  EventViewModelTests
 //
 //  Created by Nikita Sviridovich on 10.08.22.
 //
@@ -9,10 +9,9 @@ import XCTest
 import Combine
 @testable import FindTeamer
 
-class EventTests: XCTestCase {
+class EventViewModelTests: XCTestCase {
     var event: EventModel!
     var eventViewModel: EventViewModel!
-    var eventsViewModel: EventsViewModel!
     var eventManagerMock: EventManagerMock!
     private var cancellable = Set<AnyCancellable>()
 
@@ -87,10 +86,5 @@ class EventTests: XCTestCase {
         RunLoop.main.run(mode: .default, before: .distantPast)
         eventViewModel.handleDoneTapped()
         XCTAssertEqual(eventManagerMock.addEventCalled, true)
-    }
-
-    func testEvents_ShouldBeNotNil_WhenViewModelIntitialized() throws {
-        eventsViewModel = EventsViewModel(eventManager: eventManagerMock)
-        XCTAssertNotNil(eventsViewModel.events)
     }
 }

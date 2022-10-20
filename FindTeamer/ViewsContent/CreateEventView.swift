@@ -29,7 +29,7 @@ struct CreateEventView: View {
                     TextField("Title", text: $viewModel.event.eventTitle.toUnwrapped(defaultValue: ""))
                 }
                 Section(header: Text("Kind of sport")) {
-                    Picker("Select kind of sport", selection: $viewModel.event.eventType) {
+                    Picker("Select kind of sport", selection: $viewModel.event.eventType.toUnwrapped(defaultValue: "")) {
                         ForEach(viewModel.sports, id: \.self) {
                             Text($0)
                         }

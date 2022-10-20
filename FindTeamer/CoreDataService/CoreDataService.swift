@@ -9,8 +9,7 @@ import SwiftUI
 import CoreData
 import Combine
 
-final class CoreDataService : EventManager {
-
+final class CoreDataService: EventManager {
     // MARK: - Private properties
 
     private var context: NSManagedObjectContext!
@@ -46,7 +45,6 @@ final class CoreDataService : EventManager {
         debugPrint(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         for event in events where getEventById(id: event.id ?? "") == nil {
             addEvent(event: event)
-
         }
     }
 

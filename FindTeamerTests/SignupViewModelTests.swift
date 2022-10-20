@@ -1,28 +1,22 @@
 //
-//  AuthenticationTests.swift
-//  AuthenticationTests
+//  SignupViewModelTests.swift
+//  SignupViewModelTests
 //
-//  Created by Nikita Sviridovich on 18.10.22.
+//  Created by Nikita Sviridovich on 20.10.22.
 //
 
 import XCTest
 import Combine
 @testable import FindTeamer
 
-class AuthenticationTests: XCTestCase {
-    var loginModel: LogInModel!
+class SignupViewModelTests: XCTestCase {
     var signupModel = SignUpModel()
-    var loginViewModel: LogInViewModel!
     var signUpViewModel: SignUpViewModel!
-    var rootViewMobel: RootViewModel!
     var authManagerMock: AuthManagerMock!
 
     override func setUpWithError() throws {
-        try super.setUpWithError()
-        loginModel = LogInModel()
         signupModel = SignUpModel()
         authManagerMock = AuthManagerMock()
-        loginViewModel = LogInViewModel(modelState: loginModel, authManager: authManagerMock)
         signUpViewModel = SignUpViewModel(signUpModel: signupModel, authManager: authManagerMock)
     }
 
@@ -66,27 +60,9 @@ class AuthenticationTests: XCTestCase {
         signupModel.userEmail = "test@test.com"
         signupModel.userPassword = "Test123123"
         signupModel.userRepeatPassword = "Test123123"
-        RunLoop.main.run(mode: .default, before: .distantPast) 
+        RunLoop.main.run(mode: .default, before: .distantPast)
         signUpViewModel.createUser(completionBlock: { flag in
             XCTAssertTrue(flag)
         })
-    }
-
-    func testUser_ShouldBeSignIn_WhenLogInModelIsNotEmpty() throws {
-        loginModel.email = "Qwe@qwe.wee"
-        loginModel.password = "123123123"
-        loginViewModel.signIn(completionBlock: { error in
-            XCTAssertNotNil(error!.localizedDescription)
-        })
-    }
-
-    func testAuthObserver_ShouldBeNotNil_WhenUserHasLoggedIn() throws {
-        rootViewMobel = RootViewModel(authManager: authManagerMock)
-        XCTAssertTrue(rootViewMobel.isAuthorized)
-    }
-
-    func testUser_ShouldBeSignOuted_WhenMethodCalled() throws {
-        loginViewModel.signOut()
-        XCTAssertTrue(authManagerMock.signOutFlag)
     }
 }
