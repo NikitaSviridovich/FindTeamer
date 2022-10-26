@@ -53,12 +53,13 @@ struct MainContentView: View {
                     }
                 }.navigationBarTitleDisplayMode(.inline)
                     .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
+                        ToolbarItem(placement: .navigationBarLeading) {
                             Button(action: {
                                 self.signOut()
-                            }, label: {
-                                Text("Logout")
-                            })
+                            }) {
+                                Image(systemName: "line.horizontal.3")
+                                    .imageScale(.large)
+                            }
                         }
                     }
             }
