@@ -8,55 +8,63 @@
 import SwiftUI
 
 struct LoginView: View {
-
+    
     // MARK: - Private properties
-
+    
     @State private var presentAlert = false
     @State private var successLogin = false
     @ObservedObject private var logInViewModel: LogInViewModel = LogInViewModel(authManager: FirebaseAuthService())
     private let alertModel: AlertModel = AlertModel()
     private let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
-
+    
     // MARK: - Initializators
-
+    
     init() { }
-
+    
     // MARK: - Body
-
+    
     var body: some View {
         NavigationView {
             VStack {
-                Text("FindTeamer")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .padding(.bottom, 20)
                 Image("WelcomeIcon")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 150, height: 150)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 260)
                     .clipped()
                     .cornerRadius(10)
                     .padding(.bottom, 35)
+                Text("Login to continue")
+                    .font(.system(size: 24))
+                    .fontWeight(.semibold)
+                Text("Welcome back! You have been missed!")
+                    .font(.system(size: 12))
+                    .foregroundColor(Color.gray)
+                    .fontWeight(.medium)
+                    .padding(.bottom, 20)
                 TextField("Email", text: $logInViewModel.modelState.email)
                     .padding()
-                    .background(lightGreyColor)
-                    .cornerRadius(10.0)
-                    .padding(.horizontal, 20)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
+                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
                 SecureField("Password", text: $logInViewModel.modelState.password)
                     .padding()
-                    .background(lightGreyColor)
-                    .cornerRadius(10.0)
-                    .padding(.horizontal, 20)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
+                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 NavigationLink(destination: MainContentView(eventManager: FirebaseEventService()), isActive: self.$successLogin) {
                     Button(action: logInClicked) {
-                        Text("LOG IN")
-                            .font(.callout)
-                            .foregroundColor(.white)
+                        Text("Login")
+                            .foregroundColor(Color.white)
                             .padding()
-                            .frame(width: 330, height: 40)
-                            .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                            .cornerRadius(45.0)
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .background(Color.green)
+                            .cornerRadius(45)
                     }
+                    .padding(EdgeInsets(top: 30, leading: 10, bottom: 0, trailing: 10))
                     .alert(isPresented: $presentAlert) {
                         return Alert(
                             title: Text(alertModel.title),
@@ -65,26 +73,19 @@ struct LoginView: View {
                         )
                     }.accessibilityIdentifier("loginButton")
                 }
-                Text("OR")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
-                    .padding(.all, 30)
                 NavigationLink(destination: SignUpView()) {
-                    Text("SIGN UP")
-                        .frame(width: 300, height: 10)
+                    Text("Don't have an account? Create a one")
+                        .font(.system(size: 12))
+                        .foregroundColor(.green)
                         .padding()
-                        .foregroundColor(.white)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]),
-                                                   startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(40)
-                        .font(.callout)
+                        .frame(minWidth: 0, maxWidth: .infinity)
                 }
             }.navigationBarHidden(true)
         }
     }
-
+    
     // MARK: - Methods
-
+    
     func logInClicked() {
         logInViewModel.signIn(completionBlock: { error in
             if let error = error {

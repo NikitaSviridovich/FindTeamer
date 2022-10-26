@@ -19,6 +19,7 @@ struct FindTeamerApp: App {
         WindowGroup {
             RootView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.colorScheme, .dark)
         }
     }
 }

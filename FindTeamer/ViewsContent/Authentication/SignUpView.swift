@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 struct SignUpView: View {
-
     // MARK: - Private properties
 
     private let alertModel: AlertModel = AlertModel()
@@ -17,10 +16,6 @@ struct SignUpView: View {
     @State private var activeAlert: ActiveAlert = .first
     @ObservedObject private var signUpViewModel: SignUpViewModel
     @Environment(\.presentationMode) private var presentationMode
-    private var buttonOpacity: Double {
-        return signUpViewModel.isFormValid ? 1 : 0.5
-    }
-    private let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
 
     // MARK: - Initializators
 
@@ -31,46 +26,53 @@ struct SignUpView: View {
     // MARK: - Body
 
     var body: some View {
-        Text("Registration")
-            .font(.largeTitle)
-            .fontWeight(.semibold)
-            .padding(.bottom, 20)
-        Image("WelcomeIcon")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: 150, height: 150)
-            .clipped()
-            .cornerRadius(10)
-            .padding(.bottom, 35)
-        TextField("Name", text: $signUpViewModel.modelState.userName)
-            .padding()
-            .background(lightGreyColor)
-            .cornerRadius(5.0)
-            .padding(.horizontal, 20)
-        TextField("Email", text: $signUpViewModel.modelState.userEmail)
-            .padding()
-            .background(lightGreyColor)
-            .cornerRadius(5.0)
-            .padding(.horizontal, 20)
-        SecureField("Password", text: $signUpViewModel.modelState.userPassword)
-            .padding()
-            .background(lightGreyColor)
-            .cornerRadius(5.0)
-            .padding(.horizontal, 20)
-        SecureField("Repeat Password", text: $signUpViewModel.modelState.userRepeatPassword)
-            .padding()
-            .background(lightGreyColor)
-            .cornerRadius(5.0)
-            .padding(.horizontal, 20)
-        Button(action: registerClicked) {
-            Text("Let's Go!")
-                .font(.callout)
-                .foregroundColor(.white)
+        VStack {
+            Spacer().frame(height: 300)
+            Text("Create your own account!")
+                .font(.system(size: 24))
+                .fontWeight(.semibold)
+            Text("Please, fill all fields")
+                .font(.system(size: 12))
+                .foregroundColor(Color.gray)
+                .fontWeight(.medium)
+                .padding(.bottom, 20)
+            TextField("Name", text: $signUpViewModel.modelState.userName)
                 .padding()
-                .frame(width: 330, height: 40)
-                .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                .cornerRadius(45.0)
-        }.opacity(buttonOpacity)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+            TextField("Email", text: $signUpViewModel.modelState.userEmail)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+            SecureField("Password", text: $signUpViewModel.modelState.userPassword)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+            SecureField("Repeat Password", text: $signUpViewModel.modelState.userRepeatPassword)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+            Button(action: registerClicked) {
+                Text("Create an account")
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .background(Color.green)
+                    .cornerRadius(45)
+            }
+            .padding(EdgeInsets(top: 30, leading: 10, bottom: 0, trailing: 10))
             .alert(isPresented: $presentAlert) {
                 switch activeAlert {
                 case .first:
@@ -87,6 +89,18 @@ struct SignUpView: View {
                         dismissButton: .default(Text(alertModel.buttonNaming)))
                 }
             }
+            Spacer().frame(height: 100)
+        }
+        .background(image, alignment: .topLeading)
+        .ignoresSafeArea()
+
+    }
+
+    var image: some View {
+        Image("RegistrationIcon")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .clipped()
     }
 
     // MARK: - Methods
