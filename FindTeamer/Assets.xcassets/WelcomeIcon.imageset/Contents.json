@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "256.png",
+      "filename" : "sport-35488.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "512.png",
+      "filename" : "sport-35488 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "1024.png",
+      "filename" : "sport-35488 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
